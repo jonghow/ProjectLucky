@@ -14,6 +14,8 @@ public class EntityMonsterController : EntityContoller
     // Controller BuffSystem
     private AbnormalSystem _abnormalSystem;
 
+    public List<Vector3> _mLt_ProbePosition; // 몬스터가 정찰할 포지션 대략 4개면 된다. 얘는 A* 로 움직일것도아니고 그냥 무빙시킬거
+
     public override void SetUp(long _entityUID, int _entityID)
     {
         _ml_EntityUID = _entityUID;
@@ -25,6 +27,31 @@ public class EntityMonsterController : EntityContoller
         _m_ActPlayer.SetOwnerUID(_entityUID, _entityID);
         AbnormalSystemSetUp();
     }
+
+    public void SetPlayerZoneProbeList()
+    {
+        if (_mLt_ProbePosition == null)
+        {
+            _mLt_ProbePosition = new List<Vector3>();
+            _mLt_ProbePosition.Add(new Vector3(-3.8f, -3.2f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(-3.8f, 1.1f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(3.8f, 1.1f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(3.8f, -3.2f, 0f));
+        }
+    }
+
+    public void SetRivalZoneProbeList()
+    {
+        if (_mLt_ProbePosition == null)
+        {
+            _mLt_ProbePosition = new List<Vector3>();
+            _mLt_ProbePosition.Add(new Vector3(-3.8f, 5.6f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(-3.8f, 1.1f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(3.8f, 1.1f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(3.8f, 5.6f, 0f));
+        }
+    }
+
     public void AISetUp()
     {
         _behaviorTree = new MonsterBehaviorMeleeNormalType($"Monster", 1, this);
@@ -43,7 +70,8 @@ public class EntityMonsterController : EntityContoller
     private void Update()
     {
         // AI 평가
-        _behaviorTree.Evaluate();
+        if (_behaviorTree != null)
+            _behaviorTree.Evaluate();
 
         // Abnormal
         float smoothDeltaTime = Time.smoothDeltaTime;

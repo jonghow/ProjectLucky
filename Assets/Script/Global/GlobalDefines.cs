@@ -7,8 +7,8 @@ namespace GlobalGameDataSpace
 {
     public static class Defines
     {
-        public const float DefaultScaleX = 1f; // 
-        public const float DefaultScaleY = 1f; // 
+        public const float DefaultScaleX = 1; // 
+        public const float DefaultScaleY = 0.95f; // 
 
         public const float DefaultHalfScaleX = DefaultScaleX * 0.5f; // 
         public const float DefaultHalfScaleY = DefaultScaleY * 0.5f; // 

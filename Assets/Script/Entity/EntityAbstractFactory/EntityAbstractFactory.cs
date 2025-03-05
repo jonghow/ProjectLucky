@@ -208,8 +208,8 @@ public class RivalEntityFactory : EntityFactoryBase
 
             var _mobContoller = _obj.AddComponent<EntityMonsterController>();
 
-            var _moveAgent = _obj.AddComponent<EntityMoveAgent>();
-            var _pathFinder = _obj.AddComponent<EntityPathFinder>();
+            //var _moveAgent = _obj.AddComponent<EntityMoveAgent>();
+            //var _pathFinder = _obj.AddComponent<EntityPathFinder>();
 
             EntityManager.GetInstance().AddEntity(EntityDivision.Enemy, uUID, ref _cEntity);
             // 선 컴포넌트 세팅 및 UID 발급
@@ -221,18 +221,18 @@ public class RivalEntityFactory : EntityFactoryBase
             _mobContoller.SetUp(uUID, _entityTID);
             // 컨트롤러 셋업
 
-            _mobContoller.SetMoveAgent(_moveAgent);
+            //_mobContoller.SetMoveAgent(_moveAgent);
             // 무빙 에이전트 셋업
 
-            _moveAgent.SetPathFinder(_pathFinder);
+            //_moveAgent.SetPathFinder(_pathFinder);
             // Path Finder 셋업
 
-            _moveAgent.OnInitialize(uUID, _mobContoller);
+            //_moveAgent.OnInitialize(uUID, _mobContoller);
             // 필수 Entity Script 설정
 
-            var _navigationElement = MapManager.GetInstance().GetMyNavigationByPos3D(_position);
-            _moveAgent.SetStartPoint(_navigationElement._mv2_Index);
-            _pathFinder.SetNavigationElement(_navigationElement);
+            //var _navigationElement = MapManager.GetInstance().GetMyNavigationByPos3D(_position);
+            //_moveAgent.SetStartPoint(_navigationElement._mv2_Index);
+            //_pathFinder.SetNavigationElement(_navigationElement);
             // 무빙 에이전트 맵 그리드 세팅
 
             _mobContoller.AISetUp();
@@ -250,7 +250,7 @@ public class RivalEntityFactory : EntityFactoryBase
         return null;
     }
 
-    public async UniTask CreateEntity(int _entityTID, Vector3 _position , Action<Entity> _onCB_Create)
+    public async UniTask CreateEntity(int _entityTID, Vector3 _position, bool _isMySpawner, Action<Entity> _onCB_Create)
     {
         bool _IsCreate = false;
         bool _IsLoaded = false;
@@ -282,8 +282,8 @@ public class RivalEntityFactory : EntityFactoryBase
 
             var _userContoller = _obj.AddComponent<EntityMonsterController>();
 
-            var _moveAgent = _obj.AddComponent<EntityMoveAgent>();
-            var _pathFinder = _obj.AddComponent<EntityPathFinder>();
+            //var _moveAgent = _obj.AddComponent<EntityMoveAgent>();
+            //var _pathFinder = _obj.AddComponent<EntityPathFinder>();
 
             while(true)
             {
@@ -303,19 +303,24 @@ public class RivalEntityFactory : EntityFactoryBase
             _userContoller.SetUp(uUID, _entityTID);
             // 컨트롤러 셋업
 
-            _userContoller.SetMoveAgent(_moveAgent);
+            if (_isMySpawner == true)
+                _userContoller.SetPlayerZoneProbeList();
+            else
+                _userContoller.SetRivalZoneProbeList();
+
+            //_userContoller.SetMoveAgent(_moveAgent);
             // 무빙 에이전트 셋업
 
-            _moveAgent.SetPathFinder(_pathFinder);
-            // Path Finder 셋업
+                //_moveAgent.SetPathFinder(_pathFinder);
+                // Path Finder 셋업
 
-            _moveAgent.OnInitialize(uUID, _userContoller);
-            // 필수 Entity Script 설정
+                //_moveAgent.OnInitialize(uUID, _userContoller);
+                // 필수 Entity Script 설정
 
-            var _navigationElement = MapManager.GetInstance().GetMyNavigationByPos3D(_position);
-            _moveAgent.SetStartPoint(_navigationElement._mv2_Index);
-            _pathFinder.SetNavigationElement(_navigationElement);
-            // 무빙 에이전트 맵 그리드 세팅
+                //var _navigationElement = MapManager.GetInstance().GetMyNavigationByPos3D(_position);
+                //_moveAgent.SetStartPoint(_navigationElement._mv2_Index);
+                //_pathFinder.SetNavigationElement(_navigationElement);
+                // 무빙 에이전트 맵 그리드 세팅
 
             _userContoller.AISetUp();
             // AI SetUp

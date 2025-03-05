@@ -213,8 +213,6 @@
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1001.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1008.xml" />
-    <None Include="Assets\ResourceData\99.GameData\NavData\stage1001ss.xml" />
-    <None Include="Assets\ResourceData\99.GameData\NavData\stage1001_test2.xml" />
     <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Changelog.txt" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1018.xml" />
     <None Include="Assets\ResourceData\99.GameData\AnimData\TempRef\fighter_Anim.xml" />
@@ -238,7 +236,6 @@
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1012.xml" />
     <None Include="Assets\ResourceData\99.GameData\AnimData\Act_RedRiceCakeMercenary.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1003.xml" />
-    <None Include="Assets\ResourceData\99.GameData\NavData\stage1001_prev.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1017.xml" />
     <None Include="Assets\ResourceData\99.GameData\GameData\BuildingData\BuildingStat.xml" />
     <None Include="Assets\ResourceData\99.GameData\GameData\CharacterData\CharacterInfo.xml" />
@@ -251,14 +248,12 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\ResourceData\99.GameData\AnimData\Act_WaterMercenary.xml" />
     <None Include="Assets\ResourceData\99.GameData\GameData\DrawHandCardData\DrawHandCardInfo.xml" />
-    <None Include="Assets\ResourceData\99.GameData\NavData\stage1001_Real.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1002.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1020.xml" />
     <None Include="Assets\ResourceData\99.GameData\AnimData\Act_ChiliPepperPasteMercenary.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1011.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\ResourceData\99.GameData\NavData\stage1001_s1.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1000.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1016.xml" />
@@ -1236,16 +1231,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UniTask.Linq">
@@ -1308,8 +1303,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
@@ -1328,8 +1323,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

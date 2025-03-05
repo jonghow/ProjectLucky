@@ -367,32 +367,30 @@ namespace EntityBehaviorTree
     }
     public class MonsterProbe : BTActionStrategy
     {
-        private Transform _owner;
-        private List<Vector3> _probeList;
-        private int _currentIndex;
-        private float _speed;
+        private long _ml_uniqueID;
+        private Entity _m_CachedOwner;
+        private EntityContoller _m_CachedOwnerController;
+        private EntityInfo _m_EntityInfo;
+
+        private List<Vector3> _mLt_CacheProbe;
+
+        private float _mf_Speed;
+        private int _mi_CurrentIndex;
         private StringBuilder _sb;
-        public MonsterProbe(Transform _owner)
+        public MonsterProbe(long _ownerUID)
         {
             _sb = new StringBuilder();
-            _currentIndex = 0;
-            _speed = 5f;
+            _ml_uniqueID = _ownerUID;
+            _mi_CurrentIndex = 0;
 
-            this._owner = _owner;
+            EntityManager.GetInstance().GetEntity(_ownerUID, out _m_CachedOwner);
+            _m_CachedOwnerController = _m_CachedOwner.Controller;
+            _m_EntityInfo = _m_CachedOwner.Info;
 
-            if (_probeList == null)
-                _probeList = new List<Vector3>();
+            if(_m_CachedOwnerController is EntityMonsterController _monsterController)
+                _mLt_CacheProbe = _monsterController._mLt_ProbePosition;
 
-            _probeList.Clear();
-
-            for (int i = 0; i < 4; ++i)
-            {
-                int rangeX = UnityEngine.Random.Range(1, 15);
-                int rangeZ = UnityEngine.Random.Range(1, 15);
-
-                Vector3 pos = new Vector3(_owner.transform.position.x - rangeX, _owner.transform.position.y, _owner.transform.position.z - rangeZ);
-                _probeList.Add(pos);
-            }
+            _mf_Speed = _m_EntityInfo.MoveSpeed;
         }
         public BTNodeState Run()
         {
@@ -402,36 +400,35 @@ namespace EntityBehaviorTree
 
         public void UpdatePosition()
         {
-            if (_currentIndex >= _probeList.Count)
-                _currentIndex = 0;
+            if (_mi_CurrentIndex >= _mLt_CacheProbe.Count)
+                _mi_CurrentIndex = 0;
 
-            Vector3 currentPos = _owner.position;
-            Vector3 destinationPos = _probeList[_currentIndex];
+            Vector3 currentPos = _m_CachedOwnerController.Pos3D;
+            Vector3 destinationPos = _mLt_CacheProbe[_mi_CurrentIndex];
 
             Vector3 dir = (destinationPos - currentPos).normalized;
 
-            Vector3 P0 = _owner.position;
-            Vector3 AT = dir * _speed * Time.deltaTime;
+            Vector3 P0 = _m_CachedOwnerController.Pos3D;
+            Vector3 AT = dir * _mf_Speed * Time.deltaTime;
             Vector3 P1 = P0 + AT;
-            _owner.position = P1;
-            _owner.LookAt(destinationPos);
+            _m_CachedOwnerController.Pos3D = P1;
+            //_owner.LookAt(destinationPos);
 
-            if (Vector3.Distance(currentPos, destinationPos) <= 0.1f)
-                ++_currentIndex;
+            if (MathUtility.CheckOverV2SqrMagnitudeDistance(currentPos, destinationPos, 0.1f) == false)
+                ++_mi_CurrentIndex; 
+            // 거리만큼 가까워 졌다면.
 
             UpdateAnimation();
         }
 
         public void UpdateAnimation()
         {
-            EntityContoller _controllerBase = _owner.GetComponent<EntityContoller>();
-
-            if (_controllerBase is EntityMonsterController _monsterContoller)
+            if (_m_CachedOwnerController is EntityMonsterController _monsterContoller)
             {
                 string _mClipName = "MOVE";
 
                 Entity _retEntity = null;
-                EntityManager.GetInstance().GetEntity(_monsterContoller._ml_EntityUID, out _retEntity);
+                EntityManager.GetInstance().GetEntity(_ml_uniqueID, out _retEntity);
                 EntityDivision _eDivision = _retEntity._me_Division;
 
                 if (_monsterContoller._m_ActPlayer.IsPlayingEqualAnimation(_mClipName) == false)
@@ -443,7 +440,7 @@ namespace EntityBehaviorTree
 
         public void Reset()
         {
-            _currentIndex = 0;
+            _mi_CurrentIndex = 0;
         }
     }
     public class EntityBehaviorTreeActionNode : EntityBehaviorTreeNodeBase

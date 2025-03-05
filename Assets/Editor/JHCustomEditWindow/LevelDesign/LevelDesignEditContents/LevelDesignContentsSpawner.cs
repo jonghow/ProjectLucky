@@ -277,6 +277,10 @@ public class LevelDesignContentsSpawner : ILevelDegineEditContents
                     GUILayout.Space(-8);
                     _editSpawner._mf_SpawnDelay = EditorGUILayout.FloatField(_editSpawner._mf_SpawnDelay, options);
 
+                    GUILayout.Label("IsMySpawner", GUILayout.Width(53));
+                    _editSpawner._isMySpwner = GUILayout.Toggle(_editSpawner._isMySpwner, "", GUILayout.Width(12));
+                    GUILayout.Space(7);
+
                     // Selected Object Emphasize
                     if (GUILayout.Button("Select", GUILayout.Width(65)))
                     {

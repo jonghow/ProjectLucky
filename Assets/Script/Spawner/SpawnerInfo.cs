@@ -26,6 +26,8 @@ public class SpawnerBase
 
     public float _mf_InitSpawnDelay;
     public float _mf_SpawnDelay;
+
+    public bool _isMySpwner; // 내 스포너면 Probe 구성을 바꿔야함
 }
 
 /// <summary>
@@ -128,7 +130,7 @@ public class SpawnerUseEdit : SpawnerBase, ISpawnerBase
                 _newSpawnPos.x += _randomX;
                 _newSpawnPos.y += _randomY;
 
-                _ = _factory.CreateEntity(_spawnEnitityID, _newSpawnPos, (_createEntity) => 
+                _ = _factory.CreateEntity(_spawnEnitityID, _newSpawnPos,_isMySpwner, (_createEntity) => 
                 {
                     _createEntity.Controller._onCB_DiedProcess -= () => { _createEntity.Controller.OnDieEvent(_createEntity); };
                     _createEntity.Controller._onCB_DiedProcess += () => { _createEntity.Controller.OnDieEvent(_createEntity); };
