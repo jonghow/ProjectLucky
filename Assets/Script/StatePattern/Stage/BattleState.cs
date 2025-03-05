@@ -11,6 +11,7 @@ public class BattleState : IStageState
     private StageStateMachine stateMachine;
 
     public float _mf_spareTime; // 여유시간
+    public int _mi_gameDefeatEnemyCount;
 
     public BattleState(StageStateMachine machine)
     {
@@ -31,10 +32,12 @@ public class BattleState : IStageState
             return;
         // 스폰 중이라면 배틀 중
 
-        if(!IsMyStoreFactoryAlive())
+        if(IsOverEnemyCount())
         {
             ChangeState(new BattleDefeatState(stateMachine));
+            // 게임에서 정해진 갯수 이상이 스폰되었다면, 
         }
+
 
         if (IsAllDeadEnemy())
         {
@@ -82,22 +85,12 @@ public class BattleState : IStageState
         return _ret = _enemyList.Count == 0 ? true : false;
     }
 
-    public bool IsMyStoreFactoryAlive()
+    public bool IsOverEnemyCount()
     {
         bool _ret = false;
+        EntityManager.GetInstance().GetEntityList(EntityDivision.Enemy, out var _enemyList);
 
-        EntityManager.GetInstance().GetEntityList(EntityDivision.MealFactory, out var _enemyList);
-
-        for(int i = 0; i< _enemyList.Count; ++i)
-        {
-            if(_enemyList[i].Item2.CharacterID == 3)
-            {
-                _ret = true;
-                break;
-            }
-        }
-
-        return _ret;
+        return _ret = _enemyList.Count >= Defines.NormalSingleGameEnemyAllowCount ? true : false;
     }
 
     public void PrintState()

@@ -1,0 +1,225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\statepattern\\stage\\battlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\statepattern\\stage\\battlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\global\\globaldefines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\global\\globaldefines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\managers\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\entity\\entityabstractfactory\\entityabstractfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\entityabstractfactory\\entityabstractfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreeactionnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreeactionnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreesequencenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreesequencenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreenodebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreenodebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreeconditionnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreeconditionnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreedecoratornode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\behaviortree\\behaviorcomponent\\entitybehaviortreedecoratornode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\customcollections\\minheapprorityqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\customcollections\\minheapprorityqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\entity\\actionplayer\\actioninfo\\actioninfoattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\actionplayer\\actioninfo\\actioninfoattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GlobalDefines.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Global\\GlobalDefines.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Global\\GlobalDefines.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Global\\GlobalDefines.cs",
+              "RelativeToolTip": "Assets\\Script\\Global\\GlobalDefines.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:36:48.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BattleState.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\StatePattern\\Stage\\BattleState.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\StatePattern\\Stage\\BattleState.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\StatePattern\\Stage\\BattleState.cs",
+              "RelativeToolTip": "Assets\\Script\\StatePattern\\Stage\\BattleState.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAA1wCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:34:56.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\InputManager.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Managers\\InputManager.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAnwGwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:34:25.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EntityAbstractFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntityAbstractFactory\\EntityAbstractFactory.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Entity\\EntityAbstractFactory\\EntityAbstractFactory.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntityAbstractFactory\\EntityAbstractFactory.cs",
+              "RelativeToolTip": "Assets\\Script\\Entity\\EntityAbstractFactory\\EntityAbstractFactory.cs",
+              "ViewState": "AQIAAE0BAAAAAAAAAAAMwFQBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:33:43.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EntityBehaviorTreeSequenceNode.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeSequenceNode.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeSequenceNode.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeSequenceNode.cs",
+              "RelativeToolTip": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeSequenceNode.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:32:29.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EntityBehaviorTree.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTree.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTree.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTree.cs",
+              "RelativeToolTip": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTree.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:32:26.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EntityBehaviorTreeActionNode.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeActionNode.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeActionNode.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeActionNode.cs",
+              "RelativeToolTip": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeActionNode.cs",
+              "ViewState": "AQIAAMMBAAAAAAAAAAAMwNABAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:32:25.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EntityBehaviorTreeDecoratorNode.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeDecoratorNode.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeDecoratorNode.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeDecoratorNode.cs",
+              "RelativeToolTip": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeDecoratorNode.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:32:23.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EntityBehaviorTreeNodeBase.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeNodeBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeNodeBase.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeNodeBase.cs",
+              "RelativeToolTip": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeNodeBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:32:22.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EntityBehaviorTreeConditionNode.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeConditionNode.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeConditionNode.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeConditionNode.cs",
+              "RelativeToolTip": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeConditionNode.cs",
+              "ViewState": "AQIAANwBAAAAAAAAAAAzwO8BAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:31:56.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ActionInfoAttack.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\ActionPlayer\\ActionInfo\\ActionInfoAttack.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Entity\\ActionPlayer\\ActionInfo\\ActionInfoAttack.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\ActionPlayer\\ActionInfo\\ActionInfoAttack.cs",
+              "RelativeToolTip": "Assets\\Script\\Entity\\ActionPlayer\\ActionInfo\\ActionInfoAttack.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T18:49:13.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MinHeapProrityQueue.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\CustomCollections\\MinHeapProrityQueue.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\CustomCollections\\MinHeapProrityQueue.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\CustomCollections\\MinHeapProrityQueue.cs",
+              "RelativeToolTip": "Assets\\Script\\CustomCollections\\MinHeapProrityQueue.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAA5wEwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T18:49:07.138Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

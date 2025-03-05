@@ -71,11 +71,6 @@ public class InputManager : MonoBehaviour
                 _Lt_Cmd.Add(_cmdBase);
                 // Camera Move
 
-                _cmdBase = new StructureBuildCommand();
-                _cmdBase.Initialize();
-                _Lt_Cmd.Add(_cmdBase);
-                // Structure Build
-
                 _cmdBase = new StateBackCommand();
                 _cmdBase.Initialize();
                 _Lt_Cmd.Add(_cmdBase);
@@ -108,10 +103,6 @@ public class InputManager : MonoBehaviour
             case InputState.SelectCookCardState:
 
                 _cmdBase = new CameraMoveCommand();
-                _cmdBase.Initialize();
-                _Lt_Cmd.Add(_cmdBase);
-
-                _cmdBase = new CookMealKitSelectCommand();
                 _cmdBase.Initialize();
                 _Lt_Cmd.Add(_cmdBase);
 

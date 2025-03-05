@@ -14,6 +14,8 @@ namespace GlobalGameDataSpace
         public const float DefaultHalfScaleY = DefaultScaleY * 0.5f; // 
 
         public const float GridPixelPerUnit = 0.25f; // 1Unit = 4Tile , 1Tile = 0.25Unit
+
+        public const int NormalSingleGameEnemyAllowCount = 100; // 이 싱글, 노멀 게임에서 허용할 적군의 숫자. 넘어가면 게임 끝.
     }
 
     public static class BuildGridHelper
