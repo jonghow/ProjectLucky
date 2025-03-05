@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpawnerWrap xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <List>
+    <SpawnerBase xsi:type="SpawnerUseEdit">
+      <_mi_IndexID>0</_mi_IndexID>
+      <_mv3_Pos>
+        <x>16</x>
+        <y>6</y>
+        <z>0</z>
+      </_mv3_Pos>
+      <_mStr_SpawnIdx>1001</_mStr_SpawnIdx>
+      <_mi_SpawnCount>8</_mi_SpawnCount>
+      <_mf_InitSpawnDelay>2</_mf_InitSpawnDelay>
+      <_mf_SpawnDelay>1.5</_mf_SpawnDelay>
+    </SpawnerBase>
+    <SpawnerBase xsi:type="SpawnerUseEdit">
+      <_mi_IndexID>1</_mi_IndexID>
+      <_mv3_Pos>
+        <x>16</x>
+        <y>-6</y>
+        <z>0</z>
+      </_mv3_Pos>
+      <_mStr_SpawnIdx>1001</_mStr_SpawnIdx>
+      <_mi_SpawnCount>9</_mi_SpawnCount>
+      <_mf_InitSpawnDelay>1.5</_mf_InitSpawnDelay>
+      <_mf_SpawnDelay>2</_mf_SpawnDelay>
+    </SpawnerBase>
+  </List>
+</SpawnerWrap>

@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: SpawnerData
+  m_EditorClassIdentifier: 
+  m_GroupName: SpawnerData
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5a25be29ea2cce048b8d979461dec16f
+  m_SerializeEntries:
+  - m_GUID: bb762989db305cd448d5c87f200d38f3
+    m_Address: Spawner_1000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1f47b0fca270d84e8175c383d8f1abe
+    m_Address: Spawner_1001
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 194344793d862d447aa019cd282db062
+    m_Address: Spawner_1002
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6429b82ddafd3540928670806d166ac
+    m_Address: Spawner_1003
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 230d6050f1061cf498ec81152a739b6c
+    m_Address: Spawner_1004
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03b30a8d314069d41ab4d25fb7d5a231
+    m_Address: Spawner_1005
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fc26cac19b0ac3489f741283ee905f2
+    m_Address: Spawner_1006
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5378fa0493b3c8448036dc9270b9deb
+    m_Address: Spawner_1007
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 627d6742703a2f443be14acac1b40a84
+    m_Address: Spawner_1008
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b30ad5f8cd431624992d5e6449fd2ddc
+    m_Address: Spawner_1009
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2788dcbad7843d449c0f60f776de07d
+    m_Address: Spawner_1010
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99bfb9d842cbb634a8927d859a49fae8
+    m_Address: Spawner_1011
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 660bf1f4a11eacb43803477d6e60cd0f
+    m_Address: Spawner_1012
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74e47fbec75218e4cab25aba7f941a8e
+    m_Address: Spawner_1013
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c32d5f3b65487c428fe43c34e228eb3
+    m_Address: Spawner_1014
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5a5f2ae9c939664f93e8d39474d0489
+    m_Address: Spawner_1015
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb9f66ab5c50c3f408fd73eaf68c11b4
+    m_Address: Spawner_1016
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 870d92eba19ca5741b31c583a070faa8
+    m_Address: Spawner_1017
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b281a1e709badc443a03a3ee87396b81
+    m_Address: Spawner_1018
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 05c87aa047a7d7c469bb509eddd903be
+    m_Address: Spawner_1019
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 392fc90a63fe7694ea34b67b7cf9e3a6
+    m_Address: Spawner_1020
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 27b8562dd249edd43bd66dae345cb2d7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b6cb4638c696bba4b8ad4edf8e38a6a9, type: 2}
+    - {fileID: 11400000, guid: 7b552f21308384246ad0bf06fc68627f, type: 2}

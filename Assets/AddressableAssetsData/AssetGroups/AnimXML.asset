@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: AnimXML
+  m_EditorClassIdentifier: 
+  m_GroupName: AnimXML
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a163a7a4ad5657940860609f01298a5f
+  m_SerializeEntries:
+  - m_GUID: 569a9384afcc04b4e9344487f2cea695
+    m_Address: Act_tteokbokkifactory
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01afc45b6913a9e4382311ccd716b3d1
+    m_Address: Act_ricecakemercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90088fa4a60136c4eb77a01a58b1c20f
+    m_Address: Act_novice
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce9dfba031aa81748838bfc7f0cfb208
+    m_Address: Act_Enemy_spoiledslime
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89d9ae2abaa229d42934cc52a5e58d52
+    m_Address: Act_chilipepperpastemercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c670050c3c98d834b8d16e7a2a5ac786
+    m_Address: Act_redricecakemercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bebb1dde4c9f58d4d913ec1377d4d9b1
+    m_Address: Act_greenonionmercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e82d139a890e58c44ab5f84046f2a94d
+    m_Address: Act_watermercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48afd0d84feadbb4b821c1b619aecc8d
+    m_Address: Act_firemercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2fa83d6b2850b24883bbd31da6e8a90
+    m_Address: Act_tteokbokkimercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb8225f6a081a494590088189921c700
+    m_Address: Act_Enemy_spoiledslime2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 27b8562dd249edd43bd66dae345cb2d7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f2787d5f16137d24e8f3c874573c4adc, type: 2}
+    - {fileID: 11400000, guid: 9613405625b85c14e95ca95b0442a69b, type: 2}

@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using EntityBehaviorTree;
+
+public class EntityMonsterController : EntityContoller
+{
+    // 월드 모델은 어디서 관리?
+    private Avatar _avatar; // 공용화된 모델 베이스
+    private EntityBehaviorTreeBase _behaviorTree;
+
+    // AnimatoController
+
+    // Controller BuffSystem
+    private AbnormalSystem _abnormalSystem;
+
+    public override void SetUp(long _entityUID, int _entityID)
+    {
+        _ml_EntityUID = _entityUID;
+        _mi_EntityTID = _entityID;
+        //TurnOffAI(); // 초기는 끈다.
+        TurnOnAI(); // 몬스터는 스포너에서만 생길거라,ON 하고 태어난다.
+        TransformSetUp();
+
+        _m_ActPlayer.SetOwnerUID(_entityUID, _entityID);
+        AbnormalSystemSetUp();
+    }
+    public void AISetUp()
+    {
+        _behaviorTree = new MonsterBehaviorMeleeNormalType($"Monster", 1, this);
+        //_behaviorTree.Evaluate();
+    }
+    private void TransformSetUp()
+    {
+        _mTr_WorldObject = GetComponent<Transform>();
+    }
+
+    private void AbnormalSystemSetUp()
+    {
+        _abnormalSystem = new AbnormalSystem();
+    }
+
+    private void Update()
+    {
+        // AI 평가
+        _behaviorTree.Evaluate();
+
+        // Abnormal
+        float smoothDeltaTime = Time.smoothDeltaTime;
+        _abnormalSystem.OnUpdateAbnormals(smoothDeltaTime);
+    }
+
+    public int GetFressness()
+    {
+        int _freshness = 0;
+
+        GameDataManager.GetInstance().GetGameDBCharacterInfo(this._mi_EntityTID, out var _ret);
+        _freshness = _ret == null ? 0 : _ret._mi_Freshness;
+        return _freshness;
+    }
+
+    public override void OnDieEvent(Entity _entity)
+    {
+        int _freshness = GetFressness();
+        PlayerManager.GetInstance().AddFreshness(_freshness);
+
+        _m_ActPlayer.ClearActionInfos();
+    }
+
+    public void OnDrawGizmos()
+    {
+        //Color color = Color.blue;
+        //Gizmos.color = color;
+        //Gizmos.DrawWireSphere(this.transform.position, _attackRange);
+
+        //color = Color.magenta;
+        //Gizmos.color = color;
+        //Gizmos.DrawWireSphere(this.transform.position, _detectRange);
+    }
+}

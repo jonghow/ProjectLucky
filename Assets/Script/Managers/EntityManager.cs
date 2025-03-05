@@ -1,0 +1,137 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using GlobalGameDataSpace;
+using UnityEditor;
+
+
+public class EntityManager
+{
+    public static EntityManager Instance;
+    public static EntityManager GetInstance()
+    {
+        if (Instance == null)
+        {
+            Instance = new EntityManager();
+        }
+
+        return Instance;
+    }
+
+    public Dictionary<EntityDivision, Dictionary<long, Entity>> _mDict_Entities = new Dictionary<EntityDivision, Dictionary<long, Entity>>();
+    public void AddEntity(EntityDivision _category, long _uid, ref Entity _entity)
+    {
+        if (_mDict_Entities.ContainsKey(_category) == false)
+            _mDict_Entities.Add(_category, new Dictionary<long, Entity>());
+
+        _mDict_Entities[_category].Add(_uid, _entity);
+    }
+    public void GetEntity(EntityDivision _category, long _uid, out Entity _entity)
+    {
+        Dictionary<long, Entity> _uidPair = null;
+        _entity = null;
+
+        if (_mDict_Entities.TryGetValue(_category, out _uidPair))
+        {
+            if (_uidPair.TryGetValue(_uid, out _entity))
+            {
+            }
+        }
+    }
+    public void GetEntityList(EntityDivision _category, out List<Tuple<long, Entity>> _listEntities)
+    {
+        if (_mDict_Entities.ContainsKey(_category) == false)
+            _mDict_Entities.Add(_category, new Dictionary<long, Entity>());
+
+        _listEntities = new List<Tuple<long, Entity>>();
+
+        foreach (var pair in _mDict_Entities[_category])
+        {
+            _listEntities.Add(new Tuple<long, Entity>(pair.Key, pair.Value));
+        }
+    }
+    public void GetEntity(long _uid, out Entity _entity)
+    {
+        _entity = null;
+        foreach(var _dict_Category_EntitiesPair in _mDict_Entities)
+        {
+            var _dict_Category_Entities = _dict_Category_EntitiesPair.Value;
+            foreach (var _dic_Inner_Entities in _dict_Category_Entities)
+            {
+                var checkEntity = _dic_Inner_Entities.Value;
+                if (checkEntity.UID == _uid)
+                {
+                    _entity = checkEntity;
+                    return;
+                }
+            }
+        }
+    }
+    public void GetEntityList(EntityDivision[] _categories, out List<Tuple<long, Entity>> _listEntities)
+    {
+        for (int i = 0; i < _categories.Length; ++i)
+        {
+            if (_mDict_Entities.ContainsKey(_categories[i]) == false)
+                _mDict_Entities.Add(_categories[i], new Dictionary<long, Entity>());
+        }
+
+        _listEntities = new List<Tuple<long, Entity>>();
+
+        for (int i = 0; i < _categories.Length; ++i)
+        {
+            foreach (var pair in _mDict_Entities[_categories[i]])
+            {
+                _listEntities.Add(new Tuple<long, Entity>(pair.Key, pair.Value));
+            }
+        }
+    }
+
+    public bool CheckContainEntityKey(long _uid)
+    {
+        foreach (var _dict_Category_EntitiesPair in _mDict_Entities)
+        {
+            var _dict_Category_Entities = _dict_Category_EntitiesPair.Value;
+
+            if(_dict_Category_Entities.ContainsKey(_uid))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void RemoveEntity(long _uid)
+    {
+        foreach (var _dict_Category_EntitiesPair in _mDict_Entities)
+        {
+            var _dict_Category_Entities = _dict_Category_EntitiesPair.Value;
+            foreach (var _dic_Inner_Entities in _dict_Category_Entities)
+            {
+                var checkEntity = _dic_Inner_Entities.Value;
+                if (checkEntity.UID == _uid)
+                {
+                    _dict_Category_Entities.Remove(_uid);
+                    return;
+                }
+            }
+        }
+    }
+
+    public void ClearEntity()
+    {
+        foreach (var _dict_Category_EntitiesPair in _mDict_Entities)
+        {
+            var _dict_Category_Entities = _dict_Category_EntitiesPair.Value;
+            foreach (var _dic_Inner_Entities in _dict_Category_Entities)
+            {
+                var checkEntity = _dic_Inner_Entities.Value;
+                checkEntity.Controller?._onCB_DiedProcess?.Invoke();
+                GameObject.Destroy(checkEntity.gameObject);
+            }
+
+            _dict_Category_Entities.Clear();
+        }
+        _mDict_Entities.Clear();
+    }
+}

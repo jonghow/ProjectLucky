@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  m_GroupName: GameData
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 59ac114dd6239c94db12ad37576d2e86
+  m_SerializeEntries:
+  - m_GUID: ceedd71cf256ff44baee054a995a0164
+    m_Address: GameDB_MealRecipeInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f75389ff10ab55b4d878efbf319d0d75
+    m_Address: GameDB_CharacterInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe50f808531f3a1408f8e68685396db3
+    m_Address: GameDB_StringCommon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd645d314f6bb8f48b3caa1160bb8c7d
+    m_Address: GameDB_MealKitInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66a18426a5676e44db0bb72cfbd7a2a3
+    m_Address: GameDB_CharacterStat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44e835f20449bbb40a8b5eb943c2f2ff
+    m_Address: GameDB_BuildingInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09292e50aef865440ada27f42f1b6bbf
+    m_Address: GameDB_DrawHandCardInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b78aa4a4917d4ed49b878ade184d0843
+    m_Address: GameDB_BuildingStat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 27b8562dd249edd43bd66dae345cb2d7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 587d70767f556e74992b7a1e9b5834fc, type: 2}
+    - {fileID: 11400000, guid: 8f7832a542da6a34eb3f222c56b5abea, type: 2}

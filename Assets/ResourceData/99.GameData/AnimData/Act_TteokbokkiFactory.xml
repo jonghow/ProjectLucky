@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<RootTableGroup Group="Anim" Table="TteokbokkiFactory">
+  <ActionData ID="1" ActionName="IDLE" FileName="MealFactory_Idle" Loop="1" >
+    <DamageObject ID ="1" Frame="6" AttachNode="None"> </DamageObject>
+    <EffectObject ID ="1"  Frame ="2" EffectFileName="None" Position="(0.000,0.000,0.000)" Rotation="(0.000,0.000,0.000)" Scale="(0.000,0.000,0.000)"> </EffectObject>
+    <SoundObject ID ="1" Frame="3" SoundFileName="None" Langauge="KR" IsVoice="0" > </SoundObject>
+  </ActionData>
+  <ActionData ID="2" ActionName="COOK" FileName="MealFactory_Cook" Loop="1" >
+  </ActionData>
+  <ActionData ID="3" ActionName="OVERHEATING" FileName="MealFactory_OverHeating" Loop="1" >
+  </ActionData>
+  <ActionData ID="4" ActionName="COOK_COMPLETE" FileName="MealFactory_CookComplete" Loop="1" >
+  </ActionData>
+</RootTableGroup>

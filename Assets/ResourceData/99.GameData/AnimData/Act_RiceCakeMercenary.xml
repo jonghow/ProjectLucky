@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<RootTableGroup Group="Anim" Table="ricecakemercenary">
+  <ActionData ID="1" ActionName="IDLE" FileName="fighter_arun" Loop="1" >
+    <EffectObject ID ="1"  Frame ="2" EffectFileName="None" Position="(0.000,0.000,0.000)" Rotation="(0.000,0.000,0.000)" Scale="(0.000,0.000,0.000)"> </EffectObject>
+    <SoundObject ID ="1" Frame="3" SoundFileName="None" Langauge="KR" IsVoice="0" > </SoundObject>
+  </ActionData>
+  <ActionData ID="2" ActionName="MOVE" FileName="fighter_arun" Loop="1" >
+  </ActionData>
+  <ActionData ID="3" ActionName="ATTACK_L" FileName="fighter_arun" Loop="1" >
+    <DamageObject ID ="1" Frame="13" AttachNode="None"> </DamageObject>
+    <EffectObject ID ="1"  Frame ="2" EffectFileName="None" Position="(0.000,0.000,0.000)" Rotation="(0.000,0.000,0.000)" Scale="(0.000,0.000,0.000)"> </EffectObject>
+    <SoundObject ID ="1" Frame="3" SoundFileName="None" Langauge="KR" IsVoice="0" > </SoundObject>
+  </ActionData>
+  <ActionData ID="4" ActionName="ATTACK_R" FileName="fighter_arun" Loop="1" >
+    <DamageObject ID ="1" Frame="13" AttachNode="None"> </DamageObject>
+    <EffectObject ID ="1"  Frame ="2" EffectFileName="None" Position="(0.000,0.000,0.000)" Rotation="(0.000,0.000,0.000)" Scale="(0.000,0.000,0.000)"> </EffectObject>
+    <SoundObject ID ="1" Frame="3" SoundFileName="None" Langauge="KR" IsVoice="0" > </SoundObject>
+  </ActionData>
+  <ActionData ID="5" ActionName="DEAD" FileName="fighter_arun" Loop="1" >
+    <EffectObject ID ="1"  Frame ="5" EffectFileName="None" Position="(0.000,0.000,0.000)" Rotation="(0.000,0.000,0.000)" Scale="(0.000,0.000,0.000)"> </EffectObject>
+    <SoundObject ID ="1" Frame="5" SoundFileName="None" Langauge="KR" IsVoice="0" > </SoundObject>
+  </ActionData>
+</RootTableGroup>

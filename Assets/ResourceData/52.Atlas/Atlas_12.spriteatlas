@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas_12
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 323646a80abafd440b2f7c4156f780dd, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 77a40f609eb26984293d55085ae8d4c9: 21300000
+    - e9f4ac81f860155409fd60d2f7375cb7: 21300000
+    - ca25eaa2f13ff324083aaedd34a8bccd: 21300000
+    - f8015de2ce2a6c646a8891c0b06edb31: 21300000
+    - 963ac5f274682474099e61e02c2b9a4b: 21300000
+    - 8437152398694c94ba5ec2b6b5297159: 21300000
+    - d088c283483a77e48a5fd75a96c08113: 21300000
+    - 06f0c5c4a147402469166e9b9a8b5f2f: 21300000
+    - c7b6ba1770b4b4948bd479b9ea524693: 21300000
+    - ca025a29678101a45bebf4aa7ef4d115: 21300000
+    - 90adf0f9521288c4580f9bd1fefd9555: 21300000
+    - c81e63aba053b2740b9bc2aa3afe94ed: 21300000
+    - 992e843c809f7224c8a0c1f175d79a1d: 21300000
+    - d7ea268e7668a284c9d29d0e1da7477c: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 77a40f609eb26984293d55085ae8d4c9, type: 3}
+  - {fileID: 21300000, guid: e9f4ac81f860155409fd60d2f7375cb7, type: 3}
+  - {fileID: 21300000, guid: ca25eaa2f13ff324083aaedd34a8bccd, type: 3}
+  - {fileID: 21300000, guid: f8015de2ce2a6c646a8891c0b06edb31, type: 3}
+  - {fileID: 21300000, guid: 963ac5f274682474099e61e02c2b9a4b, type: 3}
+  - {fileID: 21300000, guid: 8437152398694c94ba5ec2b6b5297159, type: 3}
+  - {fileID: 21300000, guid: d088c283483a77e48a5fd75a96c08113, type: 3}
+  - {fileID: 21300000, guid: 06f0c5c4a147402469166e9b9a8b5f2f, type: 3}
+  - {fileID: 21300000, guid: c7b6ba1770b4b4948bd479b9ea524693, type: 3}
+  - {fileID: 21300000, guid: ca025a29678101a45bebf4aa7ef4d115, type: 3}
+  - {fileID: 21300000, guid: 90adf0f9521288c4580f9bd1fefd9555, type: 3}
+  - {fileID: 21300000, guid: c81e63aba053b2740b9bc2aa3afe94ed, type: 3}
+  - {fileID: 21300000, guid: 992e843c809f7224c8a0c1f175d79a1d, type: 3}
+  - {fileID: 21300000, guid: d7ea268e7668a284c9d29d0e1da7477c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - CharacterPortrait_19
+  - CharacterPortrait_04
+  - CharacterPortrait_14
+  - CharacterPortrait_03
+  - CharacterPortrait_18
+  - CharacterPortrait_20
+  - CharacterPortrait_17
+  - CharacterPortrait_06
+  - CharacterPortrait_05
+  - CharacterPortrait_09
+  - CharacterPortrait_07
+  - CharacterPortrait_01
+  - CharacterPortrait_08
+  - CharacterPortrait_02
+  m_RenderDataMap: {}
+  m_Tag: Atlas_12
+  m_IsVariant: 0

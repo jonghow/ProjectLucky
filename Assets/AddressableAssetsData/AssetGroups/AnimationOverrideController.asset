@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: AnimationOverrideController
+  m_EditorClassIdentifier: 
+  m_GroupName: AnimationOverrideController
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 66c6091dd8ccec5409e35a599a9985b9
+  m_SerializeEntries:
+  - m_GUID: bb10a86c49014d84b8a11bdb62549914
+    m_Address: ActOc_ricecakemercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96fd9017df3d0774b83502ac6b284bcb
+    m_Address: ActOc_spoiledslime
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb16a888ad1cced4ab7699f9813fe397
+    m_Address: ActOc_chilipepperpastemercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9483f584045b7f4b9793bf3fb0a38fd
+    m_Address: ActOc_redricecakemercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1cf52451d930e6d4baf436774a4b6339
+    m_Address: ActOc_greenonionmercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffc34d291104c9f46aa5fca493299789
+    m_Address: ActOc_watermercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9247b188ac659b842bbb43a294a3491a
+    m_Address: ActOc_firemercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80d4f4e44ac96ab44b8ed92a5a66d023
+    m_Address: ActOc_tteokbokkimercenary
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cf8d7e21c7e9b74781e97e908ba84bc
+    m_Address: ActOc_spoiledslime2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 27b8562dd249edd43bd66dae345cb2d7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e46831e4376f6ff4e81b3e19461dd0cf, type: 2}
+    - {fileID: 11400000, guid: 59eceb8a4216a3c40b858d48f03a4bd6, type: 2}
