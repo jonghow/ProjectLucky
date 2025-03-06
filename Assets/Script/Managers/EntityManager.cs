@@ -186,7 +186,6 @@ public class EntityManager
         }
     }
     public Dictionary<EntityDivision, List<EntitiesGroup>> NewGetEntityGroups() => _mDict_EntityGroup;
-
     public List<EntitiesGroup> NewGetEntityGroups(EntityDivision eDivision)
     {
         if(!_mDict_EntityGroup.ContainsKey(eDivision))
@@ -195,6 +194,29 @@ public class EntityManager
         }
 
         return _mDict_EntityGroup[eDivision];
+    }
+
+    public void NewRemoveGroup(EntityDivision _category, int _jobID, long _uid)
+    {
+        // 내가 들어갈자리를 찾아본다.
+        if (_mDict_EntityGroup.ContainsKey(_category) == false)
+        {
+            _mDict_EntityGroup.Add(_category, new List<EntitiesGroup>());
+        }
+
+        var _groups = _mDict_EntityGroup[_category].FindAll(rhs => rhs.ID == _jobID);
+
+        foreach (var group in _groups)
+        {
+            if (group.UniqueID == _uid)
+            {
+                group.RemoveEntities();
+                _mDict_EntityGroup[_category].RemoveAll(rhs => rhs.UniqueID == _uid);
+                GameObject.Destroy(group.transform.parent.gameObject);
+                break;
+                // 타겟으로 하는 곳을 찾았다.
+            }
+        }
     }
 
 

@@ -86,10 +86,18 @@ public class EntitiesGroup : MonoBehaviour
             _m_Entities[i].Controller.Pos3D = _tr_Child.position;
         }
     }
-
     public void MoveAllEntities(Vector2Int _mMoveIndex)
     {
 
+    }
+    public void RemoveEntities()
+    {
+        for (int i = 0; i < _m_Entities.Count; ++i)
+        {
+            _m_Entities[i].Controller?._onCB_DiedProcess?.Invoke();
+            _m_Entities[i].Controller?.SetChaseEntity(null);
+            GameObject.Destroy(_m_Entities[i].gameObject);
+        }
     }
 }
 
