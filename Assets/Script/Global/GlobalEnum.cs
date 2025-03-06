@@ -40,7 +40,6 @@ namespace GlobalGameDataSpace
         Common,
         UnCommon,
         Hero,
-        Legend,
         Myth,
         Max
     }

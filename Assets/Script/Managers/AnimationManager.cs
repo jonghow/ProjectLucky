@@ -85,7 +85,7 @@ public class AnimationManager
 
         for (int i = (int)CHARACTER_ACT_DATA.RiceCakeMercenary; i < (int)CHARACTER_ACT_DATA.MAX; ++i)
         {
-            if (!( i == 1 || i == 2 || i == 3 || i == 17 || i == 8 || i == 9 || i == 23)) continue;
+            if (!( i == 1 || i == 2 || i == 14 || i == 3 || i == 17 || i == 8 || i == 9 || i == 23)) continue;
 
             if (!_m_Dict_CacheCharacterAnimationClip.ContainsKey(i))
                 _m_Dict_CacheCharacterAnimationClip.Add(i, new Dictionary<string, AnimationClip>());

@@ -34,11 +34,22 @@ namespace GlobalGameDataSpace
         // =========================================
 
         // =========== 캐릭터 없음 ==================
+
         CeleryMercenary,
-        SalmonMercenary,
+        MeatMercenary,
         CabbageMercenary,
         CornMercenary,
-        MeatMercenary,
+
+        // =========================================
+
+        // =========== 캐릭터 있음 ==================
+
+        SalmonMercenary,
+
+        // =========================================
+
+        // =========== 캐릭터 없음 ==================
+
         MushroomMercenary,
         NapaCabbageMercenary,
 

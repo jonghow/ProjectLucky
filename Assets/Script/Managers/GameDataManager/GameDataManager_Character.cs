@@ -53,7 +53,7 @@ public partial class GameDataManager
             _loadingFileName = $"Act_{((CHARACTER_ACT_DATA)i).ToString().ToLower()}";
             _loaded = false;
 
-            if (!(i == 0 || i == 1 || i == 2 || i == 3 || i == 17 || i == 8 || i == 9 || i == 23)) continue;
+            if (!(i == 0 || i == 1 || i == 2 || i == 3 || i == 14 || i == 17 || i == 8 || i == 9 || i == 23)) continue;
             // 사이에 없는 캐릭터 패스
 
             Addressables.LoadAssetAsync<TextAsset>(_loadingFileName).Completed += (op) =>

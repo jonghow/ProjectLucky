@@ -44,6 +44,15 @@ public class EntitiesGroup : MonoBehaviour
         return _m_Entities[0] == null ? 1f : _m_Entities[0].Info.AttackRange;
     }
 
+    public EntityGrade GetEntityGrade()
+    {
+        var _jobID = _m_Entities[0] == null ? 1 : _m_Entities[0].CharacterID;
+
+        GameDataManager.GetInstance().GetGameDBCharacterInfo(_jobID, out var Info);
+
+        return Info._me_Grade;
+    }
+
     public void AddEntity(ref Entity _entity)
     {
         if (_m_Entities.Count > 3) return;
@@ -54,7 +63,25 @@ public class EntitiesGroup : MonoBehaviour
     }
     public bool IsEnableAddEntity()
     {
-        return Count < 3;
+        bool _isEnable = true;
+
+        if(Count >= 1) // 하나가 이미 있다.
+        {
+            var grade = GetEntityGrade();
+            if (grade >= EntityGrade.Myth)
+            {
+                _isEnable = false;
+            }
+            else
+            {
+                if (Count < 3)
+                    _isEnable = true;
+                else
+                    _isEnable = false;
+            }
+        }
+
+        return _isEnable;
     }
     public void Initialize()
     {

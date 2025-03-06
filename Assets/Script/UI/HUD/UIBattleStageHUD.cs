@@ -12,7 +12,7 @@ public class UIBattleStageHUD : MonoBehaviour
     /// <summary>
     /// Bottom
     /// </summary>
-    [SerializeField] UIBattleStageHUD_MyHandInfo _m_MyHandInfo;
+    [SerializeField] UIBattleStageHUD_LuckyDraw _m_MyLuckyDraw;
 
     private void OnEnable()
     {
@@ -130,7 +130,6 @@ public class UIBattleStageHUD : MonoBehaviour
            });
         });
     }
-
     public void Spawn(int _jobID, EntitiesGroup _entitiesGroup)
     {
         Vector2Int _n2_NavIdx = _entitiesGroup.NvPos;

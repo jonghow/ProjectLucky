@@ -195,7 +195,6 @@ public class EntityManager
 
         return _mDict_EntityGroup[eDivision];
     }
-
     public void NewRemoveGroup(EntityDivision _category, int _jobID, long _uid)
     {
         // 내가 들어갈자리를 찾아본다.
@@ -218,10 +217,6 @@ public class EntityManager
             }
         }
     }
-
-
-
-
 
     #endregion
 }

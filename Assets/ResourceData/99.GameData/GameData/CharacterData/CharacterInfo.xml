@@ -13,7 +13,7 @@
 <StatSet>2</StatSet>
 <SkillSet>2</SkillSet>
 <Freshness>2</Freshness>
-<Grade>1</Grade>
+<Grade>2</Grade>
 </Item>
 <Item>
 <ID>3</ID>
@@ -21,7 +21,7 @@
 <StatSet>3</StatSet>
 <SkillSet>3</SkillSet>
 <Freshness>2</Freshness>
-<Grade>2</Grade>
+<Grade>1</Grade>
 </Item>
 <Item>
 <ID>4</ID>
@@ -69,7 +69,7 @@
 <StatSet>9</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
-<Grade>1</Grade>
+<Grade>4</Grade>
 </Item>
 <Item>
 <ID>10</ID>
@@ -133,7 +133,7 @@
 <StatSet>17</StatSet>
 <SkillSet>8</SkillSet>
 <Freshness>2</Freshness>
-<Grade>0</Grade>
+<Grade>3</Grade>
 </Item>
 <Item>
 <ID>18</ID>
@@ -181,7 +181,7 @@
 <StatSet>23</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
-<Grade>3</Grade>
+<Grade>4</Grade>
 </Item>
 <Item>
 <ID>24</ID>

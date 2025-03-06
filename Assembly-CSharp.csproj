@@ -204,6 +204,7 @@
     <Compile Include="Assets\Script\Navigation\NavigationVisualizer.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalBuffAttackUp.cs" />
     <Compile Include="Assets\Script\Managers\ManagerCreator.cs" />
+    <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_LuckyDraw.cs" />
     <Compile Include="Assets\Script\Managers\InputCommandClass\StateBackCommand.cs" />
     <Compile Include="Assets\Script\BattleRoutines\BattleCalculator.cs" />
   </ItemGroup>
@@ -212,6 +213,7 @@
     <None Include="Assets\ResourceData\99.GameData\AnimData\Act_novice.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\ResourceData\99.GameData\AnimData\Act_RiceCakeMercenary.xml" />
+    <None Include="Assets\ResourceData\99.GameData\AnimData\Act_SalmonMercenary.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1001.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1008.xml" />

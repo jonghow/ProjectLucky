@@ -7,6 +7,7 @@ using Unity.Burst.CompilerServices;
 using UnityEngine.UI;
 using System.Linq;
 using System.ComponentModel;
+using Unity.Mathematics;
 
 public class SelectCircle : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class SelectCircle : MonoBehaviour
     [SerializeField] Image _mImg_Range;
 
     [SerializeField] EntitiesGroup _m_CachedOwnerEntity;
+
+    [SerializeField] GameObject _m_BtnCombine;
 
     [SerializeField] float _manipluas;
 
@@ -41,6 +44,7 @@ public class SelectCircle : MonoBehaviour
         {
             UpdateRangeScale();
             _m_Pivot.gameObject.SetActive(true);
+            _m_BtnCombine.gameObject.SetActive(_entity.GetEntityGrade() < EntityGrade.Hero); // 히어로부터 버튼 뺀다. 신화는 무조건 조합UI
         }
         else
         {
@@ -88,9 +92,72 @@ public class SelectCircle : MonoBehaviour
 
     public void OnClickCombine()
     {
-        UnityLogger.GetInstance().Log($"OnClickCombine");
+        if (_m_CachedOwnerEntity == null) return;
+        if (_m_CachedOwnerEntity.IsEnableAddEntity() == true) return;
 
+        GameDataManager.GetInstance().GetGameDBCharacterInfo(_m_CachedOwnerEntity.ID, out var _ret);
+
+        // 데이터 가져오고 내가 가진 용병을 지운다
+
+        int _jobID = _m_CachedOwnerEntity.ID;
+        long _uid = _m_CachedOwnerEntity.UniqueID;
+
+        EntityManager.GetInstance().NewRemoveGroup(EntityDivision.Player, _jobID, _uid);
+
+        _m_CachedOwnerEntity = null;
+        PlayerManager.GetInstance().SetSelectedEntity(null);
+        SetOwnerEntity(PlayerManager.GetInstance().GetSelectedEntity());
+
+        // 용병 삭제
+
+        int _mi_Grade = (int)_ret._me_Grade;
+
+        if (_mi_Grade >= 4) return;
+
+         EntityGrade _me_NextGrade = (EntityGrade)(_mi_Grade + 1);
+
+        int _drawJobID = DrawCharacterID(_me_NextGrade);
+        FindEnableEntityGroups(_drawJobID, out var _entitiesGroup);
+
+        if (_entitiesGroup == null)
+        {
+            DrawAnyMapNavigation(out var _Navigation);
+            Spawn(_drawJobID, _Navigation);
+        }
+        else
+        {
+            Spawn(_drawJobID, _entitiesGroup);
+        }
     }
+
+    public void FindEnableEntityGroups(int _jobID, out EntitiesGroup _ret)
+    {
+        _ret = null;
+        EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player, _jobID, out _ret);
+    }
+
+
+    public int DrawCharacterID(EntityGrade _drawGrade)
+    {
+        List<GameDB_CharacterInfo> _Lt_Infos;
+        GameDataManager.GetInstance().GetGameDBCharacterInfoByGrade(new EntityGrade[1] { _drawGrade }, out _Lt_Infos);
+
+        int suffleCount = 20;
+
+        for (int i = 0; i < suffleCount; ++i)
+        {
+            int _prevIndex = UnityEngine.Random.Range(0, _Lt_Infos.Count);
+            int _nextIndex = UnityEngine.Random.Range(0, _Lt_Infos.Count);
+
+            var _temp = _Lt_Infos[_nextIndex];
+            _Lt_Infos[_nextIndex] = _Lt_Infos[_prevIndex];
+            _Lt_Infos[_prevIndex] = _temp;
+        }
+
+        return _Lt_Infos[0]._mi_CharacterID;
+    }
+
+
 
     public void OnClickTrash()
     {
@@ -104,5 +171,86 @@ public class SelectCircle : MonoBehaviour
         _m_CachedOwnerEntity = null;
         PlayerManager.GetInstance().SetSelectedEntity(null);
         SetOwnerEntity(PlayerManager.GetInstance().GetSelectedEntity());
+    }
+
+    public void DrawAnyMapNavigation(out NavigationElement _retNavigation)
+    {
+        MapManager.GetInstance().GetNavigationElements(out var _dictElements);
+        var _Lt_Elements = new List<NavigationElement>(_dictElements.Values.ToList());
+
+        var _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player);
+
+        for (int i = 0; i < _Lt_Groups.Count; ++i)
+        {
+            Vector2Int _v2_Index = _Lt_Groups[i].NvPos;
+
+            var _mLt_ElementToRemove = new List<NavigationElement>();
+
+            foreach (var pair in _Lt_Elements)
+            {
+                if (pair._mv2_Index == _v2_Index)
+                {
+                    _mLt_ElementToRemove.Add(pair);
+                }
+            }
+
+            for (int j = 0; j < _mLt_ElementToRemove.Count; ++j)
+            {
+                _Lt_Elements.Remove(_mLt_ElementToRemove[j]);
+            }
+        }
+        // 필터링
+
+        int suffleCount = 20;
+
+        for (int i = 0; i < suffleCount; ++i)
+        {
+            int _prevIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
+            int _nextIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
+
+            var _temp = _Lt_Elements[_nextIndex];
+            _Lt_Elements[_nextIndex] = _Lt_Elements[_prevIndex];
+            _Lt_Elements[_prevIndex] = _temp;
+        }
+        // 셔플 완료
+        _retNavigation = _Lt_Elements[0];
+    }
+    public void Spawn(int _jobID, NavigationElement _selectedNavigation)
+    {
+        if (_selectedNavigation == null)
+        {
+            UnityLogger.GetInstance().LogFuncFailed(this.GetType().Name, $"SpawnEntity", $"_selectedNavigation is NULL");
+            return;
+        }
+
+        Vector2Int _n2_NavIdx = _selectedNavigation._mv2_Index;
+        Vector3 _v3_position = _selectedNavigation._mv3_Pos;
+
+        int spawnID = _jobID;
+
+        UserEntitiesGroupFactory _spawner = new UserEntitiesGroupFactory();
+        _ = _spawner.CreateEntity(spawnID, _v3_position, (entitiesGroup) =>
+        {
+            UserEntityFactory _entitySpanwer = new UserEntityFactory();
+
+            _ = _entitySpanwer.CreateEntity(_jobID, _v3_position, (entity) =>
+            {
+                entitiesGroup.AddEntity(ref entity);
+
+            });
+        });
+    }
+    public void Spawn(int _jobID, EntitiesGroup _entitiesGroup)
+    {
+        Vector2Int _n2_NavIdx = _entitiesGroup.NvPos;
+        Vector3 _v3_position = _entitiesGroup.Pos3D;
+
+        int spawnID = _jobID;
+
+        UserEntityFactory _entitySpanwer = new UserEntityFactory();
+        _ = _entitySpanwer.CreateEntity(spawnID, _v3_position, (entity) =>
+        {
+            _entitiesGroup.AddEntity(ref entity);
+        });
     }
 }
