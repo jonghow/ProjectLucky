@@ -59,17 +59,17 @@ public class UIBattleStageHUD_StructureInfo : StageBase
 
     public void RefreshStructureInfo()
     {
-        _m_CachedEntity = PlayerManager.GetInstance().GetSelectedEntity();
+        //_m_CachedEntity = PlayerManager.GetInstance().GetSelectedEntity();
 
-        if(_m_CachedEntity != null)
-        {
-            _m_HpBar.SetHP(_m_CachedEntity.Info.HP, _m_CachedEntity.Info.MaxHP);
+        //if(_m_CachedEntity != null)
+        //{
+        //    _m_HpBar.SetHP(_m_CachedEntity.Info.HP, _m_CachedEntity.Info.MaxHP);
 
-            _m_Stat_Attack.SetStat(StatType.Attack, _m_CachedEntity.Info.Status.STR);
-            _m_Stat_Shield.SetStat(StatType.Shield, _m_CachedEntity.Info.Status.GUT);
-            _m_Stat_AttackRange.SetStat(StatType.AttackRange, _m_CachedEntity.Info.AttackRange);
-            _m_Stat_CriticalRate.SetStat(StatType.CriticalRate, _m_CachedEntity.Info.Status.DEX);
-            _m_Stat_MoveSpeed.SetStat(StatType.MoveSpeed, _m_CachedEntity.Info.MoveSpeed);
-        }
+        //    _m_Stat_Attack.SetStat(StatType.Attack, _m_CachedEntity.Info.Status.STR);
+        //    _m_Stat_Shield.SetStat(StatType.Shield, _m_CachedEntity.Info.Status.GUT);
+        //    _m_Stat_AttackRange.SetStat(StatType.AttackRange, _m_CachedEntity.Info.AttackRange);
+        //    _m_Stat_CriticalRate.SetStat(StatType.CriticalRate, _m_CachedEntity.Info.Status.DEX);
+        //    _m_Stat_MoveSpeed.SetStat(StatType.MoveSpeed, _m_CachedEntity.Info.MoveSpeed);
+        //}
     }
 }

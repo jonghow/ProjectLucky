@@ -9,7 +9,7 @@ using System.Threading;
 public class EntityMoveOrderCommand : InputCommandBase
 {
     private Camera _m_MainCamera;
-    [SerializeField] Entity _m_CachedSelectedEntity;
+    [SerializeField] EntitiesGroup _m_CachedSelectedEntity;
 
     public override void Initialize()
     {
@@ -33,14 +33,13 @@ public class EntityMoveOrderCommand : InputCommandBase
 
     public void Order()
     {
-        if (Input.GetMouseButtonDown(1) && IsPlayerEntity())
+        if (Input.GetMouseButtonDown(1))
         {
             Vector2 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
             Vector2Int _NavigationIndex = GetAboveNavigationElement();
 
-            _m_CachedSelectedEntity.Controller.GetMoveAgent(out var _moveAgent);
-            _moveAgent.CommandMove(_NavigationIndex);
 
+            _m_CachedSelectedEntity.MoveAllEntities(_NavigationIndex);
             ShowWorldPing(_mousePos);
         }
     }
@@ -72,16 +71,6 @@ public class EntityMoveOrderCommand : InputCommandBase
         }
 
         return Vector2Int.zero;
-    }
-
-    public bool IsPlayerEntity()
-    {
-        bool _ret = false;
-
-        if(_m_CachedSelectedEntity != null)
-            _ret = _m_CachedSelectedEntity.Controller is EntityUserContoller;
-
-        return _ret;
     }
 
     public void ShowWorldPing(Vector2 _pos)

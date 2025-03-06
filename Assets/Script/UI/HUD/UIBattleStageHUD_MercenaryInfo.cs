@@ -43,36 +43,36 @@ public class UIBattleStageHUD_MercenaryInfo : MonoBehaviour , IBattleHUDActivati
 
     private void OnEnable()
     {
-        if (_m_CachedEntity != null)
-        {
-            _m_CachedEntity.Controller._onCB_HitProcess -= RefreshMercenaryInfo;
-            _m_CachedEntity.Controller._onCB_HitProcess += RefreshMercenaryInfo;
-        }// Prev 沥府
+        //if (_m_CachedEntity != null)
+        //{
+        //    _m_CachedEntity.Controller._onCB_HitProcess -= RefreshMercenaryInfo;
+        //    _m_CachedEntity.Controller._onCB_HitProcess += RefreshMercenaryInfo;
+        //}// Prev 沥府
 
-        _m_CachedEntity = PlayerManager.GetInstance().GetSelectedEntity();
+        //_m_CachedEntity = PlayerManager.GetInstance().GetSelectedEntity();
 
-        if (_m_CachedEntity != null)
-        {
-            _m_CachedEntity.Controller._onCB_HitProcess -= RefreshMercenaryInfo;
-            _m_CachedEntity.Controller._onCB_HitProcess += RefreshMercenaryInfo;
-        }// Next 技泼
+        //if (_m_CachedEntity != null)
+        //{
+        //    _m_CachedEntity.Controller._onCB_HitProcess -= RefreshMercenaryInfo;
+        //    _m_CachedEntity.Controller._onCB_HitProcess += RefreshMercenaryInfo;
+        //}// Next 技泼
 
         RefreshMercenaryInfo();
     }
 
     private void OnDisable()
     {
-        if (_m_CachedEntity != null)
-        {
-            _m_CachedEntity.Controller._onCB_HitProcess -= RefreshMercenaryInfo;
-        }
+        //if (_m_CachedEntity != null)
+        //{
+        //    _m_CachedEntity.Controller._onCB_HitProcess -= RefreshMercenaryInfo;
+        //}
 
-        _m_CachedEntity = PlayerManager.GetInstance().GetSelectedEntity();
+        //_m_CachedEntity = PlayerManager.GetInstance().GetSelectedEntity();
 
-        if (_m_CachedEntity != null)
-        {
-            _m_CachedEntity.Controller._onCB_HitProcess -= RefreshMercenaryInfo;
-        }
+        //if (_m_CachedEntity != null)
+        //{
+        //    _m_CachedEntity.Controller._onCB_HitProcess -= RefreshMercenaryInfo;
+        //}
     }
 
     public void RefreshMercenaryInfo()

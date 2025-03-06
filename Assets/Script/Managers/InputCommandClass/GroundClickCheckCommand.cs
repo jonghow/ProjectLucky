@@ -8,7 +8,7 @@ using System.Threading;
 public class GroundClickCheckCommand : InputCommandBase
 {
     private Camera _m_MainCamera;
-    [SerializeField] Entity _m_CachedSelectedEntity;
+    [SerializeField] EntitiesGroup _m_CachedSelectedEntitiesGroup;
 
     public override void Initialize()
     {
@@ -22,9 +22,9 @@ public class GroundClickCheckCommand : InputCommandBase
             _m_MainCamera = Camera.main;
         }
 
-        _m_CachedSelectedEntity = PlayerManager.GetInstance().GetSelectedEntity();
+        _m_CachedSelectedEntitiesGroup = PlayerManager.GetInstance().GetSelectedEntity();
 
-        if (_m_CachedSelectedEntity == null)
+        if (_m_CachedSelectedEntitiesGroup == null)
             return;
 
         GroundClickCheck();
@@ -34,29 +34,31 @@ public class GroundClickCheckCommand : InputCommandBase
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
-            List<Tuple<long, Entity>> _entities;
-            EntityManager.GetInstance().GetEntityList(new EntityDivision[3] { EntityDivision.Player, EntityDivision.Enemy , EntityDivision.MealFactory}, out _entities);
+            if (CheckOverrideButtons())
+                return;
 
-            float _magDistance = 1f; // 弥家 芭府
+            Vector3 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
 
-            Entity _m_NearEntity = null;
-            if (_entities != null)
+            List<EntitiesGroup> _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player);
+
+            float _magDistance = 0.5f; // 弥家 芭府
+
+            EntitiesGroup _m_NearEntityGroup = null;
+            if (_Lt_Groups != null)
             {
-                foreach (var _entityPair in _entities)
+                for (int i = 0; i < _Lt_Groups.Count; ++i)
                 {
-                    Entity _curEntity = _entityPair.Item2;
-                    EntityContoller _controller = _curEntity.Controller;
+                    EntitiesGroup _curEntity = _Lt_Groups[i];
 
-                    if (Vector2.SqrMagnitude(_controller._mv2_Pos - _mousePos) <= _magDistance)
+                    if (Vector2.SqrMagnitude(_curEntity.Pos3D - _mousePos) <= _magDistance)
                     {
-                        _m_NearEntity = _curEntity;
-                        _magDistance = Vector2.SqrMagnitude(_controller._mv2_Pos - _mousePos);
+                        _m_NearEntityGroup = _curEntity;
+                        _magDistance = Vector2.SqrMagnitude(_m_NearEntityGroup.Pos3D - _mousePos);
                     }
                 }
             }
 
-            if (_m_NearEntity == null)
+            if (_m_NearEntityGroup == null)
                 ReleaseState();
         }
     }
@@ -64,15 +66,66 @@ public class GroundClickCheckCommand : InputCommandBase
     public void ReleaseState()
     {
         PlayerManager.GetInstance().ClearSelectedEntity();
-        SetSelectedArrow();
+        SetSelectedCircle();
         InputManager.GetInstance().PopInputState();
         InputManager.GetInstance().PushInputState(InputState.NormalState);
     }
 
-    public void SetSelectedArrow()
+    public bool CheckOverrideButtons()
     {
-        var gObj = GameObject.Find("SelectedArrow");
-        var component = gObj.GetComponent<SelectedArrow>();
+        if (PlayerManager.GetInstance().GetSelectedEntity() == null)
+            return false;
+
+        if ((MouseTopButtonCheck() && MouseBottomButtonCheck()))
+            return false;
+
+        return true;
+    }
+
+    public bool MouseTopButtonCheck()
+    {
+        Vector3 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
+        _mousePos.z = 0;
+
+        float restrict = 0.5f;
+
+        var gObj = GameObject.Find("SelectedGroups");
+        var component = gObj.GetComponent<SelectCircle>();
+        Vector3 pivot = component.GetPivotPos3D();
+
+        Vector3 pivotToWorld = _m_MainCamera.ScreenToWorldPoint(pivot);
+        pivotToWorld.y += 1;
+
+        if (MathUtility.CheckOverV3MagnitudeDistance(_mousePos, pivotToWorld, restrict))
+            return true;
+
+        return false;
+    }
+
+    public bool MouseBottomButtonCheck()
+    {
+        Vector3 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
+        _mousePos.z = 0;
+
+        float restrict = 0.5f;
+
+        var gObj = GameObject.Find("SelectedGroups");
+        var component = gObj.GetComponent<SelectCircle>();
+        Vector3 pivot = component.GetPivotPos3D();
+
+        Vector3 pivotToWorld = _m_MainCamera.ScreenToWorldPoint(pivot);
+        pivotToWorld.y -= 1;
+
+        if (MathUtility.CheckOverV3MagnitudeDistance(_mousePos, pivotToWorld, restrict))
+            return true;
+
+        return false;
+    }
+
+    public void SetSelectedCircle()
+    {
+        var gObj = GameObject.Find("SelectedGroups");
+        var component = gObj.GetComponent<SelectCircle>();
         component.SetOwnerEntity(PlayerManager.GetInstance().GetSelectedEntity());
     }
 }

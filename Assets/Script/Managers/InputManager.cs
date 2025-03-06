@@ -58,18 +58,8 @@ public class InputManager : MonoBehaviour
                 _Lt_Cmd.Add(_cmdBase);
                 // Entity Select
 
-                _cmdBase = new CameraMoveCommand();
-                _cmdBase.Initialize();
-                _Lt_Cmd.Add(_cmdBase);
-                // Camera Move
-
                 break;
             case InputState.StructureBuildState:
-
-                _cmdBase = new CameraMoveCommand();
-                _cmdBase.Initialize();
-                _Lt_Cmd.Add(_cmdBase);
-                // Camera Move
 
                 _cmdBase = new StateBackCommand();
                 _cmdBase.Initialize();
@@ -87,10 +77,6 @@ public class InputManager : MonoBehaviour
                 _cmdBase.Initialize();
                 _Lt_Cmd.Add(_cmdBase);
 
-                _cmdBase = new CameraMoveCommand();
-                _cmdBase.Initialize();
-                _Lt_Cmd.Add(_cmdBase);
-
                 _cmdBase = new EntityMoveOrderCommand();
                 _cmdBase.Initialize();
                 _Lt_Cmd.Add(_cmdBase);
@@ -98,13 +84,8 @@ public class InputManager : MonoBehaviour
                 _cmdBase = new StateBackCommand();
                 _cmdBase.Initialize();
                 _Lt_Cmd.Add(_cmdBase);
-
                 break;
             case InputState.SelectCookCardState:
-
-                _cmdBase = new CameraMoveCommand();
-                _cmdBase.Initialize();
-                _Lt_Cmd.Add(_cmdBase);
 
                 _cmdBase = new StateBackCommand();
                 _cmdBase.Initialize();
@@ -123,10 +104,6 @@ public class InputManager : MonoBehaviour
                 _cmdBase.Initialize();
                 _Lt_Cmd.Add(_cmdBase);
 
-                _cmdBase = new CameraMoveCommand();
-                _cmdBase.Initialize();
-                _Lt_Cmd.Add(_cmdBase);
-
                 _cmdBase = new StateBackCommand();
                 _cmdBase.Initialize();
                 _Lt_Cmd.Add(_cmdBase);
@@ -134,10 +111,6 @@ public class InputManager : MonoBehaviour
                 break;
 
             case InputState.SelectSpawnCardState:
-
-                _cmdBase = new CameraMoveCommand();
-                _cmdBase.Initialize();
-                _Lt_Cmd.Add(_cmdBase);
 
                 _cmdBase = new SpawnEntityCommand();
                 _cmdBase.Initialize();

@@ -111,25 +111,8 @@ public class UIProtoDevGuide : MonoBehaviour
         PlayerManager.GetInstance().AddFreshness(_freshness);
     }
 
-    public void OnClick_SelectEntityDestory()
-    {
-        var _selectedEntity = PlayerManager.GetInstance().GetSelectedEntity();
-        if(_selectedEntity != null)
-        {
-            _selectedEntity.Controller?._onCB_DiedProcess?.Invoke();
-
-            _selectedEntity.Controller.SetChaseEntity(null);
-            EntityManager.GetInstance().RemoveEntity(_selectedEntity.UID);
-            GameObject.Destroy(_selectedEntity.gameObject);
-        }
-    }
-
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            OnClick_SelectEntityDestory();
-        }
     }
 }
 

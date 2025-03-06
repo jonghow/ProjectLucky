@@ -21,6 +21,11 @@ public class BattleStage : StageBase
 
     public Action<int> _onCB_ChangeStage;
 
+    public void Start()
+    {
+        InitStage();
+    }
+
     public override async void InitStage()
     {
         base.InitStage();
@@ -29,12 +34,14 @@ public class BattleStage : StageBase
         // 초기 인풋 매니저 세팅
 
         _mi_StageValue = 0;
-        _mi_MaxStageValue = 3;
+        _mi_MaxStageValue = 20;
         // 초기 스테이지 데이터 세팅
 
         _m_StageStateMachine = new StageStateMachine();
         _m_StageStateMachine.SetState(new BattleStageInitState(_m_StageStateMachine));
         // 배틀 스테이트 머신 생성 _ 초기 카드 지급
+
+        _isLoadingComplete = true;
     }
 
     public AsyncLazy<List<InputCommandBase>> InputSystemInitialized = new AsyncLazy<List<InputCommandBase>>(async () =>
@@ -60,7 +67,7 @@ public class BattleStage : StageBase
         if (_isLoadingComplete == false)
             return;
 
-        if(_m_StageStateMachine != null)
+        if (_m_StageStateMachine != null)
         {
             _m_StageStateMachine.Update();
         }

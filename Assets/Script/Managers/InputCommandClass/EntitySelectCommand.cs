@@ -25,45 +25,88 @@ public class EntitySelectCommand : InputCommandBase
 
         if (Input.GetMouseButtonDown(0)) // 마우스 클릭
         {
+            if (CheckOverrideButtons())
+                return;
+
             // 편의상 에디터에서 쓰는 코드
-            Vector2 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
-            List<Tuple<long, Entity>> _entities;
-            EntityManager.GetInstance().GetEntityList(new EntityDivision[3] { EntityDivision.Player, EntityDivision.Enemy , EntityDivision.MealFactory} , out _entities);
+            Vector3 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
+            _mousePos.z = 0;
+
+            List<EntitiesGroup> _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player);
 
             float _magDistance = 0.5f; // 최소 거리
 
-            if (_entities != null)
+            if (_Lt_Groups != null)
             {
-                foreach (var _entityPair in _entities)
+                for (int i = 0; i < _Lt_Groups.Count; ++i)
                 {
-                    Entity _curEntity = _entityPair.Item2;
-                    EntityContoller _controller = _curEntity.Controller;
+                    EntitiesGroup _curEntity = _Lt_Groups[i];
 
-                    if (Vector2.SqrMagnitude(_controller._mv2_Pos - _mousePos) <= _magDistance)
+                    if (Vector3.SqrMagnitude(_curEntity.Pos3D - _mousePos) <= _magDistance)
                     {
                         PlayerManager.GetInstance().SetSelectedEntity(_curEntity);
-                        _magDistance = Vector2.SqrMagnitude(_controller._mv2_Pos - _mousePos);
+                        _magDistance = Vector2.SqrMagnitude(_curEntity.Pos3D - _mousePos);
                     }
                 }
             }
 
-            // 
             if (PlayerManager.GetInstance().GetSelectedEntity() != null)
             {
-                if (PlayerManager.GetInstance().GetSelectedEntity()._me_Division == EntityDivision.Player ||
-                    PlayerManager.GetInstance().GetSelectedEntity()._me_Division == EntityDivision.Enemy)
-                {
-                    SetSelectedArrow();
-                    ChangeInputStateToSelectEntity();
-                }
-                else if (PlayerManager.GetInstance().GetSelectedEntity()._me_Division == EntityDivision.MealFactory)
-                {
-                    SetSelectedArrow();
-                    ChangeInputStateToSelectStructure();
-                }
-                else { }
+                SetSelectedCircle();
+                ChangeInputStateToSelectEntity();
             }
         }
+    }
+
+    public bool CheckOverrideButtons()
+    {
+        if (PlayerManager.GetInstance().GetSelectedEntity() == null)
+            return false;
+
+        if ((MouseTopButtonCheck() && MouseBottomButtonCheck()))
+            return false;
+
+        return true;
+    }
+
+    public bool MouseTopButtonCheck()
+    {
+        Vector3 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
+        _mousePos.z = 0;
+
+        float restrict = 0.5f;
+
+        var gObj = GameObject.Find("SelectedGroups");
+        var component = gObj.GetComponent<SelectCircle>();
+        Vector3 pivot = component.GetPivotPos3D();
+
+        Vector3 pivotToWorld = _m_MainCamera.ScreenToWorldPoint(pivot);
+        pivotToWorld.y += 1;
+
+        if (MathUtility.CheckOverV3MagnitudeDistance(_mousePos, pivotToWorld, restrict))
+            return true;
+
+        return false;
+    }
+
+    public bool MouseBottomButtonCheck()
+    {
+        Vector3 _mousePos = _m_MainCamera.ScreenToWorldPoint(Input.mousePosition);
+        _mousePos.z = 0;
+
+        float restrict = 0.5f;
+
+        var gObj = GameObject.Find("SelectedGroups");
+        var component = gObj.GetComponent<SelectCircle>();
+        Vector3 pivot = component.GetPivotPos3D();
+
+        Vector3 pivotToWorld = _m_MainCamera.ScreenToWorldPoint(pivot);
+        pivotToWorld.y -= 1;
+
+        if (MathUtility.CheckOverV3MagnitudeDistance(_mousePos, pivotToWorld, restrict))
+            return true;
+
+        return false;
     }
 
     public void ChangeInputStateToSelectEntity()
@@ -72,16 +115,10 @@ public class EntitySelectCommand : InputCommandBase
         InputManager.GetInstance().PushInputState(InputState.SelectEntityState);
     }
 
-    public void ChangeInputStateToSelectStructure()
+    public void SetSelectedCircle()
     {
-        InputManager.GetInstance().PopInputState();
-        InputManager.GetInstance().PushInputState(InputState.SelectStructureState);
-    }
-
-    public void SetSelectedArrow()
-    {
-        var gObj = GameObject.Find("SelectedArrow");
-        var component = gObj.GetComponent<SelectedArrow>();
+        var gObj = GameObject.Find("SelectedGroups");
+        var component = gObj.GetComponent<SelectCircle>();
         component.SetOwnerEntity(PlayerManager.GetInstance().GetSelectedEntity());
     }
 }

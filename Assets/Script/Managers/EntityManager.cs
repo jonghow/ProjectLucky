@@ -165,7 +165,6 @@ public class EntityManager
         //    _mDict_EntityGroup[_category].Add(_newEntitiesGroup);
         //}
     }
-
     public void NewGetEntityGroups(EntityDivision _category, int _jobID, out EntitiesGroup _ret)
     {
         _ret = null;
@@ -186,7 +185,6 @@ public class EntityManager
             }
         }
     }
-
     public Dictionary<EntityDivision, List<EntitiesGroup>> NewGetEntityGroups() => _mDict_EntityGroup;
 
     public List<EntitiesGroup> NewGetEntityGroups(EntityDivision eDivision)

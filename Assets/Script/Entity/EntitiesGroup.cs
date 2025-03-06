@@ -33,12 +33,16 @@ public class EntitiesGroup : MonoBehaviour
         }
     }
 
-
     // 캐릭터 피벗 위치
     [SerializeField] GameObject[] _m_Pivots;
     [SerializeField] GameObject _m_TempPivots;
 
     [SerializeField] List<Entity> _m_Entities;
+
+    public float GetEntityAttackRange()
+    {
+        return _m_Entities[0] == null ? 1f : _m_Entities[0].Info.AttackRange;
+    }
 
     public void AddEntity(ref Entity _entity)
     {
@@ -81,6 +85,11 @@ public class EntitiesGroup : MonoBehaviour
             _m_Entities[i].transform.SetParent(_tr_Child);
             _m_Entities[i].Controller.Pos3D = _tr_Child.position;
         }
+    }
+
+    public void MoveAllEntities(Vector2Int _mMoveIndex)
+    {
+
     }
 }
 
