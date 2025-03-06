@@ -6,6 +6,7 @@ using GlobalGameDataSpace;
 using Unity.Burst.CompilerServices;
 using UnityEngine.UI;
 using System.Linq;
+using System.ComponentModel;
 
 public class SelectCircle : MonoBehaviour
 {
@@ -76,7 +77,6 @@ public class SelectCircle : MonoBehaviour
         {
             Vector3 _ownerPos = _m_CachedOwnerEntity.Pos3D;
             Vector3 _screenPos = Camera.main.WorldToScreenPoint(_ownerPos);
-            //_screenPos.y += _manipluas;
 
             this._mRectTr_SelectedCircle.position = _screenPos;
         }
@@ -84,5 +84,25 @@ public class SelectCircle : MonoBehaviour
         {
             this._mRectTr_SelectedCircle.localPosition = new Vector3(99999f, 99999f, 99999f);
         }
+    }
+
+    public void OnClickCombine()
+    {
+        UnityLogger.GetInstance().Log($"OnClickCombine");
+
+    }
+
+    public void OnClickTrash()
+    {
+        UnityLogger.GetInstance().Log($"OnClickTrash");
+
+        int _jobID = _m_CachedOwnerEntity.ID;
+        long _uid = _m_CachedOwnerEntity.UniqueID;
+
+        EntityManager.GetInstance().NewRemoveGroup(EntityDivision.Player,_jobID, _uid);
+
+        _m_CachedOwnerEntity = null;
+        PlayerManager.GetInstance().SetSelectedEntity(null);
+        SetOwnerEntity(PlayerManager.GetInstance().GetSelectedEntity());
     }
 }
