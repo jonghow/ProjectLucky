@@ -74,8 +74,8 @@ public class EntityMonsterController : EntityContoller
             _behaviorTree.Evaluate();
 
         // Abnormal
-        float smoothDeltaTime = Time.smoothDeltaTime;
-        _abnormalSystem.OnUpdateAbnormals(smoothDeltaTime);
+        //float smoothDeltaTime = Time.smoothDeltaTime;
+        //_abnormalSystem.OnUpdateAbnormals(smoothDeltaTime);
     }
 
     public int GetFressness()

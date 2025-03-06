@@ -82,6 +82,7 @@
     <Compile Include="Assets\Script\Spawner\SpawnerInfo.cs" />
     <Compile Include="Assets\Script\BehaviorTree\BehaviorComponent\EntityBehaviorTreeDecoratorNode.cs" />
     <Compile Include="Assets\Script\Entity\EntityController.cs" />
+    <Compile Include="Assets\Script\UI\SelectCircle\SelectCircle.cs" />
     <Compile Include="Assets\Script\Managers\GameDataManager\GameDataManager_Recipe.cs" />
     <Compile Include="Assets\Script\Managers\GameDataManager\GameDataManager.cs" />
     <Compile Include="Assets\Script\Managers\GameDataManager\Act\CharacterActionEffect.cs" />
