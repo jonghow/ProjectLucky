@@ -3,16 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\global\\globaldefines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\hud\\uibattlestagehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\uibattlestagehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\entity\\entitiesgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\entitiesgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\entity\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\inputcommandclass\\groundclickcheckcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\inputcommandclass\\groundclickcheckcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\managers\\inputcommandclass\\spawnentitycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\inputcommandclass\\spawnentitycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\inputcommandclass\\inputcommandbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\inputcommandclass\\inputcommandbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\inputcommandclass\\entityselectcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\inputcommandclass\\entityselectcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\inputcommandclass\\entitymoveordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\inputcommandclass\\entitymoveordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\stage\\battlestage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\stage\\battlestage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\global\\globaldefines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\global\\globaldefines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\navigation\\navigationvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\navigation\\navigationvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\entity\\entitymonstercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\entitymonstercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\entity\\entitymonstercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\entitymonstercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\navigation\\navigationvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\navigation\\navigationvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD80D8EA-1AE5-32CB-A0A7-7026501DCFC6}|Assembly-CSharp-Editor.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\editor\\jhcustomeditwindow\\leveldesign\\leveldesigneditcontents\\leveldesigncontentsspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -93,9 +133,36 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 188,
+          "DockedWidth": 240,
           "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\Entity.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Entity\\Entity.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\Entity.cs",
+              "RelativeToolTip": "Assets\\Script\\Entity\\Entity.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAYwBAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:05:01.549Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EntitiesGroup.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntitiesGroup.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Entity\\EntitiesGroup.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntitiesGroup.cs",
+              "RelativeToolTip": "Assets\\Script\\Entity\\EntitiesGroup.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAswBkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:49:20.395Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
@@ -107,19 +174,68 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NavigationVisualizer.cs",
-              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Navigation\\NavigationVisualizer.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Navigation\\NavigationVisualizer.cs",
-              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Navigation\\NavigationVisualizer.cs",
-              "RelativeToolTip": "Assets\\Script\\Navigation\\NavigationVisualizer.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAcwCYAAAAyAAAA",
+              "Title": "EntityManager.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\EntityManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\EntityManager.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\EntityManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Managers\\EntityManager.cs",
+              "ViewState": "AQIAAJ4AAAAAAAAAAAAQwKUAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T21:45:02.036Z",
+              "WhenOpened": "2025-03-06T07:05:12.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "UIBattleStageHUD.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
+              "RelativeToolTip": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAiwCUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:01:03.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GroundClickCheckCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\GroundClickCheckCommand.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\InputCommandClass\\GroundClickCheckCommand.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\GroundClickCheckCommand.cs",
+              "RelativeToolTip": "Assets\\Script\\Managers\\InputCommandClass\\GroundClickCheckCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T06:59:36.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EntityMoveOrderCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\EntityMoveOrderCommand.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\InputCommandClass\\EntityMoveOrderCommand.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\EntityMoveOrderCommand.cs",
+              "RelativeToolTip": "Assets\\Script\\Managers\\InputCommandClass\\EntityMoveOrderCommand.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T06:59:34.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BattleStage.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Stage\\BattleStage.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Stage\\BattleStage.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Stage\\BattleStage.cs",
+              "RelativeToolTip": "Assets\\Script\\Stage\\BattleStage.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAuwFAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T06:58:31.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "LevelDesignEditWindow.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Editor\\JHCustomEditWindow\\LevelDesign\\LevelDesignEditWindow.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\JHCustomEditWindow\\LevelDesign\\LevelDesignEditWindow.cs",
@@ -131,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "SpawnerInfo.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Spawner\\SpawnerInfo.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Spawner\\SpawnerInfo.cs",
@@ -143,20 +259,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "GlobalDefines.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Global\\GlobalDefines.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Global\\GlobalDefines.cs",
               "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Global\\GlobalDefines.cs",
               "RelativeToolTip": "Assets\\Script\\Global\\GlobalDefines.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAuAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T19:36:48.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T19:36:48.989Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
+              "Title": "NavigationVisualizer.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Navigation\\NavigationVisualizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Navigation\\NavigationVisualizer.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Navigation\\NavigationVisualizer.cs",
+              "RelativeToolTip": "Assets\\Script\\Navigation\\NavigationVisualizer.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAcwCYAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T21:45:02.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "LevelDesignContentsSpawner.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Editor\\JHCustomEditWindow\\LevelDesign\\LevelDesignEditContents\\LevelDesignContentsSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Editor\\JHCustomEditWindow\\LevelDesign\\LevelDesignEditContents\\LevelDesignContentsSpawner.cs",
@@ -168,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "EntityAbstractFactory.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntityAbstractFactory\\EntityAbstractFactory.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Entity\\EntityAbstractFactory\\EntityAbstractFactory.cs",
@@ -180,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "SpanwerManager.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\SpanwerManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Managers\\SpanwerManager.cs",
@@ -192,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "UIProtoDevGuide.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\UIProtoDevGuide\\UIProtoDevGuide.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\UIProtoDevGuide\\UIProtoDevGuide.cs",
@@ -204,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "ManagerCreator.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\ManagerCreator.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Managers\\ManagerCreator.cs",
@@ -216,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "MonsterBehaviorMeleeNormalType.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorProduct\\MonsterBehavior\\MonsterBehaviorMeleeNormalType.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorProduct\\MonsterBehavior\\MonsterBehaviorMeleeNormalType.cs",
@@ -228,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "EntityBehaviorTreeActionNode.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeActionNode.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeActionNode.cs",
@@ -240,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "BattleState.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\StatePattern\\Stage\\BattleState.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\StatePattern\\Stage\\BattleState.cs",
@@ -252,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "InputManager.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Managers\\InputManager.cs",
@@ -264,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "EntityBehaviorTree.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTree.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTree.cs",
@@ -276,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "EntityBehaviorTreeSequenceNode.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeSequenceNode.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeSequenceNode.cs",
@@ -288,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "EntityBehaviorTreeDecoratorNode.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeDecoratorNode.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeDecoratorNode.cs",
@@ -300,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
               "Title": "EntityBehaviorTreeNodeBase.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeNodeBase.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeNodeBase.cs",
@@ -312,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "EntityBehaviorTreeConditionNode.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeConditionNode.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\BehaviorTree\\BehaviorComponent\\EntityBehaviorTreeConditionNode.cs",
@@ -324,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 30,
               "Title": "ActionInfoAttack.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\ActionPlayer\\ActionInfo\\ActionInfoAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Entity\\ActionPlayer\\ActionInfo\\ActionInfoAttack.cs",
@@ -336,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 29,
               "Title": "MinHeapProrityQueue.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\CustomCollections\\MinHeapProrityQueue.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CustomCollections\\MinHeapProrityQueue.cs",
@@ -349,21 +476,57 @@
           ]
         },
         {
-          "DockedWidth": 212,
+          "DockedWidth": 160,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "SpawnEntityCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\SpawnEntityCommand.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\InputCommandClass\\SpawnEntityCommand.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\SpawnEntityCommand.cs",
+              "RelativeToolTip": "Assets\\Script\\Managers\\InputCommandClass\\SpawnEntityCommand.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAYwIUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T06:59:39.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InputCommandBase.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\InputCommandBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\InputCommandClass\\InputCommandBase.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\InputCommandBase.cs",
+              "RelativeToolTip": "Assets\\Script\\Managers\\InputCommandClass\\InputCommandBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:02:51.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EntitySelectCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\EntitySelectCommand.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\InputCommandClass\\EntitySelectCommand.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\InputCommandClass\\EntitySelectCommand.cs",
+              "RelativeToolTip": "Assets\\Script\\Managers\\InputCommandClass\\EntitySelectCommand.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAA2wBkAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T06:59:35.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "EntityMonsterController.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntityMonsterController.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Entity\\EntityMonsterController.cs",
               "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntityMonsterController.cs",
               "RelativeToolTip": "Assets\\Script\\Entity\\EntityMonsterController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAQwCwAAAAnAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAQwCUAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T19:59:04.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T19:59:04.802Z"
             }
           ]
         }

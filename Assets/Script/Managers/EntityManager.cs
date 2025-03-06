@@ -5,7 +5,6 @@ using UnityEngine;
 using GlobalGameDataSpace;
 using UnityEditor;
 
-
 public class EntityManager
 {
     public static EntityManager Instance;
@@ -86,7 +85,6 @@ public class EntityManager
             }
         }
     }
-
     public bool CheckContainEntityKey(long _uid)
     {
         foreach (var _dict_Category_EntitiesPair in _mDict_Entities)
@@ -100,7 +98,6 @@ public class EntityManager
         }
         return false;
     }
-
     public void RemoveEntity(long _uid)
     {
         foreach (var _dict_Category_EntitiesPair in _mDict_Entities)
@@ -117,7 +114,6 @@ public class EntityManager
             }
         }
     }
-
     public void ClearEntity()
     {
         foreach (var _dict_Category_EntitiesPair in _mDict_Entities)
@@ -134,4 +130,62 @@ public class EntityManager
         }
         _mDict_Entities.Clear();
     }
+
+    #region NewManager
+
+    public Dictionary<EntityDivision, List<EntitiesGroup>> _mDict_EntityGroup = new Dictionary<EntityDivision, List<EntitiesGroup>>();
+    public void NewAddEntity(EntityDivision _category, int _jobID, ref Entity _entity)
+    {
+        if (_mDict_EntityGroup.ContainsKey(_category) == false)
+        {
+            _mDict_EntityGroup.Add(_category, new List<EntitiesGroup>());
+        }
+
+        var _groups = _mDict_EntityGroup[_category].FindAll(rhs => rhs.ID == _jobID);
+        bool _isSetEntity = false;
+
+        foreach (var group in _groups)
+        {
+            if (!group.IsEnableAddEntity())
+                continue;
+
+            _isSetEntity = true;
+            group.AddEntity(ref _entity);
+        }
+
+        if( !_isSetEntity )
+        {
+            // 아무곳에도 넣지 못한 경우 그룹을 만든다.
+            var _newEntitiesGroup = new EntitiesGroup();
+            _newEntitiesGroup.ID = _jobID;
+
+            _mDict_EntityGroup[_category].Add(_newEntitiesGroup);
+        }
+    }
+
+    public void NewGetEntityGroups(EntityDivision _category, int _jobID, out EntitiesGroup _ret)
+    {
+        _ret = null;
+        // 내가 들어갈자리를 찾아본다.
+        if (_mDict_EntityGroup.ContainsKey(_category) == false)
+        {
+            _mDict_EntityGroup.Add(_category, new List<EntitiesGroup>());
+        }
+
+        var _groups = _mDict_EntityGroup[_category].FindAll(rhs => rhs.ID == _jobID);
+        foreach (var group in _groups)
+        {
+            if (group.IsEnableAddEntity())
+            {
+                _ret = group;
+                break;
+                // 타겟으로 하는 곳을 찾았다.
+            }
+        }
+    }
+
+
+
+
+    #endregion
 }

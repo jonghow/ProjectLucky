@@ -76,4 +76,8 @@ public class BattleStage : StageBase
 
         // Check Any .. Ex) GameRule Etc..
     }
+
+    public void Cheat_Spawn()
+    {
+    }
 }
