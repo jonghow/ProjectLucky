@@ -353,7 +353,8 @@ namespace EntityBehaviorTree
             Entity _chaseEntity;
             _m_CachedOwnerController.GetChaseEntity(out _chaseEntity);
 
-            return !MathUtility.CheckOverV2SqrMagnitudeDistance(_m_CachedOwnerController.Pos3D, _chaseEntity.Controller.Pos3D, _mf_AttackRange) ? BTNodeState.Failure : BTNodeState.Success;
+            Vector3 _chassPos3D = _chaseEntity == null ? new Vector3(99999f, 99999f, 99999f) : _chaseEntity.Controller.Pos3D;
+            return !MathUtility.CheckOverV2SqrMagnitudeDistance(_m_CachedOwnerController.Pos3D, _chassPos3D, _mf_AttackRange) ? BTNodeState.Failure : BTNodeState.Success;
         }
 
         public void Reset()

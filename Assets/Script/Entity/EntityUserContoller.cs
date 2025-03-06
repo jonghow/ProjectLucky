@@ -24,7 +24,7 @@ public class EntityUserContoller : EntityContoller
     {
         _ml_EntityUID = _entityUID;
         _mi_EntityTID = _entityID;
-        TurnOffAI(); // 초기는 끈다.
+        TurnOnAI(); // 초기는 끈다.
         TransformSetUp();
 
         _m_ActPlayer.SetOwnerUID(_entityUID, _entityID);

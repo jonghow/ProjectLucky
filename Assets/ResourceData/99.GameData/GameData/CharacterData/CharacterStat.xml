@@ -1,12 +1,12 @@
 <CharacterStat>
 <Item>
 <ID>1</ID>
-<Str>10</Str>
+<Str>12</Str>
 <Dex>6</Dex>
 <Wis>30</Wis>
 <Guts>15</Guts>
 <Men>12</Men>
-<MaxHP>200</MaxHP>
+<MaxHP>240</MaxHP>
 <AttackRange>1.4</AttackRange>
 </Item>
 <Item>
@@ -16,8 +16,8 @@
 <Wis>30</Wis>
 <Guts>42</Guts>
 <Men>20</Men>
-<MaxHP>130</MaxHP>
-<AttackRange>3.2</AttackRange>
+<MaxHP>150</MaxHP>
+<AttackRange>4.2</AttackRange>
 </Item>
 <Item>
 <ID>3</ID>
@@ -26,7 +26,7 @@
 <Wis>15</Wis>
 <Guts>15</Guts>
 <Men>15</Men>
-<MaxHP>160</MaxHP>
+<MaxHP>190</MaxHP>
 <AttackRange>2</AttackRange>
 </Item>
 <Item>
@@ -76,7 +76,7 @@
 <Wis>15</Wis>
 <Guts>15</Guts>
 <Men>15</Men>
-<MaxHP>250</MaxHP>
+<MaxHP>270</MaxHP>
 <AttackRange>1.5</AttackRange>
 </Item>
 <Item>
@@ -86,7 +86,7 @@
 <Wis>13</Wis>
 <Guts>15</Guts>
 <Men>13</Men>
-<MaxHP>150</MaxHP>
+<MaxHP>180</MaxHP>
 <AttackRange>1.4</AttackRange>
 </Item>
 <Item>
@@ -166,7 +166,7 @@
 <Wis>13</Wis>
 <Guts>15</Guts>
 <Men>13</Men>
-<MaxHP>400</MaxHP>
+<MaxHP>420</MaxHP>
 <AttackRange>1.5</AttackRange>
 </Item>
 <Item>
@@ -226,8 +226,8 @@
 <Wis>30</Wis>
 <Guts>42</Guts>
 <Men>20</Men>
-<MaxHP>550</MaxHP>
-<AttackRange>2.5</AttackRange>
+<MaxHP>580</MaxHP>
+<AttackRange>4</AttackRange>
 </Item>
 <Item>
 <ID>24</ID>
@@ -251,7 +251,7 @@
 </Item>
 <Item>
 <ID>1001</ID>
-<Str>8</Str>
+<Str>6</Str>
 <Dex>5</Dex>
 <Wis>13</Wis>
 <Guts>15</Guts>
@@ -261,7 +261,7 @@
 </Item>
 <Item>
 <ID>1002</ID>
-<Str>9</Str>
+<Str>7</Str>
 <Dex>5</Dex>
 <Wis>13</Wis>
 <Guts>15</Guts>
@@ -271,7 +271,7 @@
 </Item>
 <Item>
 <ID>1003</ID>
-<Str>12</Str>
+<Str>10</Str>
 <Dex>6</Dex>
 <Wis>13</Wis>
 <Guts>15</Guts>
@@ -281,7 +281,7 @@
 </Item>
 <Item>
 <ID>1004</ID>
-<Str>13</Str>
+<Str>11</Str>
 <Dex>6</Dex>
 <Wis>13</Wis>
 <Guts>15</Guts>

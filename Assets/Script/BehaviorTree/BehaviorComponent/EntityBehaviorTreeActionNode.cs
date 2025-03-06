@@ -18,15 +18,15 @@ namespace EntityBehaviorTree
     {
         private long _ml_ownerUID;
         private EntityDivision _me_CachedOwnerDivision;
+        private Entity _m_CachedOwner;
         private EntityContoller _m_CachedOwnerController;
 
         public EnemyFindStategy(long _ownerUID)
         {
             this._ml_ownerUID = _ownerUID;
-            Entity _entity;
-            EntityManager.GetInstance().GetEntity(_ml_ownerUID, out _entity);
-            _m_CachedOwnerController = _entity.Controller;
-            _me_CachedOwnerDivision = _entity._me_Division;
+            EntityManager.GetInstance().GetEntity(_ml_ownerUID, out _m_CachedOwner);
+            _m_CachedOwnerController = _m_CachedOwner.Controller;
+            _me_CachedOwnerDivision = _m_CachedOwner._me_Division;
         }
 
         public void ProcFindPlayerDivisionEnemy(out Entity _enemy)
@@ -35,7 +35,8 @@ namespace EntityBehaviorTree
 
             _m_CachedOwnerController.GetChaseEntity(out var _chaseEntity);
 
-            if (_chaseEntity != null)
+
+            if (_chaseEntity != null && CheckRange())
             {
                 _enemy = _chaseEntity;
             }
@@ -111,6 +112,163 @@ namespace EntityBehaviorTree
             float _ownerToB = Vector3.SqrMagnitude(_m_CachedOwnerController.Pos3D - _b.Controller.Pos3D);
 
             return _ownerToA.CompareTo(_ownerToB); // 가까운 순 정렬
+        }
+
+        public bool CheckRange()
+        {
+            _m_CachedOwnerController.GetChaseEntity(out var _chaseEntity);
+
+            Vector3 chasedEntityPos = _chaseEntity.Controller.Pos3D;
+            Vector3 ownerEntityPos = _m_CachedOwnerController.Pos3D;
+
+            float _attackRange = _m_CachedOwner.Info.AttackRange;
+
+            if (MathUtility.CheckOverV3MagnitudeDistance(chasedEntityPos, ownerEntityPos, _attackRange))
+                return false;
+
+            return true;
+        }
+
+        public void Reset()
+        {
+        }
+
+        public BTNodeState Run()
+        {
+            Entity _enemy = null;
+
+            switch (_me_CachedOwnerDivision)
+            {
+                case EntityDivision.Player:
+                    ProcFindPlayerDivisionEnemy(out _enemy);
+                    _m_CachedOwnerController.SetChaseEntity(_enemy);
+                    break;
+                case EntityDivision.Enemy:
+                    ProcFindRivalDivisionEnemy(out _enemy);
+                    _m_CachedOwnerController.SetChaseEntity(_enemy);
+                    break;
+                case EntityDivision.Neutrality:
+                    break;
+                default:
+                    break;
+            }
+
+            return _enemy != null ? BTNodeState.Failure : BTNodeState.Success;
+        }
+    }
+
+    public class EnemyExistCheckStategy : BTActionStrategy
+    {
+        private long _ml_ownerUID;
+        private EntityDivision _me_CachedOwnerDivision;
+        private Entity _m_CachedOwner;
+        private EntityContoller _m_CachedOwnerController;
+
+        public EnemyExistCheckStategy(long _ownerUID)
+        {
+            this._ml_ownerUID = _ownerUID;
+            EntityManager.GetInstance().GetEntity(_ml_ownerUID, out _m_CachedOwner);
+            _m_CachedOwnerController = _m_CachedOwner.Controller;
+            _me_CachedOwnerDivision = _m_CachedOwner._me_Division;
+        }
+
+        public void ProcFindPlayerDivisionEnemy(out Entity _enemy)
+        {
+            _enemy = null;
+
+            _m_CachedOwnerController.GetChaseEntity(out var _chaseEntity);
+
+            if (_chaseEntity != null && CheckRange())
+            {
+                _enemy = _chaseEntity;
+            }
+            else
+            {
+                List<Tuple<long, Entity>> _entities;
+                List<Entity> _sortedEntities = new List<Entity>();
+
+                EntityManager.GetInstance().GetEntityList(EntityDivision.Enemy, out _entities);
+
+                for (int i = 0; i < _entities.Count; ++i)
+                    _sortedEntities.Add(_entities[i].Item2);
+
+                _sortedEntities.Sort(Sorted);
+
+                if (_sortedEntities.Count == 0)
+                    return;
+
+                var _abobeNavElement = MapManager.GetInstance().GetMyNavigationByPos3D(_m_CachedOwnerController.Pos3D);
+
+                _m_CachedOwnerController.GetMoveAgent(out EntityMoveAgent _moveAgent);
+                _moveAgent.SetStartPoint(_abobeNavElement._mv2_Index);
+
+                _enemy = _sortedEntities[0];
+            }
+        }
+
+        public void ProcFindRivalDivisionEnemy(out Entity _enemy)
+        {
+            _enemy = null;
+
+            _m_CachedOwnerController.GetChaseEntity(out var _chaseEntity);
+
+            if (_chaseEntity != null)
+            {
+                _enemy = _chaseEntity;
+            }
+            else
+            {
+                List<Tuple<long, Entity>> _entities;
+                List<Entity> _sortedEntities = new List<Entity>();
+
+                EntityManager.GetInstance().GetEntityList(new EntityDivision[2] { EntityDivision.Player, EntityDivision.MealFactory }, out _entities);
+
+                for (int i = 0; i < _entities.Count; ++i)
+                    _sortedEntities.Add(_entities[i].Item2);
+
+                _sortedEntities.Sort(Sorted);
+
+                if (_sortedEntities.Count == 0)
+                    return;
+
+                var _abobeNavElement = MapManager.GetInstance().GetMyNavigationByPos3D(_m_CachedOwnerController.Pos3D);
+
+                EntityMoveAgent _moveAgent;
+                _m_CachedOwnerController.GetMoveAgent(out _moveAgent);
+                _moveAgent.SetStartPoint(_abobeNavElement._mv2_Index);
+
+                _enemy = _sortedEntities[0];
+            }
+        }
+        public int Sorted(Entity _a, Entity _b)
+        {
+            // Division 우선 정렬 (Player가 가장 높은 우선순위)
+            int divisionCompare = _a._me_Division.CompareTo(_b._me_Division);
+            if (divisionCompare != 0)
+            {
+                return divisionCompare;
+            }
+
+            // 같은 Division 내에서는 가까운 순으로 정렬
+            float _ownerToA = Vector3.SqrMagnitude(_m_CachedOwnerController.Pos3D - _a.Controller.Pos3D);
+            float _ownerToB = Vector3.SqrMagnitude(_m_CachedOwnerController.Pos3D - _b.Controller.Pos3D);
+
+            return _ownerToA.CompareTo(_ownerToB); // 가까운 순 정렬
+        }
+
+        public bool CheckRange()
+        {
+            _m_CachedOwnerController.GetChaseEntity(out var _chaseEntity);
+
+            Vector3 chasedEntityPos = _chaseEntity.Controller.Pos3D;
+            Vector3 ownerEntityPos = _m_CachedOwnerController.Pos3D;
+
+            float _attackRange = _m_CachedOwner.Info.AttackRange;
+
+            if (MathUtility.CheckOverV3MagnitudeDistance(chasedEntityPos, ownerEntityPos, _attackRange))
+                return false;
+
+            return true;
         }
 
         public void Reset()
@@ -269,6 +427,97 @@ namespace EntityBehaviorTree
 
         public void Reset() { }
     }
+
+    public class IdleStrategy : BTActionStrategy
+    {
+        private Entity _m_CachedOwner;
+        private EntityContoller _m_CachedOwnerController;
+        private EntityMoveAgent _m_CachedMoveAgent;
+        public long _ml_ownerUID;
+        public int _mi_ownerJobID;
+        public StringBuilder _sb_AnimationClipName;
+
+        public IdleStrategy(long _ownerUID)
+        {
+            _sb_AnimationClipName = new StringBuilder();
+            // 평타는 보통 타겟을 정해서 발사한다.
+            this._ml_ownerUID = _ownerUID;
+
+            EntityManager.GetInstance().GetEntity(_ml_ownerUID, out _m_CachedOwner);
+            _m_CachedOwnerController = _m_CachedOwner.Controller;
+            _mi_ownerJobID = _m_CachedOwner.JobID;
+
+            _m_CachedOwnerController.GetMoveAgent(out _m_CachedMoveAgent);
+        }
+        public BTNodeState Run()
+        {
+            string _mActXMLName = $"IDLE".ToUpper();
+            // 클립
+
+            UpdateAnimationKey();
+            EntityDivision _eDivision = _m_CachedOwner._me_Division;
+
+            if (_m_CachedOwnerController._m_ActPlayer.IsPlayingEqualAnimation(_sb_AnimationClipName.ToString()) == false)
+            {
+                _m_CachedOwnerController._m_ActPlayer.PlayAnimationBaseOverride(_eDivision, _mi_ownerJobID, _mActXMLName);
+            }
+            else
+            {
+                if (_m_CachedOwnerController._m_ActPlayer.IsEndAnimation(_sb_AnimationClipName.ToString()))
+                {
+                    _m_CachedOwnerController._m_ActPlayer.PlayAnimationBaseOverride(_eDivision, _mi_ownerJobID, _mActXMLName);
+                }
+
+                return BTNodeState.Running;
+            }
+
+            return BTNodeState.Failure;
+        }
+
+        public void UpdateAnimationKey()
+        {
+            EntityDivision _eDivision = _m_CachedOwner._me_Division;
+            _sb_AnimationClipName.Clear();
+
+            string _mActXMLName = (_m_CachedOwnerController.GetNowFaceDirection() == true ? "Attack_L" : "Attack_R");
+
+            switch (_eDivision)
+            {
+                case EntityDivision.Player:
+                    _sb_AnimationClipName.Append($"Character{String.Format("{0:00}", _m_CachedOwner.CharacterID)}_{_mActXMLName}");
+                    break;
+                case EntityDivision.Enemy:
+                    _sb_AnimationClipName.Append($"Monster{String.Format("{0:00}", _m_CachedOwner.CharacterID)}_{_mActXMLName}");
+                    break;
+                case EntityDivision.MealFactory:
+                    _sb_AnimationClipName.Append($"MealFactory{String.Format("{0:00}", _m_CachedOwner.CharacterID)}_{_mActXMLName}");
+                    break;
+                case EntityDivision.Neutrality:
+                    break;
+                case EntityDivision.Deco:
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void CheckFaceDirection()
+        {
+            _m_CachedOwnerController.GetChaseEntity(out var _chaseEntity);
+
+            if (_chaseEntity == null) return;
+
+            Vector3 _ownerPos = _m_CachedOwnerController.Pos3D;
+            Vector3 _chasePos = _chaseEntity.Controller.Pos3D;
+
+            _m_CachedOwnerController.GetMoveAgent(out var _ownerMoveAgent);
+            _ownerMoveAgent.ProcFaceDirection(_ownerPos, _chasePos);
+        }
+        public void Reset()
+        {
+
+        }
+    }
+
     public class NormalAtkStrategy : BTActionStrategy
     {
         private Entity _m_CachedOwner;

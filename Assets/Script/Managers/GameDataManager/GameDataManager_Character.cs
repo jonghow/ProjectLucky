@@ -322,6 +322,20 @@ public partial class GameDataManager
     public void GetGameDBCharacterInfo(int _characterID, out GameDB_CharacterInfo _ret) 
         => _dict_CharacterInfo.TryGetValue( _characterID, out _ret );
 
+    public void GetGameDBCharacterInfoByGrade(EntityGrade[] _categories, out List<GameDB_CharacterInfo> _Lt_Infos)
+    {
+        _Lt_Infos = new List<GameDB_CharacterInfo>();
+
+        for (int i = 0; i < _categories.Length; ++i)
+        {
+            foreach (var pair in _dict_CharacterInfo)
+            {
+                if (pair.Value._me_Grade == _categories[i])
+                    _Lt_Infos.Add(pair.Value);
+            }
+        }
+    }
+
     #endregion
 
     private async UniTask UTask_Load_GameDBCharacterInfo()
@@ -365,7 +379,6 @@ public partial class GameDataManager
     }
 
     #region CharacterStatData
-
     private async UniTask UTask_Load_GameDBCharacterStat()
     {
         string _loadingFileName = string.Empty;

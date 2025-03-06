@@ -97,6 +97,7 @@ public class GameDB_CharacterInfo : GameDB_BaseData
     public int _mi_CharacterStatSet;
     public int _mi_CharacterSkillSet;
     public int _mi_Freshness;
+    public EntityGrade _me_Grade;
 
     public string CharacterName => $""; // 나중에 추가할 것
 
@@ -106,6 +107,9 @@ public class GameDB_CharacterInfo : GameDB_BaseData
         int.TryParse(_node["Name"].InnerText.ToString(), out _mi_CharacterName);
         int.TryParse(_node["StatSet"].InnerText.ToString(), out _mi_CharacterStatSet);
         int.TryParse(_node["Freshness"].InnerText.ToString(), out _mi_Freshness);
+
+        string _grade = _node["Grade"].InnerText.ToString();
+        _me_Grade = (EntityGrade)Enum.Parse(typeof(EntityGrade), _grade);
     }
 }
 public class GameDB_CharacterStat

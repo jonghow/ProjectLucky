@@ -5,6 +5,7 @@
 <StatSet>1</StatSet>
 <SkillSet>4</SkillSet>
 <Freshness>2</Freshness>
+<Grade>1</Grade>
 </Item>
 <Item>
 <ID>2</ID>
@@ -12,6 +13,7 @@
 <StatSet>2</StatSet>
 <SkillSet>2</SkillSet>
 <Freshness>2</Freshness>
+<Grade>1</Grade>
 </Item>
 <Item>
 <ID>3</ID>
@@ -19,6 +21,7 @@
 <StatSet>3</StatSet>
 <SkillSet>3</SkillSet>
 <Freshness>2</Freshness>
+<Grade>2</Grade>
 </Item>
 <Item>
 <ID>4</ID>
@@ -26,6 +29,7 @@
 <StatSet>4</StatSet>
 <SkillSet>2</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>5</ID>
@@ -33,6 +37,7 @@
 <StatSet>1</StatSet>
 <SkillSet>7</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>6</ID>
@@ -40,6 +45,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>7</ID>
@@ -47,6 +53,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>8</ID>
@@ -54,6 +61,7 @@
 <StatSet>8</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>2</Grade>
 </Item>
 <Item>
 <ID>9</ID>
@@ -61,6 +69,7 @@
 <StatSet>9</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>1</Grade>
 </Item>
 <Item>
 <ID>10</ID>
@@ -68,6 +77,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>11</ID>
@@ -75,6 +85,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>12</ID>
@@ -82,6 +93,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>13</ID>
@@ -89,6 +101,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>14</ID>
@@ -96,6 +109,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>3</Grade>
 </Item>
 <Item>
 <ID>15</ID>
@@ -103,6 +117,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>16</ID>
@@ -110,6 +125,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>17</ID>
@@ -117,6 +133,7 @@
 <StatSet>17</StatSet>
 <SkillSet>8</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>18</ID>
@@ -124,6 +141,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>19</ID>
@@ -131,6 +149,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>20</ID>
@@ -138,6 +157,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>21</ID>
@@ -145,6 +165,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>22</ID>
@@ -152,6 +173,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>23</ID>
@@ -159,6 +181,7 @@
 <StatSet>23</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>3</Grade>
 </Item>
 <Item>
 <ID>24</ID>
@@ -166,6 +189,7 @@
 <StatSet>1</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>2</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>1001</ID>
@@ -173,6 +197,7 @@
 <StatSet>1001</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>7</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>1002</ID>
@@ -180,6 +205,7 @@
 <StatSet>1002</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>10</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>1003</ID>
@@ -187,6 +213,7 @@
 <StatSet>1003</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>12</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>1004</ID>
@@ -194,6 +221,7 @@
 <StatSet>1004</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>15</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>1005</ID>
@@ -201,6 +229,7 @@
 <StatSet>1005</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>17</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>1006</ID>
@@ -208,6 +237,7 @@
 <StatSet>1006</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>20</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>1007</ID>
@@ -215,6 +245,7 @@
 <StatSet>1005</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>23</Freshness>
+<Grade>0</Grade>
 </Item>
 <Item>
 <ID>1008</ID>
@@ -222,5 +253,6 @@
 <StatSet>1006</StatSet>
 <SkillSet>1</SkillSet>
 <Freshness>25</Freshness>
+<Grade>0</Grade>
 </Item>
 </CharacterInfo>

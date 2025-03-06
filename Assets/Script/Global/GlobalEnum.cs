@@ -33,6 +33,17 @@ namespace GlobalGameDataSpace
         Neutrality, // 중립인데.. 공격? 일단 Player - Rival 구도
         Deco, // 맵상 오브젝트인데, Deco 정도? 혹시 모르니 수집만 해놓자.
     }
+
+    public enum EntityGrade
+    {
+        None,
+        Common,
+        UnCommon,
+        Hero,
+        Legend,
+        Myth,
+        Max
+    }
     public enum HandCardType
     {
         EntityCountUp,
