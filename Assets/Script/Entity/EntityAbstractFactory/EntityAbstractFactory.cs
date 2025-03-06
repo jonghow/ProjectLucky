@@ -16,7 +16,75 @@ public abstract class EntityFactoryBase : IEntityAbsFactoryBase
     public abstract Entity CreateEntity(int _entityTID, Vector3 _position);
 }
 
-public class UserEntityFactory : EntityFactoryBase
+public class UserEntitiesGroupFactory : EntityFactoryBase
+{
+    [Obsolete("Unitask 기반으로 생성하는 것으로 변경")]
+    public override Entity CreateEntity(int _entityTID, Vector3 _position) { return null; }
+    public async UniTask CreateEntity(int _entityTID, Vector3 _position, Action<EntitiesGroup> _onCB_Create)
+    {
+        bool _IsCreate = false;
+        bool _IsLoaded = false;
+
+        // 관련 데이터 먼저 모두 로딩
+        //ResourceManager.GetInstance().GetResource(ResourceType.PlayerAnimationController, _entityTID, true, (obj) =>
+        //{
+        //    _IsLoaded = true;
+        //});
+
+        //await UniTask.WaitUntil(() => _IsLoaded == true);
+
+        ResourceManager.GetInstance().GetResource(ResourceType.EntityGroup, _entityTID, true, (_modelResource) => {
+
+            // 여기서 나오는 obj는 리소스 매니저에서 오는 단순 월드모델 오브젝트
+            var _modelObj = GameObject.Instantiate(_modelResource);
+            EntitiesGroup _entitiesGroup = _modelObj.GetComponent<EntitiesGroup>();
+
+            UUIDGenerator<long> uUIDGenerator = UUIDGenerator<long>.GetInstance();
+            var uUID = uUIDGenerator.Generate();
+            // UID 발급
+
+            GameObject _obj = new GameObject();
+
+            while (true)
+            {
+                if (EntityManager.GetInstance().CheckContainEntityKey(uUID) == false)
+                    break;
+
+                uUID = uUIDGenerator.Generate();
+            }
+
+            _entitiesGroup.UniqueID = uUID;
+            // UID 세팅
+
+            EntityManager.GetInstance().NewAddEntityGroup(EntityDivision.Player, _entityTID, ref _entitiesGroup);
+            // 선 컴포넌트 세팅 및 UID 발급
+
+            var _navigationElement = MapManager.GetInstance().GetMyNavigationByPos3D(_position);
+            _entitiesGroup.NvPos = _navigationElement._mv2_Index;
+            // 무빙 에이전트 맵 그리드 세팅
+
+            _entitiesGroup.Pos3D = _position;
+            _entitiesGroup.ID = _entityTID;
+            // 위치 세팅
+
+            _modelObj.transform.SetParent(_obj.transform);
+            // 부모로 세팅
+
+            SceneLoadManager.GetInstance().GetStage(out var _stage);
+
+            _obj.name = $"{_modelObj.name.Replace("(Clone)", "")}_{uUID}";
+            // 이름 세팅
+
+            _IsCreate = true;
+
+            _onCB_Create?.Invoke(_entitiesGroup);
+        });
+
+        await UniTask.WaitUntil(() => _IsCreate == true);
+    }
+}
+
+    public class UserEntityFactory : EntityFactoryBase
 {
     public override Entity CreateEntity(int _entityTID , Vector3 _position)
     {

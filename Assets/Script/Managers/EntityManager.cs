@@ -134,33 +134,36 @@ public class EntityManager
     #region NewManager
 
     public Dictionary<EntityDivision, List<EntitiesGroup>> _mDict_EntityGroup = new Dictionary<EntityDivision, List<EntitiesGroup>>();
-    public void NewAddEntity(EntityDivision _category, int _jobID, ref Entity _entity)
+
+    public void NewAddEntityGroup(EntityDivision _category, int _jobID, ref EntitiesGroup _entitiesGroup)
     {
         if (_mDict_EntityGroup.ContainsKey(_category) == false)
         {
             _mDict_EntityGroup.Add(_category, new List<EntitiesGroup>());
         }
 
-        var _groups = _mDict_EntityGroup[_category].FindAll(rhs => rhs.ID == _jobID);
-        bool _isSetEntity = false;
+        _mDict_EntityGroup[_category].Add(_entitiesGroup);
 
-        foreach (var group in _groups)
-        {
-            if (!group.IsEnableAddEntity())
-                continue;
+        //var _groups = _mDict_EntityGroup[_category].FindAll(rhs => rhs.ID == _jobID);
+        //bool _isSetEntity = false;
 
-            _isSetEntity = true;
-            group.AddEntity(ref _entity);
-        }
+        //foreach (var group in _groups)
+        //{
+        //    if (!group.IsEnableAddEntity())
+        //        continue;
 
-        if( !_isSetEntity )
-        {
-            // 아무곳에도 넣지 못한 경우 그룹을 만든다.
-            var _newEntitiesGroup = new EntitiesGroup();
-            _newEntitiesGroup.ID = _jobID;
+        //    _isSetEntity = true;
+        //    group.AddEntity(ref _entity);
+        //}
 
-            _mDict_EntityGroup[_category].Add(_newEntitiesGroup);
-        }
+        //if (!_isSetEntity)
+        //{
+        //    // 아무곳에도 넣지 못한 경우 그룹을 만든다.
+        //    var _newEntitiesGroup = new EntitiesGroup();
+        //    _newEntitiesGroup.ID = _jobID;
+
+        //    _mDict_EntityGroup[_category].Add(_newEntitiesGroup);
+        //}
     }
 
     public void NewGetEntityGroups(EntityDivision _category, int _jobID, out EntitiesGroup _ret)
@@ -183,6 +186,19 @@ public class EntityManager
             }
         }
     }
+
+    public Dictionary<EntityDivision, List<EntitiesGroup>> NewGetEntityGroups() => _mDict_EntityGroup;
+
+    public List<EntitiesGroup> NewGetEntityGroups(EntityDivision eDivision)
+    {
+        if(!_mDict_EntityGroup.ContainsKey(eDivision))
+        {
+            _mDict_EntityGroup.Add(eDivision, new List<EntitiesGroup>());
+        }
+
+        return _mDict_EntityGroup[eDivision];
+    }
+
 
 
 

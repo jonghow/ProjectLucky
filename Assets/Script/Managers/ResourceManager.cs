@@ -14,6 +14,8 @@ public enum ResourceType
     MapNaviData,        // 맵의 이동을 판단하는 그리드 네비게이션 타입
     SpawnerData,         // 맵의 적군 스폰 데이터 타입
 
+    EntityGroup,            // Entity 그룹, Entity가 새로 생겨야할 때 생성
+
     Entity,
     NPCEntity,
     FactoryEntity, // 공장 타입
@@ -77,6 +79,9 @@ public class ResourceManager : MonoBehaviour
             case ResourceType.Entity:
                 ClientUtility.ConvertJobIDToAddressableKey(_relativeID, out _addressKey);
                 // Converting Entity Table ID To AddressableKey
+                break;
+            case ResourceType.EntityGroup:
+                _addressKey = $"EntityGroup";
                 break;
             case ResourceType.NPCEntity:
                 ClientUtility.ConvertMobIDToAddressableKey(_relativeID, out _addressKey);
