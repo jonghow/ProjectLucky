@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\hud\\uibattlestagehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\uibattlestagehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\ui\\hud\\uibattlestagehud_luckydraw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\uibattlestagehud_luckydraw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,8 +15,8 @@
       "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\selectcircle\\selectcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\hud\\uibattlestagehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\uibattlestagehud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\gamedatamanager\\gamedatamanager_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\gamedatamanager\\gamedatamanager_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\entity\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\gamedatamanager\\gamedatamanager_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\gamedatamanager\\gamedatamanager_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\resourcedata\\99.gamedata\\animdata\\act_salmonmercenary.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -233,12 +233,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 158,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 182,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\Entity.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Entity\\Entity.cs",
@@ -250,6 +250,19 @@
               "IsPinned": true
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UIBattleStageHUD_LuckyDraw.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
+              "RelativeToolTip": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAuwBMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T21:40:48.805Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
@@ -259,32 +272,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "GameDataManager_Character.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\GameDataManager\\GameDataManager_Character.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Managers\\GameDataManager\\GameDataManager_Character.cs",
               "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\GameDataManager\\GameDataManager_Character.cs",
               "RelativeToolTip": "Assets\\Script\\Managers\\GameDataManager\\GameDataManager_Character.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAAAEkAAABLAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAA7wEkAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T13:47:51.607Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SelectCircle.cs",
-              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
-              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
-              "RelativeToolTip": "Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAuwE4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T18:09:12.82Z",
+              "WhenOpened": "2025-03-06T13:47:51.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EntitiesGroup.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntitiesGroup.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Entity\\EntitiesGroup.cs",
@@ -296,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "EntityManager.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\EntityManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Managers\\EntityManager.cs",
@@ -777,20 +778,20 @@
           ]
         },
         {
-          "DockedWidth": 242,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 218,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UIBattleStageHUD_LuckyDraw.cs",
-              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
-              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
-              "RelativeToolTip": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACMAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "SelectCircle.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
+              "RelativeToolTip": "Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
+              "ViewState": "AQIAAOQAAAAAAAAAAADwv/4AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T21:40:48.805Z",
+              "WhenOpened": "2025-03-06T18:09:12.82Z",
               "EditorCaption": ""
             },
             {
@@ -807,13 +808,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UIBattleStageHUD.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
               "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
               "RelativeToolTip": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAYwJIAAAAAAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAYwCgAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-06T07:01:03.218Z",
               "EditorCaption": ""

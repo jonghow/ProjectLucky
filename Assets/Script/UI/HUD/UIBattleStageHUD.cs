@@ -38,6 +38,11 @@ public class UIBattleStageHUD : MonoBehaviour
         }
     }
 
+    public void OnClick_LuckyDraw()
+    {
+        _m_MyLuckyDraw.ProcActivationCardList(true);
+    }
+
     public int DrawCharacterID()
     {
         List<GameDB_CharacterInfo> _Lt_Infos;
@@ -57,7 +62,6 @@ public class UIBattleStageHUD : MonoBehaviour
 
         return _Lt_Infos[0]._mi_CharacterID;
     }
-
     public void FindEnableEntityGroups(int _jobID, out EntitiesGroup _ret)
     {
         _ret = null;
