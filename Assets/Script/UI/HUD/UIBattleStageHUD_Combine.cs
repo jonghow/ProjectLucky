@@ -5,54 +5,95 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using System.Threading;
 using GlobalGameDataSpace;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.EventSystems;
 using System.Linq;
 
-public class UIBattleStageHUD : MonoBehaviour
+public class UIBattleStageHUD_Combine : MonoBehaviour , IBattleHUDActivation
 {
-    /// <summary>
-    /// Bottom
-    /// </summary>
-    [SerializeField] UIBattleStageHUD_LuckyDraw _m_MyLuckyDraw;
-    [SerializeField] UIBattleStageHUD_Combine _m_Combine;
+    [SerializeField] RecipeElement _m_CombineOrigin;
 
-    private void OnEnable()
+    [SerializeField] List<RecipeElement> _mLt_Recipe;
+    [SerializeField] GameObject _CombineContentsParent;
+
+    [SerializeField] RecipeInfo _m_RecipeInfo;
+
+    public int _mi_SelectID;
+
+    public void ProcActivationCardList(bool isActive)
     {
+        OnInitRecipeElement();
+        UpdateRecipes();
+        this.gameObject.SetActive(isActive);
     }
-    private void OnDisable()
+
+    public void UpdateRecipes()
+    {
+        UpdateInfoElement();
+    }
+
+    public void OnInitRecipeElement()
+    {
+        GameDataManager.GetInstance().GetRecipeDatasToList(out List<GameDB_MealRecipe> _ret);
+
+        int Index = 0; 
+
+        for(; Index < _ret.Count; ++Index)
+        {
+            GameObject _obj;
+            int _recipeID = _ret[Index]._mi_ID;
+            RecipeElement _recipe;
+            if (Index >= _mLt_Recipe.Count)
+            {
+                _obj = GameObject.Instantiate(_m_CombineOrigin.gameObject, _CombineContentsParent.transform);
+                _obj.transform.SetAsLastSibling();
+                _recipe = _obj.GetComponent<RecipeElement>();
+                _mLt_Recipe.Add(_recipe);
+            }
+            else
+            {
+                _obj = _mLt_Recipe[Index].gameObject;
+                _recipe = _obj.GetComponent<RecipeElement>();
+            }
+
+            _recipe.OnInitElement(_recipeID, (_m_id) => {
+                _mi_SelectID = _m_id;
+                UpdateRecipes(); 
+            });
+            _recipe.gameObject.SetActive(true);
+        }
+        for(int i = Index; i < _mLt_Recipe.Count; ++i)
+        {
+            var _recipe = _mLt_Recipe[i];
+            _recipe.OnRelease();
+            _recipe.gameObject.SetActive(false);
+        }
+    }
+
+    public void UpdateInfoElement()
+    {
+        _m_RecipeInfo.OnUpdate(_mi_SelectID);
+    }
+
+    public void OnClick_Close()
+    {
+        this.gameObject.SetActive(false);
+    }
+    public void OnClick_Combine()
     {
        
     }
 
-    public void On_ClickSpawn()
+    public void FindEnableEntityGroups(int _jobID, out EntitiesGroup _ret)
     {
-        int _jobID = DrawCharacterID();
-        FindEnableEntityGroups(_jobID , out var _entitiesGroup);
-
-        if(_entitiesGroup == null)
-        {
-            DrawAnyMapNavigation(out var _Navigation);
-            Spawn(_jobID, _Navigation);
-        }
-        else
-        {
-            Spawn(_jobID, _entitiesGroup);
-        }
+        _ret = null;
+        EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player, _jobID, out _ret);
     }
-
-    public void OnClick_LuckyDraw()
-    {
-        _m_MyLuckyDraw.ProcActivationCardList(true);
-    }
-
-    public void OnClick_Combine()
-    {
-        _m_Combine.ProcActivationCardList(true);
-    }
-
-    public int DrawCharacterID()
+    public int DrawCharacterID(EntityGrade _drawGrade)
     {
         List<GameDB_CharacterInfo> _Lt_Infos;
-        GameDataManager.GetInstance().GetGameDBCharacterInfoByGrade(new EntityGrade[2] { EntityGrade.Common, EntityGrade.UnCommon }, out _Lt_Infos);
+        GameDataManager.GetInstance().GetGameDBCharacterInfoByGrade(new EntityGrade[1] { _drawGrade }, out _Lt_Infos);
 
         int suffleCount = 20;
 
@@ -68,11 +109,6 @@ public class UIBattleStageHUD : MonoBehaviour
 
         return _Lt_Infos[0]._mi_CharacterID;
     }
-    public void FindEnableEntityGroups(int _jobID, out EntitiesGroup _ret)
-    {
-        _ret = null;
-        EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player, _jobID, out _ret);
-    }
     public void DrawAnyMapNavigation(out NavigationElement _retNavigation)
     {
         MapManager.GetInstance().GetNavigationElements(out var _dictElements);
@@ -80,7 +116,7 @@ public class UIBattleStageHUD : MonoBehaviour
 
         var _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player);
 
-        for(int i = 0; i < _Lt_Groups.Count; ++i)
+        for (int i = 0; i < _Lt_Groups.Count; ++i)
         {
             Vector2Int _v2_Index = _Lt_Groups[i].NvPos;
 
@@ -94,7 +130,7 @@ public class UIBattleStageHUD : MonoBehaviour
                 }
             }
 
-            for(int j = 0; j < _mLt_ElementToRemove.Count; ++j)
+            for (int j = 0; j < _mLt_ElementToRemove.Count; ++j)
             {
                 _Lt_Elements.Remove(_mLt_ElementToRemove[j]);
             }
@@ -103,7 +139,7 @@ public class UIBattleStageHUD : MonoBehaviour
 
         int suffleCount = 20;
 
-        for(int i = 0; i < suffleCount; ++i)
+        for (int i = 0; i < suffleCount; ++i)
         {
             int _prevIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
             int _nextIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
@@ -134,10 +170,10 @@ public class UIBattleStageHUD : MonoBehaviour
             UserEntityFactory _entitySpanwer = new UserEntityFactory();
 
             _ = _entitySpanwer.CreateEntity(_jobID, _v3_position, (entity) =>
-           {
-               entitiesGroup.AddEntity(ref entity);
+            {
+                entitiesGroup.AddEntity(ref entity);
 
-           });
+            });
         });
     }
     public void Spawn(int _jobID, EntitiesGroup _entitiesGroup)
@@ -153,4 +189,6 @@ public class UIBattleStageHUD : MonoBehaviour
             _entitiesGroup.AddEntity(ref entity);
         });
     }
+
 }
+

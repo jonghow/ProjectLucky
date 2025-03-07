@@ -9,14 +9,18 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using Cysharp.Threading.Tasks;
 using UnityEditor;
 using System.Text;
+using System.Linq;
 
 public partial class GameDataManager
 {
     private Dictionary<string, GameDB_MealRecipe> _dict_MealRecipe;
 
+    private Dictionary<int, GameDB_MealRecipe> _dict_IDKeyMealRecipe;
+
     private void InitializeMealRecipePartial()
     {
         _dict_MealRecipe = new Dictionary<string, GameDB_MealRecipe>();
+        _dict_IDKeyMealRecipe = new Dictionary<int, GameDB_MealRecipe>();
     }
     public async UniTask UTask_Load_MealRecipe()
     {
@@ -46,6 +50,7 @@ public partial class GameDataManager
                     {
                         GameDB_MealRecipe _gameDB_MealRecipeInfo = new GameDB_MealRecipe(_node);
                         string _recipeCombine = _gameDB_MealRecipeInfo._mStr_Recipe;
+                        int _recipeID = _gameDB_MealRecipeInfo._mi_ID;
 
                         if (_dict_MealRecipe.ContainsKey(_recipeCombine))
                         {
@@ -54,6 +59,15 @@ public partial class GameDataManager
                         }
 
                         _dict_MealRecipe.Add(_recipeCombine, _gameDB_MealRecipeInfo);
+
+                        if(_dict_IDKeyMealRecipe.ContainsKey(_recipeID))
+                        {
+                            UnityLogger.GetInstance().LogFuncFailed(this.GetType().Name, $"UTask_Load_StringCommon", $"동일한 ID를 가진 recipeID 존재합니다.");
+                            EditorApplication.isPlaying = false;
+                        }
+
+                        _dict_IDKeyMealRecipe.Add(_recipeID, _gameDB_MealRecipeInfo);
+
                     }
                 }
             };
@@ -123,5 +137,15 @@ public partial class GameDataManager
             _result = true;
 
         return _result;
+    }
+
+    public void GetRecipeDatasToList(out List<GameDB_MealRecipe> _Lt_ret)
+    {
+        _Lt_ret = _dict_MealRecipe.Values.ToList();
+    }
+
+    public void GetRecipeData(int _recipeID, out GameDB_MealRecipe _ret)
+    {
+        _dict_IDKeyMealRecipe.TryGetValue(_recipeID, out _ret);
     }
 }

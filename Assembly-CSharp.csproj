@@ -64,6 +64,7 @@
     <Compile Include="Assets\Script\UI\SelectedArrow\SelectedArrow.cs" />
     <Compile Include="Assets\Script\Entity\EntityStatus.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
+    <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_Combine.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalSystem.cs" />
     <Compile Include="Assets\Script\Managers\UIManager.cs" />
     <Compile Include="Assets\Script\Managers\PlayerManager\PlayerManager.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_StructureBuild.cs" />
     <Compile Include="Assets\Script\Global\GlobalDefines.cs" />
     <Compile Include="Assets\Script\Logger\Logger.cs" />
+    <Compile Include="Assets\Script\UI\HUD\Combine\RecipeInfo.cs" />
     <Compile Include="Assets\Script\StatePattern\Stage\IStageState.cs" />
     <Compile Include="Assets\Script\Stage\StageBase.cs" />
     <Compile Include="Assets\Script\Extension\String\Extension_String.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Assets\Script\GenericCollectionExtension\GenericCollection_Queue\GenericCollectionExtension_Stack.cs" />
     <Compile Include="Assets\Script\Spawner\SpawnerVisualizer.cs" />
     <Compile Include="Assets\Script\StatePattern\Stage\BattleDefeatState.cs" />
+    <Compile Include="Assets\Script\UI\HUD\Combine\RecipeElement.cs" />
     <Compile Include="Assets\Script\Enums\GlobalType_Job.cs" />
     <Compile Include="Assets\Script\UI\HUD\InterFaceBattleHUD\IBattleHUDActivation.cs" />
     <Compile Include="Assets\Script\BehaviorTree\BehaviorProduct\CharacterBehavior\EntityBehaviorNoviceType\EntityBehaviorNoviceType.cs" />
@@ -175,6 +178,7 @@
     <Compile Include="Assets\Script\Task\AsyncLasy\AsyncLasy.cs" />
     <Compile Include="Assets\Script\UI\UIHand\UIHand.cs" />
     <Compile Include="Assets\Script\BehaviorTree\BehaviorComponent\EntityBehaviorTreeNodeBase.cs" />
+    <Compile Include="Assets\Script\UI\HUD\Combine\RecipeMaterial.cs" />
     <Compile Include="Assets\Script\Managers\ResourceManager.cs" />
     <Compile Include="Assets\Script\PooledObject\IPoolBase.cs" />
     <Compile Include="Assets\Script\Stage\BattleStage.cs" />
