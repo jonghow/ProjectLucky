@@ -21,10 +21,17 @@ public class UIBattleStageHUD_Combine : MonoBehaviour , IBattleHUDActivation
 
     public int _mi_SelectID;
 
+    public void OnSetFirstElement()
+    {
+        if (_mLt_Recipe.Count > 0)
+            _mLt_Recipe[0].OnClickElement();
+    }
+
     public void ProcActivationCardList(bool isActive)
     {
         OnInitRecipeElement();
         UpdateRecipes();
+        OnSetFirstElement();
         this.gameObject.SetActive(isActive);
     }
 
@@ -75,7 +82,6 @@ public class UIBattleStageHUD_Combine : MonoBehaviour , IBattleHUDActivation
     {
         _m_RecipeInfo.OnUpdate(_mi_SelectID);
     }
-
     public void OnClick_Close()
     {
         this.gameObject.SetActive(false);
@@ -84,7 +90,6 @@ public class UIBattleStageHUD_Combine : MonoBehaviour , IBattleHUDActivation
     {
        
     }
-
     public void FindEnableEntityGroups(int _jobID, out EntitiesGroup _ret)
     {
         _ret = null;

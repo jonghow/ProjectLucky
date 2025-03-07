@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\entity\\entitiesgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\entitiesgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\hud\\combine\\recipeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\combine\\recipeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\ui\\hud\\uibattlestagehud_combine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\uibattlestagehud_combine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\hud\\combine\\recipeelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\combine\\recipeelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\selectcircle\\selectcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\selectcircle\\selectcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\ui\\hud\\combine\\recipematerial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\combine\\recipematerial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\entity\\entitiesgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\entity\\entitiesgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|c:\\users\\jonghow\\projectlucky\\projectlucky\\assets\\script\\ui\\hud\\uibattlestagehud_combine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\uibattlestagehud_combine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\managers\\entitymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\hud\\combine\\recipeelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\combine\\recipeelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\gamedatamanager\\gamedatamanager_recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\hud\\uibattlestagehud_luckydraw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\hud\\uibattlestagehud_luckydraw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\ui\\selectcircle\\selectcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\ui\\selectcircle\\selectcircle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70203CCE-D91A-73E4-16A5-A60C19319FC4}|Assembly-CSharp.csproj|C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\assets\\script\\managers\\gamedatamanager\\gamedatamanager_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -265,8 +265,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 187,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 186,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -292,6 +292,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "SelectCircle.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
+              "RelativeToolTip": "Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
+              "ViewState": "AQIAAM8AAAAAAAAAAAAkwO0AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T18:09:12.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UIBattleStageHUD_Combine.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_Combine.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_Combine.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_Combine.cs",
+              "RelativeToolTip": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_Combine.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAuwBkAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T09:01:16.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EntitiesGroup.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntitiesGroup.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Entity\\EntitiesGroup.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntitiesGroup.cs",
+              "RelativeToolTip": "Assets\\Script\\Entity\\EntitiesGroup.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAkwIoAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:49:20.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EntityManager.cs",
+              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\EntityManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\EntityManager.cs",
+              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\EntityManager.cs",
+              "RelativeToolTip": "Assets\\Script\\Managers\\EntityManager.cs",
+              "ViewState": "AQIAALIAAAAAAAAAAAAAANUAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T07:05:12.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "RecipeElement.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\Combine\\RecipeElement.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\Combine\\RecipeElement.cs",
@@ -304,46 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UIBattleStageHUD_Combine.cs",
-              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_Combine.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_Combine.cs",
-              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_Combine.cs",
-              "RelativeToolTip": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_Combine.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAQwEsAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T09:01:16.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EntityManager.cs",
-              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\EntityManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Managers\\EntityManager.cs",
-              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\EntityManager.cs",
-              "RelativeToolTip": "Assets\\Script\\Managers\\EntityManager.cs",
-              "ViewState": "AQIAAKcAAAAAAAAAAAA1wLwAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T07:05:12.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EntitiesGroup.cs",
-              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntitiesGroup.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\Entity\\EntitiesGroup.cs",
-              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\EntitiesGroup.cs",
-              "RelativeToolTip": "Assets\\Script\\Entity\\EntitiesGroup.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T07:49:20.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "UIBattleStageHUD_MercenaryInfo.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_MercenaryInfo.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_MercenaryInfo.cs",
@@ -355,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "GameDataManager_Recipe.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Managers\\GameDataManager\\GameDataManager_Recipe.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Managers\\GameDataManager\\GameDataManager_Recipe.cs",
@@ -367,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ClientUtility_Job.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Utilities\\ClientUtility\\ClientUtility_Job.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Utilities\\ClientUtility\\ClientUtility_Job.cs",
@@ -379,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ClientUtility_Model.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Utilities\\ClientUtility\\ClientUtility_Model.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Utilities\\ClientUtility\\ClientUtility_Model.cs",
@@ -387,11 +400,12 @@
               "RelativeToolTip": "Assets\\Script\\Utilities\\ClientUtility\\ClientUtility_Model.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvxQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T10:43:23.946Z"
+              "WhenOpened": "2025-03-07T10:43:23.946Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "UIBattleStageHUD_FreshnessInfo.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_FreshnessInfo.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_FreshnessInfo.cs",
@@ -403,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Global_Character.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Global\\Global_Character\\Global_Character.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Global\\Global_Character\\Global_Character.cs",
@@ -415,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "UIBattleStageHUD_LuckyDraw.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD_LuckyDraw.cs",
@@ -427,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ActionInfoAttack.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\Entity\\ActionPlayer\\ActionInfo\\ActionInfoAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Entity\\ActionPlayer\\ActionInfo\\ActionInfoAttack.cs",
@@ -884,7 +898,7 @@
           ]
         },
         {
-          "DockedWidth": 213,
+          "DockedWidth": 214,
           "SelectedChildIndex": 1,
           "Children": [
             {
@@ -895,35 +909,22 @@
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\Combine\\RecipeMaterial.cs",
               "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\Combine\\RecipeMaterial.cs",
               "RelativeToolTip": "Assets\\Script\\UI\\HUD\\Combine\\RecipeMaterial.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAABsAAAAQAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowEIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-07T11:15:11.765Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RecipeInfo.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\Combine\\RecipeInfo.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\Combine\\RecipeInfo.cs",
               "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\Combine\\RecipeInfo.cs",
               "RelativeToolTip": "Assets\\Script\\UI\\HUD\\Combine\\RecipeInfo.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAYwGYAAAAFAAAA",
+              "ViewState": "AQIAAJMAAAAAAAAAAAAkwKYAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-07T10:55:17.697Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SelectCircle.cs",
-              "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
-              "ToolTip": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
-              "RelativeToolTip": "Assets\\Script\\UI\\SelectCircle\\SelectCircle.cs",
-              "ViewState": "AQIAAOQAAAAAAAAAAADwv/4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T18:09:12.82Z",
               "EditorCaption": ""
             },
             {
@@ -940,7 +941,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "UIBattleStageHUD.cs",
               "DocumentMoniker": "C:\\Users\\Jonghow\\ProjectLucky\\ProjectLucky\\Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\UI\\HUD\\UIBattleStageHUD.cs",

@@ -39,6 +39,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
     - 99133c30d941cf942a6a5b54699ea7f6: 21300000
+    - 87fe4260a68be794099aedfa3d7ae9bf: 21300000
     - 77a40f609eb26984293d55085ae8d4c9: 21300000
     - c0f586f0a10079e43bc58c9d7fbf5c37: 21300000
     - e918ba21ef3883746b437232a437d8fa: 21300000
@@ -67,6 +68,7 @@ SpriteAtlas:
     - 1730f7a62cab97b45b49c01f7c12d411: 21300000
     - c7b6ba1770b4b4948bd479b9ea524693: 21300000
     - a98ae26779e4a074688f4c39dfb77991: 21300000
+    - a47526672255e3a4da3d8652464a2afb: 21300000
     - 45186ef784478b740b1d8a0d929d33f9: 21300000
     - ca64ba78733111d4ba69e6af60ed3280: 21300000
     - 02b2aa9824499744c9339d2925bab046: 21300000
@@ -93,6 +95,7 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 99133c30d941cf942a6a5b54699ea7f6, type: 3}
+  - {fileID: 21300000, guid: 87fe4260a68be794099aedfa3d7ae9bf, type: 3}
   - {fileID: 21300000, guid: 77a40f609eb26984293d55085ae8d4c9, type: 3}
   - {fileID: 21300000, guid: c0f586f0a10079e43bc58c9d7fbf5c37, type: 3}
   - {fileID: 21300000, guid: e918ba21ef3883746b437232a437d8fa, type: 3}
@@ -121,6 +124,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1730f7a62cab97b45b49c01f7c12d411, type: 3}
   - {fileID: 21300000, guid: c7b6ba1770b4b4948bd479b9ea524693, type: 3}
   - {fileID: 21300000, guid: a98ae26779e4a074688f4c39dfb77991, type: 3}
+  - {fileID: 21300000, guid: a47526672255e3a4da3d8652464a2afb, type: 3}
   - {fileID: 21300000, guid: 45186ef784478b740b1d8a0d929d33f9, type: 3}
   - {fileID: 21300000, guid: ca64ba78733111d4ba69e6af60ed3280, type: 3}
   - {fileID: 21300000, guid: 02b2aa9824499744c9339d2925bab046, type: 3}
@@ -146,6 +150,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: be1af08f61988264581b7c753d9cb738, type: 3}
   m_PackedSpriteNamesToIndex:
   - CharacterResource_15
+  - CharacterResource_08
   - CharacterPortrait_19
   - CharacterResource_16
   - CharacterResource_02_Attack_L_00
@@ -174,6 +179,7 @@ SpriteAtlas:
   - CharacterResource_02_Attack_R_04-export
   - CharacterPortrait_05
   - CharacterResource_14_3
+  - CharacterResource_17
   - CharacterResource_02_Attack_R_03-export
   - CharacterResource_14_4
   - CharacterResource_02_Attack_L_01

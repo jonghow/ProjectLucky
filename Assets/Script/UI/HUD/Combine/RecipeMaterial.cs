@@ -61,6 +61,7 @@ public class RecipeMaterial : MonoBehaviour
         ResourceManager.GetInstance().GetResource(ResourceType.PortraitAtlas, 12, true, (obj) =>
         {
             _m_CachedAtlas = obj as SpriteAtlas;
+            _m_Img_Portrait.sprite = _m_CachedAtlas.GetSprite($"CharacterResource_{String.Format("{0:00}", _mi_CharacterID)}");
         });
     }
 }

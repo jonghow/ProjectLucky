@@ -126,5 +126,27 @@ public class EntitiesGroup : MonoBehaviour
             GameObject.Destroy(_m_Entities[i].gameObject);
         }
     }
+    public void RemoveLastEntity()
+    {
+        List<Entity> _mLt_RemoveEntity = new List<Entity>();
+
+        for (int i = _m_Entities.Count-1; i >= 0; --i)
+        {
+            if (_m_Entities[i] == null) continue;
+            else
+            {
+                _m_Entities[i].Controller?._onCB_DiedProcess?.Invoke();
+                _m_Entities[i].Controller?.SetChaseEntity(null);
+                _mLt_RemoveEntity.Add(_m_Entities[i]);
+                GameObject.Destroy(_m_Entities[i].gameObject);
+                break;
+            }
+        }
+
+        for(int i = 0; i < _mLt_RemoveEntity.Count; ++i)
+        {
+            _m_Entities.Remove(_mLt_RemoveEntity[i]);
+        }
+    }
 }
 
