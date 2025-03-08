@@ -53,6 +53,12 @@ public class EntitiesGroup : MonoBehaviour
         return Info._me_Grade;
     }
 
+    public EntityDivision GetEntityDivision()
+    {
+        var _division = _m_Entities[0] == null ? EntityDivision.Player : _m_Entities[0]._me_Division;
+        return _division;
+    }
+
     public void AddEntity(ref Entity _entity)
     {
         if (_m_Entities.Count > 3) return;

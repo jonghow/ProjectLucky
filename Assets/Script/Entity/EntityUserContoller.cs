@@ -61,5 +61,30 @@ public class EntityUserContoller : EntityContoller
     public override void OnDieEvent(Entity _entity)
     {
         _m_ActPlayer.ClearActionInfos();
+
+        var _Lt_EntitiesGroup = EntityManager.GetInstance().NewGetEntityGroups(new EntityDivision[2] { EntityDivision.Player, EntityDivision.Rival} );
+
+        if(_Lt_EntitiesGroup != null)
+        {
+            for(int i = 0; i < _Lt_EntitiesGroup.Count; ++i)
+            {
+                if((_Lt_EntitiesGroup[i].UniqueID == _ml_EntityGroupUID) && (_Lt_EntitiesGroup[i].ID == _mi_EntityTID))
+                {
+                    EntityDivision _division = _Lt_EntitiesGroup[i].GetEntityDivision();
+
+                    switch (_division)
+                    {
+                        case EntityDivision.Player:
+                            PlayerManager.GetInstance().AddSupply(-1);
+                            UnityLogger.GetInstance().Log($"Player Supply {PlayerManager.GetInstance().GetSupply()}");
+                            break;
+                        case EntityDivision.Rival:
+                            RivalPlayerAIManager.GetInstance().AddSupply(-1);
+                            UnityLogger.GetInstance().Log($"Rival Supply {RivalPlayerAIManager.GetInstance().GetSupply()}");
+                            break;
+                    }
+                }
+            }
+        }
     }
 }

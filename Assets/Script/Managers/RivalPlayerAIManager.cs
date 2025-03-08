@@ -27,7 +27,7 @@ public class RivalPlayerAIManager
 
     public RivalPlayerAIManager()
     {
-        _mi_Gold = 250;
+        _mi_Gold = 5000;
         _mi_Dia = 0;
         _mi_Supply = 0;
     }
@@ -64,6 +64,7 @@ public class RivalPlayerAIManager
     {
         return _gold <= _mi_Supply;
     }
+    public int GetSupply() => _mi_Supply;
 
     public bool IsMaxSupply()
     {

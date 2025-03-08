@@ -13,6 +13,7 @@ public abstract class EntityContoller : MonoBehaviour {
 
     public long _ml_EntityUID;
     public int _mi_EntityTID;
+    public long _ml_EntityGroupUID;
 
     public abstract void SetUp(long _entityUID, int _entityID);
     public void SetActPlayer(ActionPlayer _actPlayer) { _m_ActPlayer = _actPlayer; }

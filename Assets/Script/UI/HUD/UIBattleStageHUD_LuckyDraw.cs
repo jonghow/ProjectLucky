@@ -204,10 +204,14 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
         {
             UserEntityFactory _entitySpanwer = new UserEntityFactory();
 
-            _ = _entitySpanwer.CreateEntity(_jobID, _v3_position, (entity) =>
+            _ = _entitySpanwer.CreateEntity(_jobID, _v3_position, (_createEntity) =>
             {
-                entitiesGroup.AddEntity(ref entity);
+                entitiesGroup.AddEntity(ref _createEntity);
+                PlayerManager.GetInstance().AddSupply(1);
+                _createEntity.Controller._ml_EntityGroupUID = entitiesGroup.UniqueID;
 
+                _createEntity.Controller._onCB_DiedProcess -= () => { _createEntity.Controller.OnDieEvent(_createEntity); };
+                _createEntity.Controller._onCB_DiedProcess += () => { _createEntity.Controller.OnDieEvent(_createEntity); };
             });
         });
     }

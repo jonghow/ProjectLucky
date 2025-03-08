@@ -8,6 +8,7 @@ public partial class PlayerManager
 {
     public Action<int> _onCB_ChangeGold;
     public Action<int> _onCB_ChangeDia;
+    public Action<int> _onCB_ChangeSupply;
 
     private int _mi_Gold; 
 
@@ -38,4 +39,25 @@ public partial class PlayerManager
         _mi_Dia -= _usedia;
         _onCB_ChangeDia?.Invoke(_mi_Dia);
     }
+
+    int _mi_Supply;
+    public void AddSupply(int _supply)
+    {
+        _mi_Supply += _supply;
+        _onCB_ChangeSupply?.Invoke(_mi_Supply);
+    }
+    public bool EnableSupply(int _supply)
+    {
+        return _supply <= _mi_Supply;
+    }
+
+    public bool IsMaxSupply()
+    {
+        return _mi_Supply >= Defines.NormalSingleGameSupplyMaxCount;
+    }
+
+    public int GetSupply() => _mi_Supply;
+    
+
+    
 }

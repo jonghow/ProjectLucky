@@ -20,9 +20,15 @@ public class RivalPlayerAI : MonoBehaviour
 
     EntityBehaviorTreeBase _behaviorTree;
 
+    int _mi_CombineID;
+    long _ml_CombineUID;
+
     public void Start()
     {
         //TurnOnAI();
+        _mi_CombineID = 0;
+        _ml_CombineUID = 0;
+
         TurnOffAI();
         SetDrawTarget(0);
         AISetUp();
@@ -40,6 +46,17 @@ public class RivalPlayerAI : MonoBehaviour
     {
         _mi_DrawTarget = _drawTargetIndex;
     }
+    public void SetCombineID(int _combineID)
+    {
+        _mi_CombineID = _combineID;
+    }
+    public void SetCombineUID(long _combineUID)
+    {
+        _ml_CombineUID = _combineUID;
+    }
+
+    public int GetCombineID() => _mi_CombineID;
+    public long GetCombineUID() => _ml_CombineUID;
     public int GetDrawTarget() => _mi_DrawTarget;
     public void AISetUp()
     {

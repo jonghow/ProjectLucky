@@ -195,6 +195,29 @@ public class EntityManager
 
         return _mDict_EntityGroup[eDivision];
     }
+
+    public List<EntitiesGroup> NewGetEntityGroups(EntityDivision[] _categories)
+    {
+
+        for (int i = 0; i < _categories.Length; ++i)
+        {
+            if (_mDict_EntityGroup.ContainsKey(_categories[i]) == false)
+                _mDict_EntityGroup.Add(_categories[i], new List<EntitiesGroup>());
+        }
+
+        List<EntitiesGroup> _Lt_Entities = new List<EntitiesGroup>();
+
+        for (int i = 0; i < _categories.Length; ++i)
+        {
+            foreach (var pair in _mDict_EntityGroup[_categories[i]])
+            {
+                _Lt_Entities.Add(pair);
+            }
+        }
+
+        return _Lt_Entities;
+    }
+
     public void NewRemoveGroup(EntityDivision _category, int _jobID, long _uid)
     {
         // 내가 들어갈자리를 찾아본다.

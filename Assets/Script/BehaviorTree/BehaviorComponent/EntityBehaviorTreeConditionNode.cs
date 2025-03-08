@@ -604,8 +604,49 @@ namespace EntityBehaviorTree
         {
         }
     }
+    public class ConditionEnableCombineStategy : EntityBehaviorTreeNodeBase, BTConditionStrategy
+    {
+        RivalPlayerAI m_CacheRivalPlayerAI;
+        public ConditionEnableCombineStategy()
+        {
+            RivalPlayerAIManager.GetInstance().GetRavalPlayer(out m_CacheRivalPlayerAI);
+        }
 
+        public BTNodeState Check()
+        {
+            return IsEnableCombine() ? BTNodeState.Success : BTNodeState.Failure;
+        }
 
+        public bool IsEnableCombine()
+        {
+            bool _ret = false;
+
+            List<EntitiesGroup> _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Rival);
+
+            for(int i = 0; i < _Lt_Groups.Count; ++i)
+            {
+                EntitiesGroup _groups = _Lt_Groups[i];
+
+                if(_groups.Count == 3)
+                {
+                    int _mi_ID = _groups.ID;
+                    long _ml_UID = _groups.UniqueID;
+
+                    m_CacheRivalPlayerAI.SetCombineID(_mi_ID);
+                    m_CacheRivalPlayerAI.SetCombineUID(_ml_UID);
+
+                    _ret = true;
+                    break;
+                }
+            }
+
+            return _ret;
+        }
+
+        public void Reset()
+        {
+        }
+    }
 
 
 
