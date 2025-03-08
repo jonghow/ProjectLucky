@@ -260,6 +260,7 @@ public partial class GameDataManager
         switch (_eDivision)
         {
             case EntityDivision.Player:
+            case EntityDivision.Rival:
                 _IsValid = IsValidCharacterActionInfo(_jobId, _actName);
                 break;
             case EntityDivision.Enemy:
@@ -287,6 +288,7 @@ public partial class GameDataManager
         switch (_eDivision)
         {
             case EntityDivision.Player:
+            case EntityDivision.Rival:
                 _dict_Ret = GetCharacterActions(_jobId);
                 break;
             case EntityDivision.Enemy:

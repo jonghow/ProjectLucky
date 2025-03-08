@@ -8,7 +8,7 @@ public class EntitiesGroup : MonoBehaviour
     int _mi_ID;
     long _ml_uniqueID;
     Vector2Int _mv2_NavigationPos;
-    public Vector2Int NvPos { get { return _mv2_NavigationPos; } set { _mv2_NavigationPos = value; } }
+    public Vector2Int NvPos { get { return _mv2_NavigationPos; } set { _mv2_NavigationPos = value; }}
     public long UniqueID { get { return _ml_uniqueID; } set { _ml_uniqueID = value; } }
     public int ID { get { return _mi_ID; } set { _mi_ID = value; } }
     public int Count { get { return _m_Entities.Count; } }

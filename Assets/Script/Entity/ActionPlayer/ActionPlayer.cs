@@ -49,9 +49,11 @@ public class ActionPlayer : MonoBehaviour
         switch (_m_CachedOwnerEntity._me_Division)
         {
             case EntityDivision.Player:
+            case EntityDivision.Rival:
                 _resourceType = ResourceType.PlayerAnimationController;
                 _entityTID = _m_CachedOwnerEntity.Controller._mi_EntityTID;
                 break;
+
             case EntityDivision.Enemy:
                 _resourceType = ResourceType.EnemyAnimationController;
                 _entityTID = _m_CachedOwnerEntity.Controller._mi_EntityTID;

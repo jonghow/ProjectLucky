@@ -57,6 +57,7 @@ namespace EntityBehaviorTree
             switch (_eDivision)
             {
                 case EntityDivision.Player:
+                case EntityDivision.Rival:
                     _sb_AnimationClipName.Append($"Character{String.Format("{0:00}", _m_CachedOwner.CharacterID)}_Idle");
                     break;
                 case EntityDivision.Enemy:
@@ -97,6 +98,7 @@ namespace EntityBehaviorTree
             switch (_me_CachedOwnerDivision)
             {
                 case EntityDivision.Player:
+                case EntityDivision.Rival:
                     ProcFindPlayerDivisionEnemy(out _enemy);
                     _m_CachedOwnerController.SetChaseEntity(_enemy);
                     break;
@@ -223,6 +225,7 @@ namespace EntityBehaviorTree
             switch (_me_CachedOwnerDivision)
             {
                 case EntityDivision.Player:
+                case EntityDivision.Rival:
                     DetectPlayerDivision(out _ret);
                     break;
                 case EntityDivision.Enemy:
@@ -495,6 +498,118 @@ namespace EntityBehaviorTree
         {
         }
     }
+}
+
+
+namespace EntityBehaviorTree
+{
+    // RivalPlayer Type AI
+    public class ConditionRivalPlayerInputAIStopStategy : EntityBehaviorTreeNodeBase, BTConditionStrategy
+    {
+        RivalPlayerAI m_CacheRivalPlayerAI;
+
+        public ConditionRivalPlayerInputAIStopStategy()
+        {
+            RivalPlayerAIManager.GetInstance().GetRavalPlayer(out m_CacheRivalPlayerAI);
+
+
+        }
+
+        public BTNodeState Check()
+        {
+            return m_CacheRivalPlayerAI.IsTurnOnAI() == true ? BTNodeState.Failure : BTNodeState.Success;
+        }
+
+        public void Reset()
+        {
+        }
+    }
+
+    public class ConditionIsOverSupplyStategy : EntityBehaviorTreeNodeBase, BTConditionStrategy
+    {
+        RivalPlayerAI m_CacheRivalPlayerAI;
+
+        public ConditionIsOverSupplyStategy()
+        {
+            RivalPlayerAIManager.GetInstance().GetRavalPlayer(out m_CacheRivalPlayerAI);
+        }
+
+        public BTNodeState Check()
+        {
+            return RivalPlayerAIManager.GetInstance().IsMaxSupply() == true ? BTNodeState.Success : BTNodeState.Failure;
+            // Max 일때 진행하면 안되니까 Sequence에서는 Success로 멈춘다.
+        }
+
+        public void Reset()
+        {
+        }
+    }
+    public class ConditionConsumableDiaDrawPriceStategy : EntityBehaviorTreeNodeBase, BTConditionStrategy
+    {
+        RivalPlayerAI m_CacheRivalPlayerAI;
+
+        public ConditionConsumableDiaDrawPriceStategy()
+        {
+            RivalPlayerAIManager.GetInstance().GetRavalPlayer(out m_CacheRivalPlayerAI);
+        }
+
+        public BTNodeState Check()
+        {
+            int _drawTarget = UnityEngine.Random.Range(0, 3);
+            int _price = 0;
+
+            switch (_drawTarget)
+            {
+                case 0:
+                    _price = Defines.DrawDiaPriceUncommon;
+                    break;
+                case 1:
+                    _price = Defines.DrawDiaPriceHero;
+                    break;
+                case 2:
+                    _price = Defines.DrawDiaPriceMyth;
+                    break;
+            }
+
+            bool _ret = RivalPlayerAIManager.GetInstance().EnableUseDia(_price);
+
+            if (_ret == true)
+                m_CacheRivalPlayerAI.SetDrawTarget(_drawTarget);
+
+            return _ret ? BTNodeState.Success : BTNodeState.Failure;
+        }
+
+        public void Reset()
+        {
+        }
+    }
+    public class ConditionConsumableGoldDrawPriceStategy : EntityBehaviorTreeNodeBase, BTConditionStrategy
+    {
+        RivalPlayerAI m_CacheRivalPlayerAI;
+
+        public ConditionConsumableGoldDrawPriceStategy()
+        {
+            RivalPlayerAIManager.GetInstance().GetRavalPlayer(out m_CacheRivalPlayerAI);
+        }
+
+        public BTNodeState Check()
+        {
+            int _drawTarget = UnityEngine.Random.Range(0, 3);
+            int _price = Defines.DrawDefaultGoldPrice;
+
+            return RivalPlayerAIManager.GetInstance().EnableUseGold(_price) ? BTNodeState.Success : BTNodeState.Failure;
+        }
+
+        public void Reset()
+        {
+        }
+    }
+
+
+
+
+
+
 }
 
 

@@ -12,6 +12,7 @@ public class EntityStatus
         {
             case EntityDivision.Player:
             case EntityDivision.Enemy:
+            case EntityDivision.Rival:
                 SetMercenaryStatus(_objectID);
                 break;
             case EntityDivision.MealFactory:

@@ -247,6 +247,8 @@ public class AnimationManager
         switch (_eCategory)
         {
             case AnimationCategory.Character:
+            case AnimationCategory.Rival:
+                _eCategory = AnimationCategory.Character;
                 _m_Dict_CacheCharacterAnimationClip.TryGetValue(_entityTID, out _dict_FindTarget);
                 break;
             case AnimationCategory.Monster:

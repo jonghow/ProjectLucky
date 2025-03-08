@@ -18,6 +18,22 @@ public class UIProtoDevGuide : MonoBehaviour
 
         _ = MapManager.GetInstance().LoadStage(1001);
     }
+
+    public void Cheat_RivalStageDataLoad()
+    {
+        UnityEngine.Debug.Log($"[BattleStage] Cheat_RivalStageDataLoad 1002");
+
+        _ = RivalMapManager.GetInstance().LoadStage(1002);
+    }
+
+    public void Cheat_RivalPlayerTurnONAI()
+    {
+        UnityEngine.Debug.Log($"[BattleStage] Cheat_RivalStageDataLoad 1002");
+
+        RivalPlayerAIManager.GetInstance().GetRavalPlayer(out var _rival);
+        _rival.TurnOnAI();
+    }
+
     public void Cheat_Stage1DataRemove()
     {
         UnityEngine.Debug.Log($"[BattleStage] Cheat_Stage1DataRemove");

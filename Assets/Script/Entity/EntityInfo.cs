@@ -13,6 +13,7 @@ public class EntityInfo
         {
             case EntityDivision.Player:
             case EntityDivision.Enemy:
+            case EntityDivision.Rival:
                 SetEntityMercenaryStatInfo(_objectID, _eDivision);
                 break;
             case EntityDivision.MealFactory:

@@ -6,6 +6,7 @@ using GlobalGameDataSpace;
 using System.Reflection;
 using System.Text;
 using UnityEditor.Hardware;
+using System.Linq;
 
 namespace EntityBehaviorTree
 {
@@ -55,7 +56,16 @@ namespace EntityBehaviorTree
                 if (_sortedEntities.Count == 0)
                     return;
 
-                var _abobeNavElement = MapManager.GetInstance().GetMyNavigationByPos3D(_m_CachedOwnerController.Pos3D);
+                NavigationElement _abobeNavElement = null; 
+
+                if(_me_CachedOwnerDivision == EntityDivision.Player)
+                {
+                    _abobeNavElement = MapManager.GetInstance().GetMyNavigationByPos3D(_m_CachedOwnerController.Pos3D);
+                }
+                else if (_me_CachedOwnerDivision == EntityDivision.Rival)
+                {
+                    _abobeNavElement = RivalMapManager.GetInstance().GetMyNavigationByPos3D(_m_CachedOwnerController.Pos3D);
+                }
 
                 _m_CachedOwnerController.GetMoveAgent(out EntityMoveAgent _moveAgent);
                 _moveAgent.SetStartPoint(_abobeNavElement._mv2_Index);
@@ -140,6 +150,7 @@ namespace EntityBehaviorTree
             switch (_me_CachedOwnerDivision)
             {
                 case EntityDivision.Player:
+                case EntityDivision.Rival:
                     ProcFindPlayerDivisionEnemy(out _enemy);
                     _m_CachedOwnerController.SetChaseEntity(_enemy);
                     break;
@@ -282,6 +293,7 @@ namespace EntityBehaviorTree
             switch (_me_CachedOwnerDivision)
             {
                 case EntityDivision.Player:
+                case EntityDivision.Rival:
                     ProcFindPlayerDivisionEnemy(out _enemy);
                     _m_CachedOwnerController.SetChaseEntity(_enemy);
                     break;
@@ -405,6 +417,7 @@ namespace EntityBehaviorTree
             switch (_eDivision)
             {
                 case EntityDivision.Player:
+                case EntityDivision.Rival:
                     _sb_AnimationClipName.Append($"Character{String.Format("{0:00}", _m_CachedOwner.CharacterID)}_Move");
                     break;
                 case EntityDivision.Enemy:
@@ -421,8 +434,6 @@ namespace EntityBehaviorTree
                     break;
             }
         }
-
-
 
 
         public void Reset() { }
@@ -484,6 +495,7 @@ namespace EntityBehaviorTree
             switch (_eDivision)
             {
                 case EntityDivision.Player:
+                case EntityDivision.Rival:
                     _sb_AnimationClipName.Append($"Character{String.Format("{0:00}", _m_CachedOwner.CharacterID)}_{_mActXMLName}");
                     break;
                 case EntityDivision.Enemy:
@@ -581,6 +593,7 @@ namespace EntityBehaviorTree
             switch (_eDivision)
             {
                 case EntityDivision.Player:
+                case EntityDivision.Rival:
                     _sb_AnimationClipName.Append($"Character{String.Format("{0:00}", _m_CachedOwner.CharacterID)}_{_mActXMLName}");
                     break;
                 case EntityDivision.Enemy:
@@ -705,6 +718,177 @@ namespace EntityBehaviorTree
         {
             return _strategy.Run();
         }
+    }
+}
+
+
+namespace EntityBehaviorTree
+{
+    // Rival PlayerAI 전용
+    public class RivalRunDiaDraw : BTActionStrategy
+    {
+        RivalPlayerAI m_CacheRivalPlayerAI;
+        public RivalRunDiaDraw()
+        {
+            RivalPlayerAIManager.GetInstance().GetRavalPlayer(out m_CacheRivalPlayerAI);
+        }
+
+        public BTNodeState Run()
+        {
+            return BTNodeState.Failure;
+        }
+
+        public void Reset()
+        {
+
+        }
+    }
+
+    public class RivalRunGoldDraw : BTActionStrategy
+    {
+        RivalPlayerAI m_CacheRivalPlayerAI;
+        public RivalRunGoldDraw()
+        {
+            RivalPlayerAIManager.GetInstance().GetRavalPlayer(out m_CacheRivalPlayerAI);
+        }
+
+        public BTNodeState Run()
+        {
+            RunSpawn();
+            return BTNodeState.Failure;
+        }
+
+        public void Reset()
+        {
+
+        }
+
+        public void RunSpawn()
+        {
+            int _jobID = DrawCharacterID();
+            FindEnableEntityGroups(_jobID, out var _entitiesGroup);
+
+            if (_entitiesGroup == null)
+            {
+                DrawAnyMapNavigation(out var _Navigation);
+                Spawn(_jobID, _Navigation);
+            }
+            else
+            {
+                Spawn(_jobID, _entitiesGroup);
+            }
+
+            RivalPlayerAIManager.GetInstance().UseGold(Defines.DrawDefaultGoldPrice); // 스폰했으니 차감
+        }
+
+        public int DrawCharacterID()
+        {
+            List<GameDB_CharacterInfo> _Lt_Infos;
+            GameDataManager.GetInstance().GetGameDBCharacterInfoByGrade(new EntityGrade[2] { EntityGrade.Common, EntityGrade.UnCommon }, out _Lt_Infos);
+
+            int suffleCount = 20;
+
+            for (int i = 0; i < suffleCount; ++i)
+            {
+                int _prevIndex = UnityEngine.Random.Range(0, _Lt_Infos.Count);
+                int _nextIndex = UnityEngine.Random.Range(0, _Lt_Infos.Count);
+
+                var _temp = _Lt_Infos[_nextIndex];
+                _Lt_Infos[_nextIndex] = _Lt_Infos[_prevIndex];
+                _Lt_Infos[_prevIndex] = _temp;
+            }
+
+            return _Lt_Infos[0]._mi_CharacterID;
+        }
+
+        public void FindEnableEntityGroups(int _jobID, out EntitiesGroup _ret)
+        {
+            _ret = null;
+            EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Rival, _jobID, out _ret);
+        }
+
+        public void DrawAnyMapNavigation(out NavigationElement _retNavigation)
+        {
+            RivalMapManager.GetInstance().GetNavigationElements(out var _dictElements);
+            var _Lt_Elements = new List<NavigationElement>(_dictElements.Values.ToList());
+
+            var _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Rival);
+
+            for (int i = 0; i < _Lt_Groups.Count; ++i)
+            {
+                Vector2Int _v2_Index = _Lt_Groups[i].NvPos;
+
+                var _mLt_ElementToRemove = new List<NavigationElement>();
+
+                foreach (var pair in _Lt_Elements)
+                {
+                    if (pair._mv2_Index == _v2_Index)
+                    {
+                        _mLt_ElementToRemove.Add(pair);
+                    }
+                }
+
+                for (int j = 0; j < _mLt_ElementToRemove.Count; ++j)
+                {
+                    _Lt_Elements.Remove(_mLt_ElementToRemove[j]);
+                }
+            }
+            // 필터링
+
+            int suffleCount = 20;
+
+            for (int i = 0; i < suffleCount; ++i)
+            {
+                int _prevIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
+                int _nextIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
+
+                var _temp = _Lt_Elements[_nextIndex];
+                _Lt_Elements[_nextIndex] = _Lt_Elements[_prevIndex];
+                _Lt_Elements[_prevIndex] = _temp;
+            }
+            // 셔플 완료
+            _retNavigation = _Lt_Elements[0];
+        }
+
+        public void Spawn(int _jobID, NavigationElement _selectedNavigation)
+        {
+            if (_selectedNavigation == null)
+            {
+                UnityLogger.GetInstance().LogFuncFailed(this.GetType().Name, $"SpawnEntity", $"_selectedNavigation is NULL");
+                return;
+            }
+
+            Vector2Int _n2_NavIdx = _selectedNavigation._mv2_Index;
+            Vector3 _v3_position = _selectedNavigation._mv3_Pos;
+
+            int spawnID = _jobID;
+
+            RivalEntitiesGroupFactory _spawner = new RivalEntitiesGroupFactory();
+            _ = _spawner.CreateEntity(spawnID, _v3_position, (entitiesGroup) =>
+            {
+                RivalEntityFactory _entitySpanwer = new RivalEntityFactory();
+
+                _ = _entitySpanwer.CreateEntity(_jobID, _v3_position, (entity) =>
+                {
+                    entitiesGroup.AddEntity(ref entity);
+
+                });
+            });
+        }
+        public void Spawn(int _jobID, EntitiesGroup _entitiesGroup)
+        {
+            Vector2Int _n2_NavIdx = _entitiesGroup.NvPos;
+            Vector3 _v3_position = _entitiesGroup.Pos3D;
+
+            int spawnID = _jobID;
+
+            RivalEntityFactory _entitySpanwer = new RivalEntityFactory();
+            _ = _entitySpanwer.CreateEntity(spawnID, _v3_position, (entity) =>
+            {
+                _entitiesGroup.AddEntity(ref entity);
+            });
+        }
+
     }
 }
 

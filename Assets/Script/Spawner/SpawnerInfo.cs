@@ -107,7 +107,7 @@ public class SpawnerUseEdit : SpawnerBase, ISpawnerBase
         await WaitInitDelay(); // 초기 시간 대기
 
         _mf_AccEntityCreateDelayTime = 0f;
-        var _factory = new RivalEntityFactory();
+        var _factory = new EnemyEntityFactory();
 
         while (_mi_CreateCount < _mi_SpawnCount)
         {

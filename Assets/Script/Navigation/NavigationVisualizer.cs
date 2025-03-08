@@ -23,36 +23,75 @@ public class NavigationVisualizer : MonoBehaviour
 
         else
         {
-            MapManager.GetInstance().GetNavigationElements(out var _nvGrid);
+            OnDrawPlayerMap();
+            OnDrawRivalMap();
+        }
+    }
 
-            if (_nvGrid == null) return;
+    public void OnDrawPlayerMap()
+    {
+        MapManager.GetInstance().GetNavigationElements(out var _nvGrid);
 
-            foreach (var elementPair in _nvGrid)
+        if (_nvGrid == null) return;
+
+        foreach (var elementPair in _nvGrid)
+        {
+            var _element = elementPair.Value;
+            if (_element == null) continue;
+
+            if (_element._mb_IsEnable == true)
             {
-                var _element = elementPair.Value;
-                if (_element == null) continue;
+                var _vPos = _element._mv3_Pos;
+                var _scaleX = Defines.DefaultScaleX; // 0.5f
+                var _scaleY = Defines.DefaultScaleY; // // 0.5f
 
-                if (_element._mb_IsEnable == true)
-                {
-                    var _vPos = _element._mv3_Pos;
-                    var _scaleX = Defines.DefaultScaleX; // 0.5f
-                    var _scaleY = Defines.DefaultScaleY; // // 0.5f
-
-                    Gizmos.color = Color.magenta;
-                    Gizmos.DrawWireCube(_vPos, new Vector3(_scaleX, _scaleY, 0f));
-                }
-                else
-                {
-                    var _vPos = _element._mv3_Pos;
-                    var _scaleX = Defines.DefaultScaleX; // 0.5f
-                    var _scaleY = Defines.DefaultScaleY; // // 0.5f
-
-                    Gizmos.color = Color.red;
-                    Gizmos.DrawWireCube(_vPos, new Vector3(_scaleX, _scaleY, 0f));
-                }
+                Gizmos.color = Color.magenta;
+                Gizmos.DrawWireCube(_vPos, new Vector3(_scaleX, _scaleY, 0f));
             }
+            else
+            {
+                var _vPos = _element._mv3_Pos;
+                var _scaleX = Defines.DefaultScaleX; // 0.5f
+                var _scaleY = Defines.DefaultScaleY; // // 0.5f
 
-            OnDrawSelectedElement();
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireCube(_vPos, new Vector3(_scaleX, _scaleY, 0f));
+            }
+        }
+
+        OnDrawSelectedElement();
+    }
+
+    public void OnDrawRivalMap()
+    {
+        // ¾Æ·¡´Â Rival Map
+        RivalMapManager.GetInstance().GetNavigationElements(out var _rivalNvGrid);
+
+        if (_rivalNvGrid == null) return;
+
+        foreach (var elementPair in _rivalNvGrid)
+        {
+            var _element = elementPair.Value;
+            if (_element == null) continue;
+
+            if (_element._mb_IsEnable == true)
+            {
+                var _vPos = _element._mv3_Pos;
+                var _scaleX = Defines.DefaultScaleX; // 0.5f
+                var _scaleY = Defines.DefaultScaleY; // // 0.5f
+
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireCube(_vPos, new Vector3(_scaleX, _scaleY, 0f));
+            }
+            else
+            {
+                var _vPos = _element._mv3_Pos;
+                var _scaleX = Defines.DefaultScaleX; // 0.5f
+                var _scaleY = Defines.DefaultScaleY; // // 0.5f
+
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawWireCube(_vPos, new Vector3(_scaleX, _scaleY, 0f));
+            }
         }
     }
 

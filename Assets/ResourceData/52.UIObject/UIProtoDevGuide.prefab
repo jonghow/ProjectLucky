@@ -689,7 +689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCE74\uB4DC \uBC1B\uAE30"
+  m_text: "\uB77C\uC774\uBC8C \uB9F5 \uB85C\uB529(1002)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3007fdfbf79ce5341bb27c3c61d5657f, type: 2}
   m_sharedMaterial: {fileID: 6072129538459160564, guid: 3007fdfbf79ce5341bb27c3c61d5657f, type: 2}
@@ -1571,7 +1571,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7632389294053293903}
         m_TargetAssemblyTypeName: UIProtoDevGuide, Assembly-CSharp
-        m_MethodName: Cheat_GetUpgradeCard
+        m_MethodName: Cheat_RivalStageDataLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2002,10 +2002,10 @@ RectTransform:
   m_Children:
   - {fileID: 2822080323530915555}
   - {fileID: 5810935127073379131}
+  - {fileID: 5951345239187826895}
   - {fileID: 4229593196832959542}
   - {fileID: 1723408429064787730}
   - {fileID: 4503978271730924323}
-  - {fileID: 5951345239187826895}
   - {fileID: 2067105713176820662}
   - {fileID: 1625266764350851805}
   m_Father: {fileID: 1047503429490992830}
@@ -2073,7 +2073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5951345239187826895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2089,9 +2089,9 @@ RectTransform:
   - {fileID: 3602412025190342655}
   m_Father: {fileID: 2776221135279519145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -245}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7853289596578025747
@@ -2178,8 +2178,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7632389294053293903}
         m_TargetAssemblyTypeName: UIProtoDevGuide, Assembly-CSharp
-        m_MethodName: Cheat_SpawnCard
-        m_Mode: 3
+        m_MethodName: Cheat_RivalPlayerTurnONAI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2253,7 +2253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2A4\uD3F0 \uCE74\uB4DC\uC918"
+  m_text: "\uB77C\uC774\uBC8C AI ON"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3007fdfbf79ce5341bb27c3c61d5657f, type: 2}
   m_sharedMaterial: {fileID: 6072129538459160564, guid: 3007fdfbf79ce5341bb27c3c61d5657f, type: 2}

@@ -28,6 +28,7 @@ namespace GlobalGameDataSpace
     public enum EntityDivision
     {
         Player,
+        Rival,
         Enemy,
         MealFactory,
         Neutrality, // 중립인데.. 공격? 일단 Player - Rival 구도
@@ -66,6 +67,7 @@ namespace GlobalGameDataSpace
     public enum AnimationCategory
     {
         Character,
+        Rival,
         Monster,
         Factory,
     }

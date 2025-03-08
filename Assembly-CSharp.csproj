@@ -68,6 +68,7 @@
     <Compile Include="Assets\Script\Abnormal\AbnormalSystem.cs" />
     <Compile Include="Assets\Script\Managers\UIManager.cs" />
     <Compile Include="Assets\Script\Managers\PlayerManager\PlayerManager.cs" />
+    <Compile Include="Assets\Script\Managers\RivalPlayerAIManager.cs" />
     <Compile Include="Assets\Script\Managers\PlayerManager\PlayerManager_Goods.cs" />
     <Compile Include="Assets\Script\Global\GlobalEnum.cs" />
     <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_StructureBuild.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\Script\StatePattern\Stage\BattleDefeatState.cs" />
     <Compile Include="Assets\Script\UI\HUD\Combine\RecipeElement.cs" />
     <Compile Include="Assets\Script\Enums\GlobalType_Job.cs" />
+    <Compile Include="Assets\Script\RivalPlayerAI\RivalPlayerAI.cs" />
     <Compile Include="Assets\Script\UI\HUD\InterFaceBattleHUD\IBattleHUDActivation.cs" />
     <Compile Include="Assets\Script\BehaviorTree\BehaviorProduct\CharacterBehavior\EntityBehaviorNoviceType\EntityBehaviorNoviceType.cs" />
     <Compile Include="Assets\Script\UI\UIHandCard\UIHandCard.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="Assets\Script\Managers\SoundManager.cs" />
     <Compile Include="Assets\Script\UI\Common\UICommonStat.cs" />
     <Compile Include="Assets\Script\BehaviorTree\BehaviorProduct\CharacterBehavior\EntityBehaviorSwordManType\EntityBehaviorMeleeType.cs" />
+    <Compile Include="Assets\Script\Managers\RivalMapManager.cs" />
     <Compile Include="Assets\Script\Entity\EntityPathFinder.cs" />
     <Compile Include="Assets\Script\GenericCollectionExtension\GenericCollection_Queue\GenericCollectionExtension_Queue.cs" />
     <Compile Include="Assets\Script\Managers\GameDataManager\Act\CharacterActionDamage.cs" />
@@ -200,6 +203,7 @@
     <Compile Include="Assets\Script\Utilities\ClientUtility\ClientUtility_Job.cs" />
     <Compile Include="Assets\Script\PooledObject\PooledObjectArrow\PooledObjectArrow.cs" />
     <Compile Include="Assets\Script\CustomCollections\MinHeapProrityQueue.cs" />
+    <Compile Include="Assets\Script\BehaviorTree\BehaviorProduct\RivalPlayerAIType\RivalPlayerAIType.cs" />
     <Compile Include="Assets\Script\BehaviorTree\BehaviorComponent\EntityBehaviorTreeActionNode.cs" />
     <Compile Include="Assets\Script\Entity\EntityMonsterController.cs" />
     <Compile Include="Assets\Script\UI\UIPopupGameClear\UIPopupGameClear.cs" />
@@ -245,6 +249,7 @@
     <None Include="Assets\ResourceData\99.GameData\AnimData\Act_RedRiceCakeMercenary.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1003.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1017.xml" />
+    <None Include="Assets\ResourceData\99.GameData\NavData\stage1002.xml" />
     <None Include="Assets\ResourceData\99.GameData\GameData\BuildingData\BuildingStat.xml" />
     <None Include="Assets\ResourceData\99.GameData\GameData\CharacterData\CharacterInfo.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
