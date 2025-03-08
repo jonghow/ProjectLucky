@@ -29,7 +29,10 @@ public class ActionInfoIdle : ActionInfoBase
 
         while (true)
         {
-            if (token.IsCancellationRequested)
+            if (token.IsCancellationRequested) //  기존 토큰을 유지하여 체크
+                break;
+
+            if (_m_Animator == null)
                 break;
 
             AnimatorStateInfo _stateInfo = _m_Animator.GetCurrentAnimatorStateInfo(2);

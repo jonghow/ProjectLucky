@@ -44,7 +44,6 @@ public class RivalPlayerAIManager
     {
         _mi_Gold -= _gold;
     }
-
     public void AddDia(int _gold)
     {
         _mi_Dia += _gold;
