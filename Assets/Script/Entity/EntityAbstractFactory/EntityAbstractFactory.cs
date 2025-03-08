@@ -209,7 +209,6 @@ public class UserEntityFactory : EntityFactoryBase
             _userContoller.Pos3D = _position;
             // 포지션 세팅
 
-
             _obj.name = $"{_modelObj.name.Replace("(Clone)", "")}_{uUID}";
             // 이름 세팅
         });

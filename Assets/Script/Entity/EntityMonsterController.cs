@@ -16,6 +16,8 @@ public class EntityMonsterController : EntityContoller
 
     public List<Vector3> _mLt_ProbePosition; // 몬스터가 정찰할 포지션 대략 4개면 된다. 얘는 A* 로 움직일것도아니고 그냥 무빙시킬거
 
+    public bool _m_IsKillMine = true; // 내가 잡았는지 라이벌이 잡았는지
+
     public override void SetUp(long _entityUID, int _entityID)
     {
         _ml_EntityUID = _entityUID;
@@ -87,10 +89,37 @@ public class EntityMonsterController : EntityContoller
         return _freshness;
     }
 
+    public int GetDia()
+    {
+        int _dia = 0;
+
+        GameDataManager.GetInstance().GetGameDBCharacterInfo(this._mi_EntityTID, out var _ret);
+        _dia = _ret == null ? 0 : _ret._mi_Dia;
+        return _dia;
+    }
+
+    public void SetKillDivision(bool _iskillPlayerDivision)
+    {
+        // True : Player
+        // False : Rival
+        _m_IsKillMine = _iskillPlayerDivision;
+    }
+
     public override void OnDieEvent(Entity _entity)
     {
         int _freshness = GetFressness();
-        PlayerManager.GetInstance().AddFreshness(_freshness);
+        int _dia = GetDia();
+
+        if (_m_IsKillMine == true)
+        {
+            PlayerManager.GetInstance().AddFreshness(_freshness);
+            PlayerManager.GetInstance().AddDia(_dia);
+        }
+        else
+        {
+            RivalPlayerAIManager.GetInstance().AddGold(_freshness);
+            RivalPlayerAIManager.GetInstance().AddDia(_dia);
+        }
 
         _m_ActPlayer.ClearActionInfos();
     }

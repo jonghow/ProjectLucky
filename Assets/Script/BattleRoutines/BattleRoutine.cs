@@ -39,6 +39,14 @@ public static class BattleRoutine
 
         if(_effectorEntity.Info.IsDead() == true)
         {
+            if(_effectorEntity.Controller is EntityMonsterController _monsterController)
+            {
+                if(_shooterEntity._me_Division == GlobalGameDataSpace.EntityDivision.Player)
+                    _monsterController.SetKillDivision(true);
+                else
+                    _monsterController.SetKillDivision(false);
+            }
+
             _effectorEntity.Controller?._onCB_DiedProcess?.Invoke();
 
             _shooterEntity.Controller.SetChaseEntity(null);

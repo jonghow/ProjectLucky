@@ -34,12 +34,12 @@ public class UIBattleStageHUD_FreshnessInfo : MonoBehaviour , IBattleHUDActivati
 
     public void OnSetCBChangeStage()
     {
-        PlayerManager.GetInstance()._onCB_ChangeFreshNess -= RefreshFreshnessInfo;
-        PlayerManager.GetInstance()._onCB_ChangeFreshNess += RefreshFreshnessInfo;
+        PlayerManager.GetInstance()._onCB_ChangeGold -= RefreshFreshnessInfo;
+        PlayerManager.GetInstance()._onCB_ChangeGold += RefreshFreshnessInfo;
     }
     public void OnReleaseCBChangeStage()
     {
-        PlayerManager.GetInstance()._onCB_ChangeFreshNess -= RefreshFreshnessInfo;
+        PlayerManager.GetInstance()._onCB_ChangeGold -= RefreshFreshnessInfo;
     }
 
     public void RefreshFreshnessInfo(int _freshness)
