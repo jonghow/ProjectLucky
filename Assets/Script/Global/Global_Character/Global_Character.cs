@@ -112,7 +112,7 @@ public class GameDB_CharacterInfo : GameDB_BaseData
         string _grade = _node["Grade"].InnerText.ToString();
         _me_Grade = (EntityGrade)Enum.Parse(typeof(EntityGrade), _grade);
 
-        int.TryParse(_node["Dia"].InnerText.ToString(), out _mi_Freshness);
+        int.TryParse(_node["Dia"].InnerText.ToString(), out _mi_Dia);
     }
 }
 public class GameDB_CharacterStat

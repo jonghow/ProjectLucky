@@ -19,7 +19,7 @@ public class RivalPlayerAIManager
     }
 
     int _mi_Gold;
-    int _mi_Dia;
+    public int _mi_Dia;
 
     int _mi_Supply;
 
