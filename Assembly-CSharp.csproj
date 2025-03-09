@@ -144,6 +144,7 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Script\Managers\EntityManager.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
+    <Compile Include="Assets\Script\Managers\PlayerManager\PlayerManager_EnemyCount.cs" />
     <Compile Include="Assets\Script\Enums\GlobalType_AssetBundle.cs" />
     <Compile Include="Assets\Script\Managers\GameDataManager\GameDataManager_MealKit.cs" />
     <Compile Include="Assets\Script\Entity\EntityUserContoller.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Assets\Script\StatePattern\Stage\BattleStageInitState.cs" />
     <Compile Include="Assets\Script\PooledObject\PooledObjectDamageTag\PooledObjectDamageTag.cs" />
     <Compile Include="Assets\Script\Managers\GameDataManager\Act\CharacterActionSound.cs" />
+    <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_TopInfo.cs" />
     <Compile Include="Assets\Script\UI\Common\UICommonHPBar.cs" />
     <Compile Include="Assets\Script\Managers\GameDataManager\GameDataManager_Character.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalStun.cs" />

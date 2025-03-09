@@ -15,29 +15,51 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
     [SerializeField] TMPro.TextMeshProUGUI _mText_dia;
     [SerializeField] TMPro.TextMeshProUGUI _mText_Supply;
 
-    public void ProcActivationCardList(bool isActive)
+    [SerializeField] Button _mBtn_Uncommon;
+    [SerializeField] Button _mBtn_Hero;
+    [SerializeField] Button _mBtn_Myth;
+
+    public void OnEnable()
     {
-        UpdateText();
-        this.gameObject.SetActive(isActive);
+        PlayerManager.GetInstance()._onCB_ChangeDia -= UpdateDia;
+        PlayerManager.GetInstance()._onCB_ChangeDia += UpdateDia;
+
+        PlayerManager.GetInstance()._onCB_ChangeSupply -= UpdateSupply;
+        PlayerManager.GetInstance()._onCB_ChangeSupply += UpdateSupply;
     }
 
-    public void UpdateText()
+    private void OnDisable()
     {
-        //_mText_dia.text
-        //_mText_Supply.text
+        PlayerManager.GetInstance()._onCB_ChangeDia -= UpdateDia;
+
+        PlayerManager.GetInstance()._onCB_ChangeSupply -= UpdateSupply;
     }
+
+    public void ProcActivationCardList(bool isActive)
+    {
+        this.gameObject.SetActive(isActive);
+
+        UpdateDia(PlayerManager.GetInstance().GetDia());
+        UpdateSupply(PlayerManager.GetInstance().GetSupply());
+    }
+
     public void OnClick_Close()
     {
         this.gameObject.SetActive(false);
     }
     public void OnClick_DrawUnCommon()
     {
+        if (!PlayerManager.GetInstance().IsEnougnDia(Defines.DrawDiaPriceUncommon))
+            return;
+
         int _rate = 60;
         EntityGrade _me_Grade = EntityGrade.UnCommon;
 
         int _drawVal = UnityEngine.Random.Range(0, 100);
 
-        if(_rate >= _drawVal)
+        PlayerManager.GetInstance().UseDia(Defines.DrawDiaPriceUncommon);
+
+        if (_rate >= _drawVal)
         {
             // success
 
@@ -62,10 +84,15 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
     }
     public void OnClick_DrawHero()
     {
+        if (!PlayerManager.GetInstance().IsEnougnDia(Defines.DrawDiaPriceHero))
+            return;
+
         int _rate = 20;
         EntityGrade _me_Grade = EntityGrade.Hero;
 
         int _drawVal = UnityEngine.Random.Range(0, 100);
+
+        PlayerManager.GetInstance().UseDia(Defines.DrawDiaPriceHero);
 
         if (_rate >= _drawVal)
         {
@@ -93,10 +120,15 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
     }
     public void OnClick_DrawMyth()
     {
+        if (!PlayerManager.GetInstance().IsEnougnDia(Defines.DrawDiaPriceMyth))
+            return;
+
         int _rate = 20;
         EntityGrade _me_Grade = EntityGrade.Myth;
 
         int _drawVal = UnityEngine.Random.Range(0, 100);
+
+        PlayerManager.GetInstance().UseDia(Defines.DrawDiaPriceMyth);
 
         if (_rate >= _drawVal)
         {
@@ -227,6 +259,20 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
         {
             _entitiesGroup.AddEntity(ref entity);
         });
+    }
+
+    public void UpdateDia(int _dia)
+    {
+        _mText_dia.text = _dia.ToString();
+
+        _mBtn_Uncommon.interactable = PlayerManager.GetInstance().IsEnougnDia(Defines.DrawDiaPriceUncommon);
+        _mBtn_Hero.interactable = PlayerManager.GetInstance().IsEnougnDia(Defines.DrawDiaPriceHero);
+        _mBtn_Myth.interactable = PlayerManager.GetInstance().IsEnougnDia(Defines.DrawDiaPriceMyth);
+    }
+
+    public void UpdateSupply(int _supply)
+    {
+        _mText_Supply.text = string.Format("{0}/{1}", _supply, Defines.NormalSingleGameSupplyMaxCount);
     }
 
 }

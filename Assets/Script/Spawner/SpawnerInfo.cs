@@ -132,6 +132,8 @@ public class SpawnerUseEdit : SpawnerBase, ISpawnerBase
 
                 _ = _factory.CreateEntity(_spawnEnitityID, _newSpawnPos,_isMySpwner, (_createEntity) => 
                 {
+                    PlayerManager.GetInstance().AddEnemyCount(1);
+
                     _createEntity.Controller._onCB_DiedProcess -= () => { _createEntity.Controller.OnDieEvent(_createEntity); };
                     _createEntity.Controller._onCB_DiedProcess += () => { _createEntity.Controller.OnDieEvent(_createEntity); };
                 } );

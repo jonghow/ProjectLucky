@@ -28,6 +28,13 @@ public class BattleState : IStageState
         if (IsSpareTime())
             return;
 
+        if(IsClearMaxStage())
+        {
+            ChangeState(new BattleWinState(stateMachine));
+            return;
+        }
+
+
         if(SpawnerManager.GetInstance().GetIsSpawning() == false)
         {
             ChangeState(new BattlePrepareNextWaveState(stateMachine));
@@ -40,6 +47,18 @@ public class BattleState : IStageState
             ChangeState(new BattleDefeatState(stateMachine));
             return;
         }
+    }
+
+    public bool IsClearMaxStage()
+    {
+        SceneLoadManager.GetInstance().GetStage(out var _stage);
+        if (_stage is BattleStage _battleStage)
+        {
+            if (_battleStage.IsClearMaxStage())
+                return true;
+        }
+
+        return false;
     }
     public void Exit()
     {

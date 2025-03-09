@@ -112,6 +112,9 @@ public class EntityMonsterController : EntityContoller
         // 붙은 헬스바 해제
         ReleaseWorldHealBarObject();
 
+        // 적군 카운터 해제
+        PlayerManager.GetInstance().AddEnemyCount(-1);
+
         int _freshness = GetFressness();
         int _dia = GetDia();
 
@@ -130,9 +133,6 @@ public class EntityMonsterController : EntityContoller
             RivalPlayerAIManager.GetInstance().AddGold(_freshness);
             RivalPlayerAIManager.GetInstance().AddDia(_dia);
         }
-
-
-
 
         _m_ActPlayer.ClearActionInfos();
     }

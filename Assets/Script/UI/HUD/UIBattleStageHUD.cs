@@ -7,6 +7,7 @@ using System.Threading;
 using GlobalGameDataSpace;
 using System.Linq;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIBattleStageHUD : MonoBehaviour
 {
@@ -17,8 +18,12 @@ public class UIBattleStageHUD : MonoBehaviour
     [SerializeField] UIBattleStageHUD_Combine _m_Combine;
     [SerializeField] UIBattleStageHUD_AlertBoss _m_AlertBoss;
     [SerializeField] UIBattleStageHUD_Wave _m_AlertWave;
+    [SerializeField] UIBattleStageHUD_TopInfo _m_TopInfo;
 
     public GameObject _mObj_CoinCountPivot;
+
+    [SerializeField] Button _Btn_Spawn;
+
     [SerializeField] TextMeshProUGUI _mText_Gold;
     [SerializeField] TextMeshProUGUI _mText_Dia;
     [SerializeField] TextMeshProUGUI _mText_Supply;
@@ -32,6 +37,7 @@ public class UIBattleStageHUD : MonoBehaviour
 
     public void Start()
     {
+        UpdateSpawnButton(PlayerManager.GetInstance().GetGold());
         UpdateGold(PlayerManager.GetInstance().GetGold());
         UpdateDia(PlayerManager.GetInstance().GetDia());
         UpdateSupply(PlayerManager.GetInstance().GetSupply());
@@ -41,6 +47,9 @@ public class UIBattleStageHUD : MonoBehaviour
     {
         PlayerManager.GetInstance()._onCB_ChangeGold -= UpdateGold;
         PlayerManager.GetInstance()._onCB_ChangeGold += UpdateGold;
+
+        PlayerManager.GetInstance()._onCB_ChangeGold -= UpdateSpawnButton;
+        PlayerManager.GetInstance()._onCB_ChangeGold += UpdateSpawnButton;
 
         PlayerManager.GetInstance()._onCB_ChangeDia -= UpdateDia;
         PlayerManager.GetInstance()._onCB_ChangeDia += UpdateDia;
@@ -55,15 +64,20 @@ public class UIBattleStageHUD : MonoBehaviour
         PlayerManager.GetInstance()._onCB_AlertBoss += OnNotify_AlertBoss;
 
         SceneLoadManager.GetInstance().GetStage(out var _stage);
-        if(_stage is BattleStage _battleStage)
+        if (_stage is BattleStage _battleStage)
         {
             _battleStage._onCB_ChangeStage -= OnNotify_AlertWave;
             _battleStage._onCB_ChangeStage += OnNotify_AlertWave;
         }
+
+        PlayerManager.GetInstance()._onCB_ChangeEnemyCount -= OnNotify_ChangeEnemyCount;
+        PlayerManager.GetInstance()._onCB_ChangeEnemyCount += OnNotify_ChangeEnemyCount;
     }
     private void OnDisable()
     {
         PlayerManager.GetInstance()._onCB_ChangeGold -= UpdateGold;
+
+        PlayerManager.GetInstance()._onCB_ChangeGold -= UpdateSpawnButton;
 
         PlayerManager.GetInstance()._onCB_ChangeDia -= UpdateDia;
 
@@ -76,13 +90,21 @@ public class UIBattleStageHUD : MonoBehaviour
         {
             _battleStage._onCB_ChangeStage -= OnNotify_AlertWave;
         }
+
+        PlayerManager.GetInstance()._onCB_ChangeEnemyCount -= OnNotify_ChangeEnemyCount;
     }
     public void On_ClickSpawn()
     {
-        int _jobID = DrawCharacterID();
-        FindEnableEntityGroups(_jobID , out var _entitiesGroup);
+        if (PlayerManager.GetInstance().IsMaxSupply())
+            return;
 
-        if(_entitiesGroup == null)
+        if (!PlayerManager.GetInstance().IsEnougnGold(Defines.DrawDefaultGoldPrice))
+            return;
+
+        int _jobID = DrawCharacterID();
+        FindEnableEntityGroups(_jobID, out var _entitiesGroup);
+
+        if (_entitiesGroup == null)
         {
             DrawAnyMapNavigation(out var _Navigation);
             Spawn(_jobID, _Navigation);
@@ -93,7 +115,21 @@ public class UIBattleStageHUD : MonoBehaviour
         }
 
         PlayerManager.GetInstance().UseGold(Defines.DrawDefaultGoldPrice); // 스폰했으니 차감
+
     }
+
+    public void UpdateSpawnButton(int _value)
+    {
+        if ((_value >= Defines.DrawDefaultGoldPrice) && (!PlayerManager.GetInstance().IsMaxSupply()))
+        {
+            _Btn_Spawn.interactable = true;
+        }
+        else
+        {
+            _Btn_Spawn.interactable = false;
+        }
+    }
+
     public void OnClick_LuckyDraw()
     {
         _m_MyLuckyDraw.ProcActivationCardList(true);
@@ -133,7 +169,7 @@ public class UIBattleStageHUD : MonoBehaviour
 
         var _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player);
 
-        for(int i = 0; i < _Lt_Groups.Count; ++i)
+        for (int i = 0; i < _Lt_Groups.Count; ++i)
         {
             Vector2Int _v2_Index = _Lt_Groups[i].NvPos;
 
@@ -147,7 +183,7 @@ public class UIBattleStageHUD : MonoBehaviour
                 }
             }
 
-            for(int j = 0; j < _mLt_ElementToRemove.Count; ++j)
+            for (int j = 0; j < _mLt_ElementToRemove.Count; ++j)
             {
                 _Lt_Elements.Remove(_mLt_ElementToRemove[j]);
             }
@@ -156,7 +192,7 @@ public class UIBattleStageHUD : MonoBehaviour
 
         int suffleCount = 20;
 
-        for(int i = 0; i < suffleCount; ++i)
+        for (int i = 0; i < suffleCount; ++i)
         {
             int _prevIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
             int _nextIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
@@ -244,6 +280,11 @@ public class UIBattleStageHUD : MonoBehaviour
     public void OnNotify_AlertWave(int _waveIndex)
     {
         _m_AlertWave.OnPlayWave(_waveIndex);
+    }
+
+    public void OnNotify_ChangeEnemyCount(int _enemyCount)
+    {
+        _m_TopInfo.OnUpdateEnemySupplyCount(_enemyCount);
     }
 
     #endregion

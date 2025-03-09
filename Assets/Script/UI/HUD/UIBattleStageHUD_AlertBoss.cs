@@ -45,6 +45,8 @@ public class UIBattleStageHUD_AlertBoss : MonoBehaviour , IBattleHUDActivation
 
         _ = _factory.CreateEntity(_spawnEnitityID, _newMyBossSpawnPos, _isMySpwner, (_createEntity) =>
         {
+            PlayerManager.GetInstance().AddEnemyCount(1);
+
             _createEntity.Controller._onCB_DiedProcess -= () => { _createEntity.Controller.OnDieEvent(_createEntity); };
             _createEntity.Controller._onCB_DiedProcess += () => { _createEntity.Controller.OnDieEvent(_createEntity); };
         });

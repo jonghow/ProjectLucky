@@ -34,7 +34,7 @@ public class BattleStage : StageBase
         // 초기 인풋 매니저 세팅
 
         _mi_StageValue = 0;
-        _mi_MaxStageValue = 20;
+        _mi_MaxStageValue = 50;
         // 초기 스테이지 데이터 세팅
 
         _m_StageStateMachine = new StageStateMachine();

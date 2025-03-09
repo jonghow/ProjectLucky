@@ -88,6 +88,8 @@ public class PooledObjectWorldHealBarTag : PooledBase, IPoolBase
     {
         _m_CachedOwnerEntity.Controller._onCB_HitProcess -= SetHP;
 
+        transform.position = new Vector3(99999f, 99999f, 99999f);
+
         var _IPooledBase = this as IPoolBase;
         PoolingManager.GetInstance().CollectObject(_me_PooledType, _me_PooledInnerType, ref _IPooledBase);
     }
