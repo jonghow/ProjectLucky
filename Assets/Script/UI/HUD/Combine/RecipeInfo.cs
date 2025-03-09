@@ -322,9 +322,14 @@ public class RecipeInfo : MonoBehaviour
         int spawnID = _jobID;
 
         UserEntityFactory _entitySpanwer = new UserEntityFactory();
-        _ = _entitySpanwer.CreateEntity(spawnID, _v3_position, (entity) =>
+        _ = _entitySpanwer.CreateEntity(spawnID, _v3_position, (_createEntity) =>
         {
-            _entitiesGroup.AddEntity(ref entity);
+            _entitiesGroup.AddEntity(ref _createEntity);
+            PlayerManager.GetInstance().AddSupply(1);
+            _createEntity.Controller._ml_EntityGroupUID = _entitiesGroup.UniqueID;
+
+            _createEntity.Controller._onCB_DiedProcess -= () => { _createEntity.Controller.OnDieEvent(_createEntity); };
+            _createEntity.Controller._onCB_DiedProcess += () => { _createEntity.Controller.OnDieEvent(_createEntity); };
         });
     }
 }

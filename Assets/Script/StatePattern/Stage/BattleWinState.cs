@@ -19,7 +19,7 @@ public class BattleWinState : IStageState
 
     public void Enter()
     {
-        OpenCompleteUI();
+
     }
 
     public void Exit()
@@ -31,14 +31,26 @@ public class BattleWinState : IStageState
 
     public void Update()
     {
+        if (IsAllDeadEnemy())
+            OpenCompleteUI();
+    }
+
+    public bool IsAllDeadEnemy()
+    {
+        EntityManager.GetInstance().GetEntityList(EntityDivision.Enemy, out var _Lt);
+
+        return _Lt .Count <= 0;
     }
 
     public void OpenCompleteUI()
     {
+        InputManager.GetInstance().PopInputState();
+        InputManager.GetInstance().PushInputState(InputState.UIOpenState);
+
         var _uiDefeat = GameObject.Find($"UIPopupGameWin");
         if (_uiDefeat != null)
         {
-            var _script = _uiDefeat.GetComponent<UIPopupGameDefeat>();
+            var _script = _uiDefeat.GetComponent<UIPopupGameClear>();
             if (_script != null)
             {
                 _script.SetPopup();

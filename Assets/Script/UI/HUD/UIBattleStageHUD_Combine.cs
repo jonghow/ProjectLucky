@@ -29,6 +29,9 @@ public class UIBattleStageHUD_Combine : MonoBehaviour , IBattleHUDActivation
 
     public void ProcActivationCardList(bool isActive)
     {
+        InputManager.GetInstance().PopInputState();
+        InputManager.GetInstance().PushInputState(InputState.UIOpenState);
+
         OnInitRecipeElement();
         UpdateRecipes();
         OnSetFirstElement();
@@ -84,6 +87,9 @@ public class UIBattleStageHUD_Combine : MonoBehaviour , IBattleHUDActivation
     }
     public void OnClick_Close()
     {
+        InputManager.GetInstance().PopInputState();
+        InputManager.GetInstance().PushInputState(InputState.NormalState);
+
         this.gameObject.SetActive(false);
     }
     public void OnClick_Combine()

@@ -30,15 +30,19 @@ public class BattleState : IStageState
 
         if(IsClearMaxStage())
         {
-            ChangeState(new BattleWinState(stateMachine));
-            return;
+            if(SpawnerManager.GetInstance().GetIsSpawning() == false)
+            {
+                ChangeState(new BattleWinState(stateMachine));
+                return;
+            }
         }
-
-
-        if(SpawnerManager.GetInstance().GetIsSpawning() == false)
+        else
         {
-            ChangeState(new BattlePrepareNextWaveState(stateMachine));
-            return;
+            if (SpawnerManager.GetInstance().GetIsSpawning() == false)
+            {
+                ChangeState(new BattlePrepareNextWaveState(stateMachine));
+                return;
+            }
         }
 
         if(IsOverEnemyCount())

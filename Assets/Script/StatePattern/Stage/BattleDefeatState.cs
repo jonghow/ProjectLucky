@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GlobalGameDataSpace;
 
 public class BattleDefeatState : IStageState
 {
@@ -25,6 +26,9 @@ public class BattleDefeatState : IStageState
 
     public void OpenDefeatUI()
     {
+        InputManager.GetInstance().PopInputState();
+        InputManager.GetInstance().PushInputState(InputState.UIOpenState);
+
         var _uiDefeat = GameObject.Find($"UIPopupGameDefeat");
         if (_uiDefeat != null)
         {
