@@ -94,7 +94,19 @@ public class BattleState : IStageState
     public void PrintState()
     {
         TimerManager.GetInstance().SetTime(Defines.DefaultStageIntervalWaveTime);
-        PlayerManager.GetInstance().Command_AlertBoss(1002);
+
+        SceneLoadManager.GetInstance().GetStage(out var _stage);
+
+        if (_stage is BattleStage _battleStage)
+        {
+            int val = _battleStage.GetStageValue();
+
+            if(val % 3 == 0)
+            {
+                PlayerManager.GetInstance().Command_AlertBoss(1002);
+            }
+        }
+
         StageCountUp();
     }
 
