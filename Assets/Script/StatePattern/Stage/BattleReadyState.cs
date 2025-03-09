@@ -55,6 +55,6 @@ public class BattleReadyState : IStageState
         UnityEngine.Debug.Log($"[BattleReadyState] RivalPlayerTurnONAI");
 
         RivalPlayerAIManager.GetInstance().GetRavalPlayer(out var _rival);
-        _rival.TurnOnAI();
+        //_rival.TurnOnAI();
     }
 }

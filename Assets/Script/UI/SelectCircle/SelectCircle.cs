@@ -257,6 +257,9 @@ public class SelectCircle : MonoBehaviour
             _entitiesGroup.AddEntity(ref _createEntity);
             PlayerManager.GetInstance().AddSupply(1);
             _createEntity.Controller._ml_EntityGroupUID = _entitiesGroup.UniqueID;
+
+            _createEntity.Controller._onCB_DiedProcess -= () => { _createEntity.Controller.OnDieEvent(_createEntity); };
+            _createEntity.Controller._onCB_DiedProcess += () => { _createEntity.Controller.OnDieEvent(_createEntity); };
         });
     }
 }

@@ -27,7 +27,7 @@ public class UIBattleStageHUD : MonoBehaviour
 
     private void Awake()
     {
-        _mStr_SupplyFormat = $"{0}/{Defines.NormalSingleGameSupplyMaxCount}";
+        _mStr_SupplyFormat = "{0}/{1}";
     }
 
     public void Start()
@@ -205,9 +205,14 @@ public class UIBattleStageHUD : MonoBehaviour
         int spawnID = _jobID;
 
         UserEntityFactory _entitySpanwer = new UserEntityFactory();
-        _ = _entitySpanwer.CreateEntity(spawnID, _v3_position, (entity) =>
+        _ = _entitySpanwer.CreateEntity(spawnID, _v3_position, (_createEntity) =>
         {
-            _entitiesGroup.AddEntity(ref entity);
+            _entitiesGroup.AddEntity(ref _createEntity);
+            PlayerManager.GetInstance().AddSupply(1);
+            _createEntity.Controller._ml_EntityGroupUID = _entitiesGroup.UniqueID;
+
+            _createEntity.Controller._onCB_DiedProcess -= () => { _createEntity.Controller.OnDieEvent(_createEntity); };
+            _createEntity.Controller._onCB_DiedProcess += () => { _createEntity.Controller.OnDieEvent(_createEntity); };
         });
     }
 
@@ -225,7 +230,7 @@ public class UIBattleStageHUD : MonoBehaviour
 
     public void UpdateSupply(int _supply)
     {
-        _mText_Supply.text = string.Format(_mStr_SupplyFormat, _supply);
+        _mText_Supply.text = string.Format(_mStr_SupplyFormat, _supply, Defines.NormalSingleGameSupplyMaxCount);
     }
 
     #endregion
