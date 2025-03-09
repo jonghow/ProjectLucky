@@ -23,6 +23,9 @@ namespace GlobalGameDataSpace
         public const int DrawDiaPriceMyth = 2;// 운빨 신화 가격 
 
         public const int DrawDefaultGoldPrice = 20; // 골드 뽑기 가격
+
+        public const float DefaultInitWaitTime = 3; // 3초 기다리고 스테이지 시작
+        public const float DefaultStageIntervalWaveTime = 20; // 20초가 WaitTime
     }
 
     public static class BuildGridHelper

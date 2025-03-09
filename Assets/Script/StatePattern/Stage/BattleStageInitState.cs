@@ -4,6 +4,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GlobalGameDataSpace;
+
 public class BattleStageInitState : IStageState
 {
     private StageStateMachine stateMachine;
@@ -17,15 +19,9 @@ public class BattleStageInitState : IStageState
     {
         PrintState();
         SoundManager.GetInstance().PlayBGM($"SoundBGM_Stage");
-
-        OpenGuideUI();
-        //Debug.Log("🏠 메인 메뉴 상태 진입");
-        // UI 활성화, 버튼 이벤트 바인딩 등
     }
 
-    public void OpenGuideUI()
-    {
-    }
+
 
     public void Update()
     {

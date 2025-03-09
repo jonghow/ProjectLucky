@@ -28,41 +28,26 @@ public class BattleState : IStageState
         if (IsSpareTime())
             return;
 
-        if (SpawnerManager.GetInstance().GetIsSpawning() == true)
+        if(SpawnerManager.GetInstance().GetIsSpawning() == false)
+        {
+            ChangeState(new BattlePrepareNextWaveState(stateMachine));
             return;
-        // 스폰 중이라면 배틀 중
+        }
 
         if(IsOverEnemyCount())
         {
-            ChangeState(new BattleDefeatState(stateMachine));
             // 게임에서 정해진 갯수 이상이 스폰되었다면, 
+            ChangeState(new BattleDefeatState(stateMachine));
+            return;
         }
-
-
-        if (IsAllDeadEnemy())
-        {
-            ChangeState(new BattleWinState(stateMachine));
-        }
-        // 적군이 모두 스폰되었고 다 죽었다면 내가 이겼다.
     }
     public void Exit()
     {
         Debug.Log(" BattleState 종료");
     }
-    private bool IsDestoryRestaurant()
-    {
-
-        return false;
-        //EntityManager.GetInstance().GetEntityList(EntityDivision.MealFactory, out var _mealFactoryList);
-
-        //for (int i = 0; i < _mealFactoryList.Count; i++)
-        //{
-            
-        //}
-    }
     private bool IsSpareTime()
     {
-        if (_mf_spareTime >= 10)
+        if (_mf_spareTime >= 1)
         {
             return false;
         }
@@ -76,15 +61,6 @@ public class BattleState : IStageState
     {
         stateMachine.SetState(_stageState);
     }
-
-    public bool IsAllDeadEnemy()
-    {
-        bool _ret = false;
-
-        EntityManager.GetInstance().GetEntityList(EntityDivision.Enemy, out var _enemyList);
-        return _ret = _enemyList.Count == 0 ? true : false;
-    }
-
     public bool IsOverEnemyCount()
     {
         bool _ret = false;
@@ -92,11 +68,20 @@ public class BattleState : IStageState
 
         return _ret = _enemyList.Count >= Defines.NormalSingleGameEnemyAllowCount ? true : false;
     }
-
     public void PrintState()
     {
-        Debug.Log(" BattleState 시작");
-
+        TimerManager.GetInstance().SetTime(Defines.DefaultStageIntervalWaveTime);
         PlayerManager.GetInstance().Command_AlertBoss(1002);
+        StageCountUp();
+    }
+
+    public void StageCountUp()
+    {
+        SceneLoadManager.GetInstance().GetStage(out var _stage);
+
+        if (_stage is BattleStage _battleStage)
+        {
+            _battleStage.AddStageValue(1);
+        }
     }
 }

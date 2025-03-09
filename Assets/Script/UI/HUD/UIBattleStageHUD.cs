@@ -16,6 +16,7 @@ public class UIBattleStageHUD : MonoBehaviour
     [SerializeField] UIBattleStageHUD_LuckyDraw _m_MyLuckyDraw;
     [SerializeField] UIBattleStageHUD_Combine _m_Combine;
     [SerializeField] UIBattleStageHUD_AlertBoss _m_AlertBoss;
+    [SerializeField] UIBattleStageHUD_Wave _m_AlertWave;
 
     [SerializeField] TextMeshProUGUI _mText_Gold;
     [SerializeField] TextMeshProUGUI _mText_Dia;
@@ -49,6 +50,15 @@ public class UIBattleStageHUD : MonoBehaviour
         PlayerManager.GetInstance()._onCB_AlertBoss -= OnNotify_AlertBoss;
         PlayerManager.GetInstance()._onCB_AlertBoss += OnNotify_AlertBoss;
 
+        PlayerManager.GetInstance()._onCB_AlertBoss -= OnNotify_AlertBoss;
+        PlayerManager.GetInstance()._onCB_AlertBoss += OnNotify_AlertBoss;
+
+        SceneLoadManager.GetInstance().GetStage(out var _stage);
+        if(_stage is BattleStage _battleStage)
+        {
+            _battleStage._onCB_ChangeStage -= OnNotify_AlertWave;
+            _battleStage._onCB_ChangeStage += OnNotify_AlertWave;
+        }
     }
     private void OnDisable()
     {
@@ -59,6 +69,12 @@ public class UIBattleStageHUD : MonoBehaviour
         PlayerManager.GetInstance()._onCB_ChangeSupply -= UpdateSupply;
 
         PlayerManager.GetInstance()._onCB_AlertBoss -= OnNotify_AlertBoss;
+
+        SceneLoadManager.GetInstance().GetStage(out var _stage);
+        if (_stage is BattleStage _battleStage)
+        {
+            _battleStage._onCB_ChangeStage -= OnNotify_AlertWave;
+        }
     }
     public void On_ClickSpawn()
     {
@@ -219,10 +235,10 @@ public class UIBattleStageHUD : MonoBehaviour
     {
         _m_AlertBoss.OnPlayAlertBoss(_bossIndex);
     }
-
-
-
-
+    public void OnNotify_AlertWave(int _waveIndex)
+    {
+        _m_AlertWave.OnPlayWave(_waveIndex);
+    }
 
     #endregion
 

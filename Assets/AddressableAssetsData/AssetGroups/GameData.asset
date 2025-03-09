@@ -22,11 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f75389ff10ab55b4d878efbf319d0d75
-    m_Address: GameDB_CharacterInfo
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe50f808531f3a1408f8e68685396db3
     m_Address: GameDB_StringCommon
     m_ReadOnly: 0
@@ -34,11 +29,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fd645d314f6bb8f48b3caa1160bb8c7d
     m_Address: GameDB_MealKitInfo
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 66a18426a5676e44db0bb72cfbd7a2a3
-    m_Address: GameDB_CharacterStat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -54,6 +44,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b78aa4a4917d4ed49b878ade184d0843
     m_Address: GameDB_BuildingStat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f75389ff10ab55b4d878efbf319d0d75
+    m_Address: GameDB_CharacterInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66a18426a5676e44db0bb72cfbd7a2a3
+    m_Address: GameDB_CharacterStat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

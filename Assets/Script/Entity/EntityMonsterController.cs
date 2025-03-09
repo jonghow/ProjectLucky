@@ -36,9 +36,9 @@ public class EntityMonsterController : EntityContoller
         {
             _mLt_ProbePosition = new List<Vector3>();
             _mLt_ProbePosition.Add(new Vector3(-3.8f, -3.2f, 0f));
-            _mLt_ProbePosition.Add(new Vector3(-3.8f, 1.1f, 0f));
-            _mLt_ProbePosition.Add(new Vector3(3.8f, 1.1f, 0f));
-            _mLt_ProbePosition.Add(new Vector3(3.8f, -3.2f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(-3.8f, 0.6f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(3.65f, 0.6f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(3.65f, -3.2f, 0f));
         }
     }
 
@@ -48,9 +48,9 @@ public class EntityMonsterController : EntityContoller
         {
             _mLt_ProbePosition = new List<Vector3>();
             _mLt_ProbePosition.Add(new Vector3(-3.8f, 5.6f, 0f));
-            _mLt_ProbePosition.Add(new Vector3(-3.8f, 1.1f, 0f));
-            _mLt_ProbePosition.Add(new Vector3(3.8f, 1.1f, 0f));
-            _mLt_ProbePosition.Add(new Vector3(3.8f, 5.6f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(-3.8f, 0.6f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(3.65f, 0.6f, 0f));
+            _mLt_ProbePosition.Add(new Vector3(3.65f, 5.6f, 0f));
         }
     }
 

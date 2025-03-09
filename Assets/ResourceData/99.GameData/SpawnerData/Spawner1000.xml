@@ -9,8 +9,8 @@
         <z>0</z>
       </_mv3_Pos>
       <_mStr_SpawnIdx>1001</_mStr_SpawnIdx>
-      <_mi_SpawnCount>30</_mi_SpawnCount>
-      <_mf_InitSpawnDelay>0.5</_mf_InitSpawnDelay>
+      <_mi_SpawnCount>20</_mi_SpawnCount>
+      <_mf_InitSpawnDelay>0.8</_mf_InitSpawnDelay>
       <_mf_SpawnDelay>1</_mf_SpawnDelay>
       <_isMySpwner>false</_isMySpwner>
     </SpawnerBase>
@@ -22,8 +22,8 @@
         <z>0</z>
       </_mv3_Pos>
       <_mStr_SpawnIdx>1001</_mStr_SpawnIdx>
-      <_mi_SpawnCount>30</_mi_SpawnCount>
-      <_mf_InitSpawnDelay>0.5</_mf_InitSpawnDelay>
+      <_mi_SpawnCount>20</_mi_SpawnCount>
+      <_mf_InitSpawnDelay>0.8</_mf_InitSpawnDelay>
       <_mf_SpawnDelay>1</_mf_SpawnDelay>
       <_isMySpwner>true</_isMySpwner>
     </SpawnerBase>

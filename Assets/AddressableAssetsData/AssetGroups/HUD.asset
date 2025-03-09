@@ -17,7 +17,7 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: f9b98d14820127743bd8d6ac54490e41
   m_SerializeEntries:
-  - m_GUID: 2935431dd3bfcf4498602c4f6eb099d6
+  - m_GUID: 1f6e7cd22a759d146a27ff9f8dd76e87
     m_Address: UI_BattleHUD
     m_ReadOnly: 0
     m_SerializedLabels: []

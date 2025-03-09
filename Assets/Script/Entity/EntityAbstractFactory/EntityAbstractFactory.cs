@@ -290,26 +290,6 @@ public class UserEntityFactory : EntityFactoryBase
             _userContoller.Pos3D = _position;
             // 포지션 세팅
 
-            SceneLoadManager.GetInstance().GetStage(out var _stage);
-
-            if(_stage is BattleStage _battleStage)
-            {
-                _battleStage.GetStageMachine(out var _machine);
-                _machine.GetCurrentState(out var _IStage);
-
-                if(_IStage is BattleState)
-                {
-                    _userContoller.TurnOnAI();
-                }
-                else
-                {
-                    _userContoller.TurnOffAI();
-                }
-            }
-            // 스테이지 상태 확인하고 AI 킬지 마지막확인
-
-
-
             _obj.name = $"{_modelObj.name.Replace("(Clone)", "")}_{uUID}";
             // 이름 세팅
 
@@ -460,26 +440,6 @@ public class RivalEntityFactory : EntityFactoryBase
 
             _userContoller.Pos3D = _position;
             // 포지션 세팅
-
-            SceneLoadManager.GetInstance().GetStage(out var _stage);
-
-            if (_stage is BattleStage _battleStage)
-            {
-                _battleStage.GetStageMachine(out var _machine);
-                _machine.GetCurrentState(out var _IStage);
-
-                if (_IStage is BattleState)
-                {
-                    _userContoller.TurnOnAI();
-                }
-                else
-                {
-                    _userContoller.TurnOffAI();
-                }
-            }
-            // 스테이지 상태 확인하고 AI 킬지 마지막확인
-
-
 
             _obj.name = $"{_modelObj.name.Replace("(Clone)", "")}_{uUID}";
             // 이름 세팅

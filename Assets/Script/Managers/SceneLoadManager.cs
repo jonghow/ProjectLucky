@@ -66,6 +66,7 @@ public class SceneLoadManager
 
         await CreateHUD(_stageID);
         await MapManager.GetInstance().LoadStage(1001);
+        await RivalMapManager.GetInstance().LoadStage(1002);
         await SpawnerManager.GetInstance().LoadSpawner(1000,0);
 
         _m_CurrentStage.InitStage();

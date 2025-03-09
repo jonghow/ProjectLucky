@@ -153,6 +153,7 @@
     <Compile Include="Assets\Script\Managers\PoolingManager.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalDeBuffDefenceDown.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalBase.cs" />
+    <Compile Include="Assets\Script\StatePattern\Stage\BattlePrepareNextWaveState.cs" />
     <Compile Include="Assets\Script\UI\UIPopupTutorial\UIPopupTutorial.cs" />
     <Compile Include="Assets\Script\Entity\ActionPlayer\ActionInfo\ActionInfoBase.cs" />
     <Compile Include="Assets\Script\Managers\InventoryManager.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Assets\Script\Managers\GameDataManager\GameDataManager_DrawHandCard.cs" />
     <Compile Include="Assets\Script\UI\UIProtoDevGuide\UIProtoDevGuide.cs" />
     <Compile Include="Assets\Script\Utilities\ClientUtility\ClientUtility_Model.cs" />
+    <Compile Include="Assets\Script\Managers\TimerManager.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalDeBuffAttackDown.cs" />
     <Compile Include="Assets\Script\Utilities\MathUtility\MathUtility_Vector.cs" />
     <Compile Include="Assets\Script\Managers\PlayerManager\PlayerManager_State.cs" />
@@ -216,6 +218,7 @@
     <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_LuckyDraw.cs" />
     <Compile Include="Assets\Script\Managers\ManagerCreator.cs" />
     <Compile Include="Assets\Script\Managers\InputCommandClass\StateBackCommand.cs" />
+    <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_Wave.cs" />
     <Compile Include="Assets\Script\BattleRoutines\BattleCalculator.cs" />
   </ItemGroup>
   <ItemGroup>

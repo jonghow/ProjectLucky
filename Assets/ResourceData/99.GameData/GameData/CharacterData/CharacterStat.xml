@@ -256,7 +256,7 @@
 <Wis>13</Wis>
 <Guts>15</Guts>
 <Men>13</Men>
-<MaxHP>40</MaxHP>
+<MaxHP>100</MaxHP>
 <AttackRange>1.4</AttackRange>
 </Item>
 <Item>
@@ -266,7 +266,7 @@
 <Wis>13</Wis>
 <Guts>15</Guts>
 <Men>13</Men>
-<MaxHP>70</MaxHP>
+<MaxHP>150</MaxHP>
 <AttackRange>1.4</AttackRange>
 </Item>
 <Item>

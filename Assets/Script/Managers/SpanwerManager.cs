@@ -170,7 +170,6 @@ public class SpawnerManager
         await UniTask.WaitUntil(() => _isLoaded == true);
         _onCBComplete?.Invoke();
     }
-
     public void CommandAllSpawnStart()
     {
         foreach(var _spawnerPair in _mDict_SpawnerInfo)
@@ -179,6 +178,30 @@ public class SpawnerManager
             _ingameSpawner.StartSpawn();
         }
     }
+
+    private int _mi_SpawnCompleteCount = 0;
+
+    public void AddSpawnComplete()
+    {
+        _mi_SpawnCompleteCount += 1;
+    }
+
+    private void CheckAllSpawnCount()
+    {
+        if(_mDict_SpawnerInfo.Count == _mi_SpawnCompleteCount)
+        {
+            SceneLoadManager.GetInstance().GetStage(out var _stageBase);
+            if(_stageBase is BattleStage _battleStage)
+            {
+                int _stageStep = _battleStage.GetStageValue();
+                _stageStep += 1;
+
+                _ = LoadSpawner(1000, _stageStep);
+            }
+        }
+    }
+
+
 
     public void CommandAllSpawnStop()
     {
@@ -189,7 +212,6 @@ public class SpawnerManager
             _ingameSpawner.ClearSpawnCount();
         }
     }
-
     public bool GetIsSpawning()
     {
         bool _ret = false;
