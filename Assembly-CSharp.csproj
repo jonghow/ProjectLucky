@@ -62,9 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Managers\ManagerContainer.cs" />
     <Compile Include="Assets\Script\UI\SelectedArrow\SelectedArrow.cs" />
+    <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_Combine.cs" />
     <Compile Include="Assets\Script\Entity\EntityStatus.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
-    <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_Combine.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalSystem.cs" />
     <Compile Include="Assets\Script\Managers\UIManager.cs" />
     <Compile Include="Assets\Script\Managers\PlayerManager\PlayerManager.cs" />
@@ -100,10 +100,10 @@
     <Compile Include="Assets\Script\Abnormal\AbnormalConfused.cs" />
     <Compile Include="Assets\Script\GenericCollectionExtension\GenericCollection_Queue\GenericCollectionExtension_Stack.cs" />
     <Compile Include="Assets\Script\Spawner\SpawnerVisualizer.cs" />
-    <Compile Include="Assets\Script\StatePattern\Stage\BattleDefeatState.cs" />
+    <Compile Include="Assets\Script\RivalPlayerAI\RivalPlayerAI.cs" />
     <Compile Include="Assets\Script\UI\HUD\Combine\RecipeElement.cs" />
     <Compile Include="Assets\Script\Enums\GlobalType_Job.cs" />
-    <Compile Include="Assets\Script\RivalPlayerAI\RivalPlayerAI.cs" />
+    <Compile Include="Assets\Script\StatePattern\Stage\BattleDefeatState.cs" />
     <Compile Include="Assets\Script\UI\HUD\InterFaceBattleHUD\IBattleHUDActivation.cs" />
     <Compile Include="Assets\Script\BehaviorTree\BehaviorProduct\CharacterBehavior\EntityBehaviorNoviceType\EntityBehaviorNoviceType.cs" />
     <Compile Include="Assets\Script\UI\UIHandCard\UIHandCard.cs" />
@@ -211,8 +211,8 @@
     <Compile Include="Assets\Script\Managers\InputCommandClass\EntitySelectCommand.cs" />
     <Compile Include="Assets\Script\Navigation\NavigationVisualizer.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalBuffAttackUp.cs" />
-    <Compile Include="Assets\Script\Managers\ManagerCreator.cs" />
     <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_LuckyDraw.cs" />
+    <Compile Include="Assets\Script\Managers\ManagerCreator.cs" />
     <Compile Include="Assets\Script\Managers\InputCommandClass\StateBackCommand.cs" />
     <Compile Include="Assets\Script\BattleRoutines\BattleCalculator.cs" />
   </ItemGroup>

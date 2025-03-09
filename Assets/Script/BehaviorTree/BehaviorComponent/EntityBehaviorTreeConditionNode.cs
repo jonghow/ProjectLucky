@@ -614,10 +614,30 @@ namespace EntityBehaviorTree
 
         public BTNodeState Check()
         {
-            return IsEnableCombine() ? BTNodeState.Success : BTNodeState.Failure;
+            bool _ret = false;
+
+            if(IsEnableCombineLowerHero())
+            {
+                _ret = true;
+            }
+            else if (IsEnableCombineUpperHero())
+            {
+                _ret = true;
+            }
+            else
+            {
+                m_CacheRivalPlayerAI.SetCombineID(0);
+                m_CacheRivalPlayerAI.SetCombineUID(0);
+                m_CacheRivalPlayerAI.SetRecipeCombine(false);
+            }
+
+            // Lower에서 Enable Combine 개체를 찾지 못하면, Upper 도 탐색 해본다.
+            // 만약 Lower Upper 다 없다면, 이건 이제 가능한 것이 없음
+
+            return _ret ? BTNodeState.Success : BTNodeState.Failure;
         }
 
-        public bool IsEnableCombine()
+        public bool IsEnableCombineLowerHero()
         {
             bool _ret = false;
 
@@ -627,14 +647,41 @@ namespace EntityBehaviorTree
             {
                 EntitiesGroup _groups = _Lt_Groups[i];
 
-                if(_groups.Count == 3)
+                if(_groups.GetEntityGrade() < EntityGrade.Hero)
                 {
-                    int _mi_ID = _groups.ID;
-                    long _ml_UID = _groups.UniqueID;
+                    if (_groups.Count == 3)
+                    {
+                        int _mi_ID = _groups.ID;
+                        long _ml_UID = _groups.UniqueID;
 
-                    m_CacheRivalPlayerAI.SetCombineID(_mi_ID);
-                    m_CacheRivalPlayerAI.SetCombineUID(_ml_UID);
+                        m_CacheRivalPlayerAI.SetCombineID(_mi_ID);
+                        m_CacheRivalPlayerAI.SetCombineUID(_ml_UID);
+                        m_CacheRivalPlayerAI.SetRecipeCombine(false);
 
+                        _ret = true;
+                        break;
+                    }
+                }
+            }
+
+            return _ret;
+        }
+
+        public bool IsEnableCombineUpperHero()
+        {
+            bool _ret = false;
+
+            GameDataManager.GetInstance().GetRecipeDatasToList(out List<GameDB_MealRecipe> _Lt_recipe);
+
+            for(int i = 0; i < _Lt_recipe.Count; ++i)
+            {
+                GameDB_MealRecipe _recipe = _Lt_recipe[i];
+
+                if(IsCollectRecipe(_recipe) == true)
+                {
+                    m_CacheRivalPlayerAI.SetCombineID(_recipe._mi_ID);
+                    m_CacheRivalPlayerAI.SetCombineUID(0);
+                    m_CacheRivalPlayerAI.SetRecipeCombine(true);
                     _ret = true;
                     break;
                 }
@@ -642,6 +689,49 @@ namespace EntityBehaviorTree
 
             return _ret;
         }
+
+        public bool IsCollectRecipe(GameDB_MealRecipe _recipe)
+        {
+            bool _ret = false;
+
+            List<EntitiesGroup> _Lt_Entities = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Rival);
+
+            int[] _mArr_Recipe = _recipe.Arr_Recipe;
+
+            List<EntitiesGroup> _Lt_UseCandidate_CountSindle = new List<EntitiesGroup>();
+            List<EntitiesGroup> _Lt_UseCandidate_CountMulti = new List<EntitiesGroup>();
+
+            int _passCount = 0;
+
+            for (int i = 0; i < _mArr_Recipe.Length; ++i)
+            {
+                int _characterID = _mArr_Recipe[i];
+
+                if(_Lt_Entities.Exists(rhs => rhs.ID == _characterID))
+                {
+                    var _entityGroup = _Lt_Entities.Find(rhs => rhs.ID == _characterID);
+                    if(_entityGroup.Count ==1)
+                    {
+                        _Lt_UseCandidate_CountSindle.Add(_entityGroup);
+                        // 용병 삭제
+                    }
+                    else
+                    {
+                        _Lt_UseCandidate_CountMulti.Add(_entityGroup);
+                    }
+                    ++_passCount;
+                }
+            }
+
+            if (_passCount == _mArr_Recipe.Length)  // 통과 카운터와 재료 갯수가 맞지 않으면 수행하지 않음
+                _ret = true;
+
+            return _ret;
+        }
+
+
+
+
 
         public void Reset()
         {

@@ -1145,8 +1145,122 @@ namespace EntityBehaviorTree
 
         public void RunCombine()
         {
-            DeleteCombineMercenary();  // 용병 삭제
+            bool _isRecipeCombine = m_CacheRivalPlayerAI.GetRecipeCombine();
 
+            if (_isRecipeCombine)
+            {
+                Execute_RecipeCombine();
+            }
+            else
+            {
+                // 여기가 단순 MergeCombine
+                Execute_MergeCombine();
+                
+            }
+
+
+
+
+        }
+        public void Execute_MergeCombine()
+        {
+            DeleteMergeCombineMercenary();  // 용병 삭제
+            SpawnMergeMercenary();
+        }
+
+        public void Execute_RecipeCombine()
+        {
+            DeleteRecipeCombineMercenary();
+            SpawnRecipeMercenary();
+        }
+        public void DeleteMergeCombineMercenary()
+        {
+            int _jobID = m_CacheRivalPlayerAI.GetCombineID();
+            long _uid = m_CacheRivalPlayerAI.GetCombineUID();
+
+            EntityManager.GetInstance().NewRemoveGroup(EntityDivision.Rival, _jobID, _uid);
+        }
+        public void DeleteRecipeCombineMercenary()
+        {
+            List<EntitiesGroup> _Lt_Entities = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Rival);
+
+            List<EntitiesGroup> _Lt_UseCandidate_CountSindle = new List<EntitiesGroup>();
+            List<EntitiesGroup> _Lt_UseCandidate_CountMulti = new List<EntitiesGroup>();
+
+            int _recipeID = m_CacheRivalPlayerAI.GetCombineID();
+            GameDataManager.GetInstance().GetRecipeData(_recipeID, out GameDB_MealRecipe _recipe);
+
+            int[] _mArr_Recipe = _recipe.Arr_Recipe;
+            int _passCount = 0;
+
+            for (int i = 0; i < _mArr_Recipe.Length; ++i)
+            {
+                int _characterID = _mArr_Recipe[i];
+
+                for (int j = 0; j < _Lt_Entities.Count; ++j)
+                {
+                    var _groups = _Lt_Entities[j];
+
+                    if (_groups.ID == _characterID)
+                    {
+                        if (_groups.Count == 1)
+                        {
+                            _Lt_UseCandidate_CountSindle.Add(_groups);
+                            // 용병 삭제
+                        }
+                        else
+                        {
+                            _Lt_UseCandidate_CountMulti.Add(_groups);
+                        }
+
+                        ++_passCount;
+                        break;
+                    }
+                }
+            }
+            // 여긴 용병 후보 대기 구문
+
+            if (_passCount != _mArr_Recipe.Length) return; // 통과 카운터와 재료 갯수가 맞지 않으면 수행하지 않음
+
+            for (int i = 0; i < _Lt_UseCandidate_CountSindle.Count; ++i)
+            {
+                int _jobID = _Lt_UseCandidate_CountSindle[i].ID;
+                long _uid = _Lt_UseCandidate_CountSindle[i].UniqueID;
+
+                EntityManager.GetInstance().NewRemoveGroup(EntityDivision.Rival, _jobID, _uid);
+            }
+            // 하나 있는 곳 삭제
+
+            for (int i = 0; i < _Lt_UseCandidate_CountMulti.Count; ++i)
+            {
+                _Lt_UseCandidate_CountMulti[i].RemoveLastEntity();
+            }
+            // 둘 이상 있는 곳 삭제
+        }
+        public void SpawnRecipeMercenary()
+        {
+            int _recipeID = m_CacheRivalPlayerAI.GetCombineID();
+            GameDataManager.GetInstance().GetRecipeData(_recipeID, out GameDB_MealRecipe _recipe);
+
+            int _createJobID = _recipe._mi_MealKitID;
+
+            FindEnableEntityGroups(_createJobID, out var _entitiesGroup);
+
+            if (_entitiesGroup == null)
+            {
+                DrawAnyMapNavigation(out var _Navigation);
+                Spawn(_createJobID, _Navigation);
+            }
+            else
+            {
+                Spawn(_createJobID, _entitiesGroup);
+            }
+
+            UnityLogger.GetInstance().Log($"Execute Recipe Combine!! recipe ID :: {_recipeID} , CreateID :: {_createJobID}");
+        }
+
+        public void SpawnMergeMercenary()
+        {
             int _jobID = m_CacheRivalPlayerAI.GetCombineID();
             GameDataManager.GetInstance().GetGameDBCharacterInfo(_jobID, out var _ret);
 
@@ -1166,15 +1280,6 @@ namespace EntityBehaviorTree
                 Spawn(_drawJobID, _entitiesGroup);
             }
         }
-
-        public void DeleteCombineMercenary()
-        {
-            int _jobID =  m_CacheRivalPlayerAI.GetCombineID();
-            long  _uid = m_CacheRivalPlayerAI.GetCombineUID();
-
-            EntityManager.GetInstance().NewRemoveGroup(EntityDivision.Rival, _jobID, _uid);
-        }
-
         public int DrawCharacterID(EntityGrade _drawGrade)
         {
             List<GameDB_CharacterInfo> _Lt_Infos;
@@ -1194,13 +1299,11 @@ namespace EntityBehaviorTree
 
             return _Lt_Infos[0]._mi_CharacterID;
         }
-
         public void FindEnableEntityGroups(int _jobID, out EntitiesGroup _ret)
         {
             _ret = null;
             EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Rival, _jobID, out _ret);
         }
-
         public void DrawAnyMapNavigation(out NavigationElement _retNavigation)
         {
             RivalMapManager.GetInstance().GetNavigationElements(out var _dictElements);
@@ -1243,7 +1346,6 @@ namespace EntityBehaviorTree
             // 셔플 완료
             _retNavigation = _Lt_Elements[0];
         }
-
         public void Spawn(int _jobID, NavigationElement _selectedNavigation)
         {
             if (_selectedNavigation == null)
@@ -1291,7 +1393,6 @@ namespace EntityBehaviorTree
                 _createEntity.Controller._onCB_DiedProcess += () => { _createEntity.Controller.OnDieEvent(_createEntity); };
             });
         }
-
     }
 }
 

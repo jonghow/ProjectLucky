@@ -41,12 +41,12 @@ public class EntitiesGroup : MonoBehaviour
 
     public float GetEntityAttackRange()
     {
-        return _m_Entities[0] == null ? 1f : _m_Entities[0].Info.AttackRange;
+        return _m_Entities.Count <= 0 ? 1f : _m_Entities[0].Info.AttackRange;
     }
 
     public EntityGrade GetEntityGrade()
     {
-        var _jobID = _m_Entities[0] == null ? 1 : _m_Entities[0].CharacterID;
+        var _jobID = _m_Entities.Count <= 0? 1 : _m_Entities[0].CharacterID;
 
         GameDataManager.GetInstance().GetGameDBCharacterInfo(_jobID, out var Info);
 

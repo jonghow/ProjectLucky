@@ -23,11 +23,16 @@ public class RivalPlayerAI : MonoBehaviour
     int _mi_CombineID;
     long _ml_CombineUID;
 
+    bool _mb_RecipeCombine; 
+    // Recipe Combine 인지
+    // Merge Combine 인지
+
     public void Start()
     {
         //TurnOnAI();
         _mi_CombineID = 0;
         _ml_CombineUID = 0;
+        _mb_RecipeCombine = false;
 
         TurnOffAI();
         SetDrawTarget(0);
@@ -54,9 +59,14 @@ public class RivalPlayerAI : MonoBehaviour
     {
         _ml_CombineUID = _combineUID;
     }
+    public void SetRecipeCombine(bool _isRecipeCombine)
+    {
+        _mb_RecipeCombine = _isRecipeCombine;
+    }
 
     public int GetCombineID() => _mi_CombineID;
     public long GetCombineUID() => _ml_CombineUID;
+    public bool GetRecipeCombine() => _mb_RecipeCombine;
     public int GetDrawTarget() => _mi_DrawTarget;
     public void AISetUp()
     {

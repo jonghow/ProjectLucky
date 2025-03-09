@@ -45,7 +45,7 @@ public class PooledObjectFireball : PooledBase , IPoolBase
 
         this.transform.position = _m_CachedShooterEntity.Controller.Pos3D;
         _mv3_TargetPosition = _m_CachedEffectorEntity.Controller.Pos3D;
-        _mf_MoveSpeed = 3.8f;
+        _mf_MoveSpeed = 15f;
 
         Regist();
         //transform.LookAt(_m_CachedEffectorEntity.transform.position);
@@ -63,6 +63,7 @@ public class PooledObjectFireball : PooledBase , IPoolBase
         }
         else if(IsReachedTargetPos())
         {
+            BattleRoutine.OnHitUpdateBattleRoutine(_ml_shooterUID, _ml_effectorUID);
             Release();
         }
         else
