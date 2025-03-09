@@ -272,11 +272,11 @@
 <Item>
 <ID>1003</ID>
 <Str>10</Str>
-<Dex>6</Dex>
+<Dex>8</Dex>
 <Wis>13</Wis>
 <Guts>15</Guts>
 <Men>13</Men>
-<MaxHP>120</MaxHP>
+<MaxHP>200</MaxHP>
 <AttackRange>1.4</AttackRange>
 </Item>
 <Item>

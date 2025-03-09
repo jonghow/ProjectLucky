@@ -83,6 +83,7 @@ namespace GlobalGameDataSpace
         None = 1000,
         SpoiledSlime ,
         SpoiledSlime2,
+        SpoiledSlime3,
 
         MAX
     }

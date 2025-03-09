@@ -249,6 +249,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1015.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1007.xml" />
+    <None Include="Assets\ResourceData\99.GameData\AnimData\EnemyActData\Act_Enemy_SpoiledSlime3.xml" />
     <None Include="Assets\ResourceData\99.GameData\AnimData\Act_TteokbokkiFactory.xml" />
     <None Include="Assets\ResourceData\99.GameData\GameData\CharacterData\CharacterStat.xml" />
     <None Include="Assets\ResourceData\99.GameData\SpawnerData\Spawner1012.xml" />

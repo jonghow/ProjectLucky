@@ -8,7 +8,7 @@
         <y>5.6</y>
         <z>0</z>
       </_mv3_Pos>
-      <_mStr_SpawnIdx>1001</_mStr_SpawnIdx>
+      <_mStr_SpawnIdx>1003</_mStr_SpawnIdx>
       <_mi_SpawnCount>20</_mi_SpawnCount>
       <_mf_InitSpawnDelay>0.8</_mf_InitSpawnDelay>
       <_mf_SpawnDelay>1</_mf_SpawnDelay>
@@ -21,7 +21,7 @@
         <y>-3.2</y>
         <z>0</z>
       </_mv3_Pos>
-      <_mStr_SpawnIdx>1001</_mStr_SpawnIdx>
+      <_mStr_SpawnIdx>1003</_mStr_SpawnIdx>
       <_mi_SpawnCount>20</_mi_SpawnCount>
       <_mf_InitSpawnDelay>0.8</_mf_InitSpawnDelay>
       <_mf_SpawnDelay>1</_mf_SpawnDelay>
