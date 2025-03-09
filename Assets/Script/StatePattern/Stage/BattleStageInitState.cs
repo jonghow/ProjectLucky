@@ -39,5 +39,7 @@ public class BattleStageInitState : IStageState
     public void PrintState()
     {
         UnityLogger.GetInstance().Log($"현재 상태는 BattleStageInitState 입니다.");
+
+        PlayerManager.GetInstance().Command_AlertBoss(1002);
     }
 }

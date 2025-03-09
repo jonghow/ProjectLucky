@@ -96,5 +96,7 @@ public class BattleState : IStageState
     public void PrintState()
     {
         Debug.Log(" BattleState 시작");
+
+        PlayerManager.GetInstance().Command_AlertBoss(1002);
     }
 }

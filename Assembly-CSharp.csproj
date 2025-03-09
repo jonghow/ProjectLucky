@@ -100,6 +100,7 @@
     <Compile Include="Assets\Script\Abnormal\AbnormalConfused.cs" />
     <Compile Include="Assets\Script\GenericCollectionExtension\GenericCollection_Queue\GenericCollectionExtension_Stack.cs" />
     <Compile Include="Assets\Script\Spawner\SpawnerVisualizer.cs" />
+    <Compile Include="Assets\Script\UI\HUD\UIBattleStageHUD_AlertBoss.cs" />
     <Compile Include="Assets\Script\RivalPlayerAI\RivalPlayerAI.cs" />
     <Compile Include="Assets\Script\UI\HUD\Combine\RecipeElement.cs" />
     <Compile Include="Assets\Script\Enums\GlobalType_Job.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="Assets\Script\Utilities\ClientUtility\ClientUtility_Model.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalDeBuffAttackDown.cs" />
     <Compile Include="Assets\Script\Utilities\MathUtility\MathUtility_Vector.cs" />
+    <Compile Include="Assets\Script\Managers\PlayerManager\PlayerManager_State.cs" />
     <Compile Include="Assets\Script\StatePattern\Stage\BattlePauseState.cs" />
     <Compile Include="Assets\Script\Managers\PlayerManager\PlayerManager_StructureBuild.cs" />
     <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />

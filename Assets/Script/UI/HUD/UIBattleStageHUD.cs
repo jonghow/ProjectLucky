@@ -15,6 +15,7 @@ public class UIBattleStageHUD : MonoBehaviour
     /// </summary>
     [SerializeField] UIBattleStageHUD_LuckyDraw _m_MyLuckyDraw;
     [SerializeField] UIBattleStageHUD_Combine _m_Combine;
+    [SerializeField] UIBattleStageHUD_AlertBoss _m_AlertBoss;
 
     [SerializeField] TextMeshProUGUI _mText_Gold;
     [SerializeField] TextMeshProUGUI _mText_Dia;
@@ -44,6 +45,10 @@ public class UIBattleStageHUD : MonoBehaviour
 
         PlayerManager.GetInstance()._onCB_ChangeSupply -= UpdateSupply;
         PlayerManager.GetInstance()._onCB_ChangeSupply += UpdateSupply;
+
+        PlayerManager.GetInstance()._onCB_AlertBoss -= OnNotify_AlertBoss;
+        PlayerManager.GetInstance()._onCB_AlertBoss += OnNotify_AlertBoss;
+
     }
     private void OnDisable()
     {
@@ -52,6 +57,8 @@ public class UIBattleStageHUD : MonoBehaviour
         PlayerManager.GetInstance()._onCB_ChangeDia -= UpdateDia;
 
         PlayerManager.GetInstance()._onCB_ChangeSupply -= UpdateSupply;
+
+        PlayerManager.GetInstance()._onCB_AlertBoss -= OnNotify_AlertBoss;
     }
     public void On_ClickSpawn()
     {
@@ -203,6 +210,19 @@ public class UIBattleStageHUD : MonoBehaviour
     {
         _mText_Supply.text = string.Format(_mStr_SupplyFormat, _supply);
     }
+
+    #endregion
+
+    #region AlertBoss
+
+    public void OnNotify_AlertBoss(int _bossIndex)
+    {
+        _m_AlertBoss.OnPlayAlertBoss(_bossIndex);
+    }
+
+
+
+
 
     #endregion
 
