@@ -12,16 +12,16 @@ public partial class PlayerManager
 
     private int _mi_Gold; 
 
-    public void AddFreshness(int _gold)
+    public void AddGold(int _gold)
     {
         _mi_Gold += _gold;
         _onCB_ChangeGold?.Invoke(_mi_Gold);
     }
-    public int GetFreshness() => _mi_Gold;
-    public bool IsEnougnFreshness(int _freshness) => _mi_Gold >= _freshness;
-    public void UseFreshness(int _useFreshness)
+    public int GetGold() => _mi_Gold;
+    public bool IsEnougnGold(int _gold) => _mi_Gold >= _gold;
+    public void UseGold(int _gold)
     {
-        _mi_Gold -= _useFreshness;
+        _mi_Gold -= _gold;
         _onCB_ChangeGold?.Invoke(_mi_Gold);
     }
 

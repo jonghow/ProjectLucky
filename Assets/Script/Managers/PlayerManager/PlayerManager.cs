@@ -16,4 +16,9 @@ public partial class PlayerManager
 
         return Instance;
     }
+
+    public PlayerManager()
+    {
+        _mi_Gold = 100;
+    }
 }

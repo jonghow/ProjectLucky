@@ -22,7 +22,7 @@ namespace GlobalGameDataSpace
         public const int DrawDiaPriceHero = 1; // ¿î»¡ ¿µ¿õ °¡°Ý
         public const int DrawDiaPriceMyth = 2;// ¿î»¡ ½ÅÈ­ °¡°Ý 
 
-        public const int DrawDefaultGoldPrice = 50; // °ñµå »Ì±â °¡°Ý
+        public const int DrawDefaultGoldPrice = 20; // °ñµå »Ì±â °¡°Ý
     }
 
     public static class BuildGridHelper

@@ -112,7 +112,7 @@ public class EntityMonsterController : EntityContoller
 
         if (_m_IsKillMine == true)
         {
-            PlayerManager.GetInstance().AddFreshness(_freshness);
+            PlayerManager.GetInstance().AddGold(_freshness);
             PlayerManager.GetInstance().AddDia(_dia);
         }
         else

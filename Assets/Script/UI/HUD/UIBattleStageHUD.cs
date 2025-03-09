@@ -6,6 +6,7 @@ using Cysharp.Threading.Tasks;
 using System.Threading;
 using GlobalGameDataSpace;
 using System.Linq;
+using TMPro;
 
 public class UIBattleStageHUD : MonoBehaviour
 {
@@ -15,14 +16,43 @@ public class UIBattleStageHUD : MonoBehaviour
     [SerializeField] UIBattleStageHUD_LuckyDraw _m_MyLuckyDraw;
     [SerializeField] UIBattleStageHUD_Combine _m_Combine;
 
+    [SerializeField] TextMeshProUGUI _mText_Gold;
+    [SerializeField] TextMeshProUGUI _mText_Dia;
+    [SerializeField] TextMeshProUGUI _mText_Supply;
+
+    [SerializeField] string _mStr_SupplyFormat;
+
+    private void Awake()
+    {
+        _mStr_SupplyFormat = $"{0}/{Defines.NormalSingleGameSupplyMaxCount}";
+    }
+
+    public void Start()
+    {
+        UpdateGold(PlayerManager.GetInstance().GetGold());
+        UpdateDia(PlayerManager.GetInstance().GetDia());
+        UpdateSupply(PlayerManager.GetInstance().GetSupply());
+    }
+
     private void OnEnable()
     {
+        PlayerManager.GetInstance()._onCB_ChangeGold -= UpdateGold;
+        PlayerManager.GetInstance()._onCB_ChangeGold += UpdateGold;
+
+        PlayerManager.GetInstance()._onCB_ChangeDia -= UpdateDia;
+        PlayerManager.GetInstance()._onCB_ChangeDia += UpdateDia;
+
+        PlayerManager.GetInstance()._onCB_ChangeSupply -= UpdateSupply;
+        PlayerManager.GetInstance()._onCB_ChangeSupply += UpdateSupply;
     }
     private void OnDisable()
     {
-       
-    }
+        PlayerManager.GetInstance()._onCB_ChangeGold -= UpdateGold;
 
+        PlayerManager.GetInstance()._onCB_ChangeDia -= UpdateDia;
+
+        PlayerManager.GetInstance()._onCB_ChangeSupply -= UpdateSupply;
+    }
     public void On_ClickSpawn()
     {
         int _jobID = DrawCharacterID();
@@ -37,18 +67,17 @@ public class UIBattleStageHUD : MonoBehaviour
         {
             Spawn(_jobID, _entitiesGroup);
         }
-    }
 
+        PlayerManager.GetInstance().UseGold(Defines.DrawDefaultGoldPrice); // 스폰했으니 차감
+    }
     public void OnClick_LuckyDraw()
     {
         _m_MyLuckyDraw.ProcActivationCardList(true);
     }
-
     public void OnClick_Combine()
     {
         _m_Combine.ProcActivationCardList(true);
     }
-
     public int DrawCharacterID()
     {
         List<GameDB_CharacterInfo> _Lt_Infos;
@@ -157,4 +186,24 @@ public class UIBattleStageHUD : MonoBehaviour
             _entitiesGroup.AddEntity(ref entity);
         });
     }
+
+    #region GoodsInfo
+
+    public void UpdateGold(int _gold)
+    {
+        _mText_Gold.text = _gold.ToString();
+    }
+
+    public void UpdateDia(int _dia)
+    {
+        _mText_Dia.text = _dia.ToString();
+    }
+
+    public void UpdateSupply(int _supply)
+    {
+        _mText_Supply.text = string.Format(_mStr_SupplyFormat, _supply);
+    }
+
+    #endregion
+
 }

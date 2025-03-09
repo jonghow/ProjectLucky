@@ -2713,6 +2713,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _m_MyLuckyDraw: {fileID: 1358255976}
   _m_Combine: {fileID: 631087853}
+  _mText_Gold: {fileID: 712918982}
+  _mText_Dia: {fileID: 1858392120}
+  _mText_Supply: {fileID: 49574819}
+  _mStr_SupplyFormat: 
 --- !u!1 &608626739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,7 +3912,7 @@ GameObject:
   - component: {fileID: 959537170}
   - component: {fileID: 959537169}
   m_Layer: 5
-  m_Name: Img_Gold
+  m_Name: Img_Supply
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6134,7 +6138,7 @@ GameObject:
   - component: {fileID: 1334632247}
   - component: {fileID: 1334632246}
   m_Layer: 5
-  m_Name: Img_Gold
+  m_Name: Img_Dia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

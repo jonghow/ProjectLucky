@@ -124,7 +124,7 @@ public class UIProtoDevGuide : MonoBehaviour
 
     public void OnClick_ApplyFreshness(int _freshness)
     {
-        PlayerManager.GetInstance().AddFreshness(_freshness);
+        PlayerManager.GetInstance().AddGold(_freshness);
     }
 
     public void Update()
