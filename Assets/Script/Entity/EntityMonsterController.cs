@@ -114,6 +114,11 @@ public class EntityMonsterController : EntityContoller
         {
             PlayerManager.GetInstance().AddGold(_freshness);
             PlayerManager.GetInstance().AddDia(_dia);
+
+            //내가 죽였으면 내 HUD에 붙인다.
+            PoolingManager.GetInstance().GetPooledObject(PooledObject.WO,PooledObjectInner.WO_CoinCountTag, out var _ret);
+            var _pooledObject = _ret as PooledObjectCoinCountTag;
+            _pooledObject.SetData(_freshness);
         }
         else
         {

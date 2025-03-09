@@ -35,6 +35,9 @@ public class UIManager
 
     public GameObject _m_Canvas;
     public GameObject _m_WOCanvas;
+    public GameObject _m_HUDCanvas;
+
+    public GameObject _m_CoinCountPivot;
 
     public void GetCanvas(out GameObject _ret)
     {
@@ -52,5 +55,30 @@ public class UIManager
         }
 
         _ret = _m_WOCanvas;
+    }
+
+    public void GetHUDCanvas(out GameObject _ret)
+    {
+        if (_m_HUDCanvas == null)
+        {
+            GetCanvas(out var _parent);
+            _m_HUDCanvas = _parent.transform.Find($"HUD").gameObject;
+        }
+
+        _ret = _m_HUDCanvas;
+    }
+
+    public void GetCoinCountPivot(out GameObject _ret)
+    {
+        if(_m_CoinCountPivot == null)
+        {
+            GetHUDCanvas(out var _parent);
+
+            GameObject _obj= _parent.transform.Find($"UIBattleStageHUD(Clone)").gameObject;
+            UIBattleStageHUD _StageHud = _obj.GetComponent<UIBattleStageHUD>();
+            _m_CoinCountPivot = _StageHud._mObj_CoinCountPivot;
+        }
+
+        _ret = _m_CoinCountPivot;
     }
 }

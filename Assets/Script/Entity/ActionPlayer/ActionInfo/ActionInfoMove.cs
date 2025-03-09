@@ -32,6 +32,9 @@ public class ActionInfoMove : ActionInfoBase
             if (token.IsCancellationRequested)
                 break;
 
+            if (_m_Animator == null)
+                break;
+
             AnimatorStateInfo _stateInfo = _m_Animator.GetCurrentAnimatorStateInfo(2);
 
             float _normalizeTime = _stateInfo.normalizedTime % 1;

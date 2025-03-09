@@ -18,6 +18,7 @@ public class UIBattleStageHUD : MonoBehaviour
     [SerializeField] UIBattleStageHUD_AlertBoss _m_AlertBoss;
     [SerializeField] UIBattleStageHUD_Wave _m_AlertWave;
 
+    public GameObject _mObj_CoinCountPivot;
     [SerializeField] TextMeshProUGUI _mText_Gold;
     [SerializeField] TextMeshProUGUI _mText_Dia;
     [SerializeField] TextMeshProUGUI _mText_Supply;

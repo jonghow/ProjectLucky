@@ -33,6 +33,7 @@ public enum PooledObjectInner
     WO_OrderDisplay_Attack,
 
     WO_DamageTag,
+    WO_CoinCountTag,
 
     // TODO : 발사체는 추후 2D Sprite를 갈아끼울텐데, 이거는 새로만드는게 빠른지 갈아끼우는게 빠른지 체크해봐야한다.
 

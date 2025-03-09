@@ -202,6 +202,8 @@ public class PoolingManager
             _isLoaded = true;
         }); // 이동 포인트
 
+        await UniTask.WaitUntil(() => _isLoaded == true);
+
         GetHierarchyParent(PooledObject.WO, PooledObjectInner.WO_DamageTag, out GameObject _WO_UIDamageTab_HierarchyBehavior);
         _WO_UIDamageTab_HierarchyBehavior.transform.SetParent(_m_ParentBehavior.transform);
 
@@ -230,6 +232,37 @@ public class PoolingManager
 
             _isLoaded = true;
         }); // 데미지 태그
+
+        await UniTask.WaitUntil(() => _isLoaded == true);
+
+        GetHierarchyParent(PooledObject.WO, PooledObjectInner.WO_CoinCountTag, out GameObject _WO_UICoinCountTagTab_HierarchyBehavior);
+        _WO_UICoinCountTagTab_HierarchyBehavior.transform.SetParent(_m_ParentBehavior.transform);
+
+        ResourceManager.GetInstance().GetResource(ResourceType.UIWO, 2, true, (_loadedObject) =>
+        {
+            int count = 30;
+
+            for (int i = 0; i < count; i++)
+            {
+                var _newInstance = GameObject.Instantiate(_loadedObject as GameObject);
+                var _iPooled = _newInstance.GetComponent<IPoolBase>();
+
+                _newInstance.SetActive(false);
+
+                if (!_m_Dict_PoolObject.ContainsKey(PooledObject.WO))
+                    _m_Dict_PoolObject.Add(PooledObject.WO, new Dictionary<PooledObjectInner, List<IPoolBase>>());
+
+                if (!_m_Dict_PoolObject[PooledObject.WO].ContainsKey(PooledObjectInner.WO_CoinCountTag))
+                    _m_Dict_PoolObject[PooledObject.WO].Add(PooledObjectInner.WO_CoinCountTag, new List<IPoolBase>());
+
+                _m_Dict_PoolObject[PooledObject.WO][PooledObjectInner.WO_CoinCountTag].Add(_iPooled);
+
+                GetHierarchyParent(PooledObject.WO, PooledObjectInner.WO_CoinCountTag, out var _hierarchyBehavior);
+                _newInstance.transform.SetParent(_hierarchyBehavior.transform);
+            }
+
+            _isLoaded = true;
+        }); // Coin Count 태그
 
         await UniTask.WaitUntil(() => _isLoaded == true);
     }
@@ -317,6 +350,9 @@ public class PoolingManager
                 break;
             case PooledObjectInner.WO_DamageTag:
                 ProduceObject_WO_DamageTag(_createCount);
+                break;
+            case PooledObjectInner.WO_CoinCountTag:
+                ProduceObject_WO_CoinCountTag(_createCount);
                 break;
             default:
                 break;
@@ -457,8 +493,32 @@ public class PoolingManager
         }); // 데미지 태그
     }
 
+    private void ProduceObject_WO_CoinCountTag(int _createCount)
+    {
+        ResourceManager.GetInstance().GetResource(ResourceType.UIWO, 2, true, (_loadedObject) =>
+        {
+            int count = _createCount;
 
+            for (int i = 0; i < count; i++)
+            {
+                var _newInstance = GameObject.Instantiate(_loadedObject as GameObject);
+                var _iPooled = _newInstance.GetComponent<IPoolBase>();
 
+                _newInstance.SetActive(false);
+
+                if (!_m_Dict_PoolObject.ContainsKey(PooledObject.WO))
+                    _m_Dict_PoolObject.Add(PooledObject.WO, new Dictionary<PooledObjectInner, List<IPoolBase>>());
+
+                if (!_m_Dict_PoolObject[PooledObject.WO].ContainsKey(PooledObjectInner.WO_CoinCountTag))
+                    _m_Dict_PoolObject[PooledObject.WO].Add(PooledObjectInner.WO_CoinCountTag, new List<IPoolBase>());
+
+                _m_Dict_PoolObject[PooledObject.WO][PooledObjectInner.WO_CoinCountTag].Add(_iPooled);
+
+                GetHierarchyParent(PooledObject.WO, PooledObjectInner.WO_CoinCountTag, out GameObject _HierarchyBehavior);
+                _newInstance.transform.SetParent(_HierarchyBehavior.transform);
+            }
+        }); // 데미지 태그
+    }
 
 
     public void CollectObject(PooledObject _pooledCategory, PooledObjectInner _pooledInnerCategory, ref IPoolBase _collectedObject)

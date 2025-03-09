@@ -91,6 +91,7 @@
     <Compile Include="Assets\Script\Managers\GameDataManager\Act\CharacterActionEffect.cs" />
     <Compile Include="Assets\Script\Managers\PathManager.cs" />
     <Compile Include="Assets\Script\Managers\InputCommandClass\InputCommandBase.cs" />
+    <Compile Include="Assets\Script\PooledObject\PooledObjectCoinCountTag\PooledObjectCoinCountTag.cs" />
     <Compile Include="Assets\Script\Entity\EntitiesGroup.cs" />
     <Compile Include="Assets\Script\BehaviorTree\BehaviorProduct\MonsterBehavior\MonsterBehaviorMeleeNormalType.cs" />
     <Compile Include="Assets\Script\Managers\AnimationManager.cs" />
