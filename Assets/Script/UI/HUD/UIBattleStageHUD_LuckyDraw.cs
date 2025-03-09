@@ -69,7 +69,21 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
             if (_entitiesGroup == null)
             {
                 DrawAnyMapNavigation(out var _Navigation);
-                Spawn(_drawJobID, _Navigation);
+                if (_Navigation == null)
+                {
+                    // 만약에 넣을 자리가 없다면, 있는애들 중 뽑고, 스폰해라
+                    DrawInGroupEntity(out var _reDrawEntityGroup, _me_Grade);
+
+                    if (_reDrawEntityGroup == null)
+                        return;
+
+                    _drawJobID = _reDrawEntityGroup.ID;
+                    Spawn(_drawJobID, _reDrawEntityGroup);
+                }
+                else
+                {
+                    Spawn(_drawJobID, _Navigation);
+                }
             }
             else
             {
@@ -81,6 +95,37 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
             // fail
             UnityLogger.GetInstance().Log($"실패"); 
         }
+    }
+
+    public void DrawInGroupEntity(out EntitiesGroup _ret, EntityGrade _grade)
+    {
+        // 그룹 있는 애들 중에 하나 뽑자
+        _ret = null;
+        List<EntitiesGroup> _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player);
+
+        List<EntitiesGroup> _Lt_DrawPoolGroup = new List<EntitiesGroup>();
+
+        for (int i = 0; i < _Lt_Groups.Count; ++i)
+        {
+            if (_Lt_Groups[i].IsEnableAddEntity() == true && (_Lt_Groups[i].GetEntityGrade() == _grade))
+            {
+                _Lt_DrawPoolGroup.Add(_Lt_Groups[i]);
+            }
+        }
+
+        int suffleCount = 20;
+
+        for (int i = 0; i < suffleCount; ++i)
+        {
+            int _prevIndex = UnityEngine.Random.Range(0, _Lt_DrawPoolGroup.Count);
+            int _nextIndex = UnityEngine.Random.Range(0, _Lt_DrawPoolGroup.Count);
+
+            var _temp = _Lt_DrawPoolGroup[_nextIndex];
+            _Lt_DrawPoolGroup[_nextIndex] = _Lt_DrawPoolGroup[_prevIndex];
+            _Lt_DrawPoolGroup[_prevIndex] = _temp;
+        }
+
+        _ret = _Lt_DrawPoolGroup.Count > 0 ? _Lt_DrawPoolGroup[0] : null;
     }
     public void OnClick_DrawHero()
     {
@@ -104,7 +149,21 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
             if (_entitiesGroup == null)
             {
                 DrawAnyMapNavigation(out var _Navigation);
-                Spawn(_drawJobID, _Navigation);
+                if (_Navigation == null)
+                {
+                    // 만약에 넣을 자리가 없다면, 있는애들 중 뽑고, 스폰해라
+                    DrawInGroupEntity(out var _reDrawEntityGroup, _me_Grade);
+
+                    if (_reDrawEntityGroup == null)
+                        return;
+
+                    _drawJobID = _reDrawEntityGroup.ID;
+                    Spawn(_drawJobID, _reDrawEntityGroup);
+                }
+                else
+                {
+                    Spawn(_drawJobID, _Navigation);
+                }
             }
             else
             {
@@ -139,7 +198,21 @@ public class UIBattleStageHUD_LuckyDraw : MonoBehaviour , IBattleHUDActivation
             if (_entitiesGroup == null)
             {
                 DrawAnyMapNavigation(out var _Navigation);
-                Spawn(_drawJobID, _Navigation);
+                if (_Navigation == null)
+                {
+                    // 만약에 넣을 자리가 없다면, 있는애들 중 뽑고, 스폰해라
+                    DrawInGroupEntity(out var _reDrawEntityGroup, _me_Grade);
+
+                    if (_reDrawEntityGroup == null)
+                        return;
+
+                    _drawJobID = _reDrawEntityGroup.ID;
+                    Spawn(_drawJobID, _reDrawEntityGroup);
+                }
+                else
+                {
+                    Spawn(_drawJobID, _Navigation);
+                }
             }
             else
             {

@@ -35,7 +35,7 @@ public class ManagerContainer
     public Transform _mTr_Obj;
 
     protected CancellationTokenSource _onLoadedCancellationToken;
-    bool _isLoadingComplete;
+    public bool _isLoadingComplete;
 
     private void Initialize()
     {

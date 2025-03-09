@@ -44,7 +44,7 @@ public class SelectCircle : MonoBehaviour
         {
             UpdateRangeScale();
             _m_Pivot.gameObject.SetActive(true);
-            _m_BtnCombine.gameObject.SetActive(_entity.GetEntityGrade() < EntityGrade.Hero); // 히어로부터 버튼 뺀다. 신화는 무조건 조합UI
+            _m_BtnCombine.gameObject.SetActive(_entity.GetEntityGrade() < EntityGrade.Myth); // 히어로부터 버튼 뺀다. 신화는 무조건 조합UI
         }
         else
         {

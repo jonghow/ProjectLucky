@@ -19,6 +19,6 @@ public partial class PlayerManager
 
     public PlayerManager()
     {
-        _mi_Gold = 100;
+        _mi_Gold = 120;
     }
 }

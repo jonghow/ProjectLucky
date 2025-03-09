@@ -16,6 +16,8 @@ public class UITitle : MonoBehaviour
     public bool _mb_StartOnLoadBattleStage;
     public bool _IsPlayInitBGM;
 
+    [SerializeField] Button _mBtn_Start;
+
     public void Start()
     {
         _mb_OnClickStart = false;
@@ -40,6 +42,8 @@ public class UITitle : MonoBehaviour
             _IsPlayInitBGM = true;
             SoundManager.GetInstance().PlayBGM($"SoundBGM_Lobby");
         }
+
+        _mBtn_Start.interactable = ManagerContainer.GetInstance()._isLoadingComplete;
     }
 
     public void OnClick_Start()

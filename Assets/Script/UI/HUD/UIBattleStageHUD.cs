@@ -107,7 +107,22 @@ public class UIBattleStageHUD : MonoBehaviour
         if (_entitiesGroup == null)
         {
             DrawAnyMapNavigation(out var _Navigation);
-            Spawn(_jobID, _Navigation);
+
+            if(_Navigation == null)
+            {
+                // 만약에 넣을 자리가 없다면, 있는애들 중 뽑고, 스폰해라
+                DrawInGroupEntity(out var _reDrawEntityGroup);
+
+                if (_reDrawEntityGroup == null)
+                    return; // 실패처리
+
+                _jobID = _reDrawEntityGroup.ID;
+                Spawn(_jobID, _reDrawEntityGroup);
+            }
+            else
+            {
+                Spawn(_jobID, _Navigation);
+            }
         }
         else
         {
@@ -115,7 +130,6 @@ public class UIBattleStageHUD : MonoBehaviour
         }
 
         PlayerManager.GetInstance().UseGold(Defines.DrawDefaultGoldPrice); // 스폰했으니 차감
-
     }
 
     public void UpdateSpawnButton(int _value)
@@ -157,6 +171,42 @@ public class UIBattleStageHUD : MonoBehaviour
 
         return _Lt_Infos[0]._mi_CharacterID;
     }
+
+    public void DrawInGroupEntity(out EntitiesGroup _ret)
+    {
+        // 그룹 있는 애들 중에 하나 뽑자
+        _ret = null;
+        List<EntitiesGroup> _Lt_Groups = EntityManager.GetInstance().NewGetEntityGroups(EntityDivision.Player);
+
+        List<EntitiesGroup> _Lt_DrawPoolGroup = new List<EntitiesGroup>();
+
+        for(int i = 0; i < _Lt_Groups.Count; ++i)
+        {
+            if (_Lt_Groups[i].IsEnableAddEntity() == true)
+            {
+                _Lt_DrawPoolGroup.Add(_Lt_Groups[i]);
+            }
+        }
+
+        if(_Lt_DrawPoolGroup.Count > 0)
+        {
+            int suffleCount = 20;
+
+            for (int i = 0; i < suffleCount; ++i)
+            {
+                int _prevIndex = UnityEngine.Random.Range(0, _Lt_DrawPoolGroup.Count);
+                int _nextIndex = UnityEngine.Random.Range(0, _Lt_DrawPoolGroup.Count);
+
+                var _temp = _Lt_DrawPoolGroup[_nextIndex];
+                _Lt_DrawPoolGroup[_nextIndex] = _Lt_DrawPoolGroup[_prevIndex];
+                _Lt_DrawPoolGroup[_prevIndex] = _temp;
+            }
+        }
+
+        _ret = _Lt_DrawPoolGroup.Count > 0 ? _Lt_DrawPoolGroup[0] : null;
+    }
+
+
     public void FindEnableEntityGroups(int _jobID, out EntitiesGroup _ret)
     {
         _ret = null;
@@ -189,20 +239,24 @@ public class UIBattleStageHUD : MonoBehaviour
             }
         }
         // 필터링
-
-        int suffleCount = 20;
-
-        for (int i = 0; i < suffleCount; ++i)
+        
+        if(_Lt_Elements.Count > 0)
         {
-            int _prevIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
-            int _nextIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
+            int suffleCount = 20;
 
-            var _temp = _Lt_Elements[_nextIndex];
-            _Lt_Elements[_nextIndex] = _Lt_Elements[_prevIndex];
-            _Lt_Elements[_prevIndex] = _temp;
+            for (int i = 0; i < suffleCount; ++i)
+            {
+                int _prevIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
+                int _nextIndex = UnityEngine.Random.Range(0, _Lt_Elements.Count);
+
+                var _temp = _Lt_Elements[_nextIndex];
+                _Lt_Elements[_nextIndex] = _Lt_Elements[_prevIndex];
+                _Lt_Elements[_prevIndex] = _temp;
+            }
         }
         // 셔플 완료
-        _retNavigation = _Lt_Elements[0];
+
+        _retNavigation = _Lt_Elements.Count > 0? _Lt_Elements[0] : null;
     }
     public void Spawn(int _jobID, NavigationElement _selectedNavigation)
     {
