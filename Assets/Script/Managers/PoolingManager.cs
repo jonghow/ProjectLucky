@@ -73,6 +73,20 @@ public class PoolingManager
         });// DamageTag
 
         await UniTask.WaitUntil(() => _isLoaded == true);
+
+        ResourceManager.GetInstance().GetResource(ResourceType.UIWO, 2, true, (_loadedObject) =>
+        {
+            _isLoaded = true;
+        });// CoinCount
+
+        await UniTask.WaitUntil(() => _isLoaded == true);
+
+        ResourceManager.GetInstance().GetResource(ResourceType.UIWO, 3, true, (_loadedObject) =>
+        {
+            _isLoaded = true;
+        });// World HP Bar
+
+        await UniTask.WaitUntil(() => _isLoaded == true);
     }
 
     public async UniTask InitCollectObjects(GameObject _parent)
@@ -265,6 +279,37 @@ public class PoolingManager
         }); // Coin Count 태그
 
         await UniTask.WaitUntil(() => _isLoaded == true);
+
+        GetHierarchyParent(PooledObject.WO, PooledObjectInner.WO_WorldHealBarTag, out GameObject _WO_UIWorldHealBarTagTab_HierarchyBehavior);
+        _WO_UIWorldHealBarTagTab_HierarchyBehavior.transform.SetParent(_m_ParentBehavior.transform);
+
+        ResourceManager.GetInstance().GetResource(ResourceType.UIWO, 3, true, (_loadedObject) =>
+        {
+            int count = 30;
+
+            for (int i = 0; i < count; i++)
+            {
+                var _newInstance = GameObject.Instantiate(_loadedObject as GameObject);
+                var _iPooled = _newInstance.GetComponent<IPoolBase>();
+
+                _newInstance.SetActive(false);
+
+                if (!_m_Dict_PoolObject.ContainsKey(PooledObject.WO))
+                    _m_Dict_PoolObject.Add(PooledObject.WO, new Dictionary<PooledObjectInner, List<IPoolBase>>());
+
+                if (!_m_Dict_PoolObject[PooledObject.WO].ContainsKey(PooledObjectInner.WO_WorldHealBarTag))
+                    _m_Dict_PoolObject[PooledObject.WO].Add(PooledObjectInner.WO_WorldHealBarTag, new List<IPoolBase>());
+
+                _m_Dict_PoolObject[PooledObject.WO][PooledObjectInner.WO_WorldHealBarTag].Add(_iPooled);
+
+                GetHierarchyParent(PooledObject.WO, PooledObjectInner.WO_WorldHealBarTag, out var _hierarchyBehavior);
+                _newInstance.transform.SetParent(_hierarchyBehavior.transform);
+            }
+
+            _isLoaded = true;
+        }); // Coin Count 태그
+
+        await UniTask.WaitUntil(() => _isLoaded == true);
     }
 
     public void GetPooledObject(PooledObject _pooledCategory, PooledObjectInner _pooledInnerCategory, out IPoolBase _ret)
@@ -353,6 +398,9 @@ public class PoolingManager
                 break;
             case PooledObjectInner.WO_CoinCountTag:
                 ProduceObject_WO_CoinCountTag(_createCount);
+                break;
+            case PooledObjectInner.WO_WorldHealBarTag:
+                ProduceObject_WO_WorldHealBarTag(_createCount);
                 break;
             default:
                 break;
@@ -519,6 +567,35 @@ public class PoolingManager
             }
         }); // 데미지 태그
     }
+
+    private void ProduceObject_WO_WorldHealBarTag(int _createCount)
+    {
+        ResourceManager.GetInstance().GetResource(ResourceType.UIWO, 3, true, (_loadedObject) =>
+        {
+            int count = _createCount;
+
+            for (int i = 0; i < count; i++)
+            {
+                var _newInstance = GameObject.Instantiate(_loadedObject as GameObject);
+                var _iPooled = _newInstance.GetComponent<IPoolBase>();
+
+                _newInstance.SetActive(false);
+
+                if (!_m_Dict_PoolObject.ContainsKey(PooledObject.WO))
+                    _m_Dict_PoolObject.Add(PooledObject.WO, new Dictionary<PooledObjectInner, List<IPoolBase>>());
+
+                if (!_m_Dict_PoolObject[PooledObject.WO].ContainsKey(PooledObjectInner.WO_WorldHealBarTag))
+                    _m_Dict_PoolObject[PooledObject.WO].Add(PooledObjectInner.WO_WorldHealBarTag, new List<IPoolBase>());
+
+                _m_Dict_PoolObject[PooledObject.WO][PooledObjectInner.WO_WorldHealBarTag].Add(_iPooled);
+
+                GetHierarchyParent(PooledObject.WO, PooledObjectInner.WO_WorldHealBarTag, out GameObject _HierarchyBehavior);
+                _newInstance.transform.SetParent(_HierarchyBehavior.transform);
+            }
+        }); // 데미지 태그
+    }
+
+    
 
 
     public void CollectObject(PooledObject _pooledCategory, PooledObjectInner _pooledInnerCategory, ref IPoolBase _collectedObject)

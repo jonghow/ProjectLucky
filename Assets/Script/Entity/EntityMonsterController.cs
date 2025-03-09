@@ -18,6 +18,8 @@ public class EntityMonsterController : EntityContoller
 
     public bool _m_IsKillMine = true; // 내가 잡았는지 라이벌이 잡았는지
 
+    public IPoolBase _m_worldHaelBarTag; // HealBatTag
+
     public override void SetUp(long _entityUID, int _entityID)
     {
         _ml_EntityUID = _entityUID;
@@ -107,6 +109,9 @@ public class EntityMonsterController : EntityContoller
 
     public override void OnDieEvent(Entity _entity)
     {
+        // 붙은 헬스바 해제
+        ReleaseWorldHealBarObject();
+
         int _freshness = GetFressness();
         int _dia = GetDia();
 
@@ -126,7 +131,16 @@ public class EntityMonsterController : EntityContoller
             RivalPlayerAIManager.GetInstance().AddDia(_dia);
         }
 
+
+
+
         _m_ActPlayer.ClearActionInfos();
+    }
+
+    public void ReleaseWorldHealBarObject()
+    {
+        PooledObjectWorldHealBarTag _healthBarTag = _m_worldHaelBarTag as PooledObjectWorldHealBarTag;
+        _healthBarTag.Release();
     }
 
     public void OnDrawGizmos()

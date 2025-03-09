@@ -97,6 +97,7 @@
     <Compile Include="Assets\Script\Managers\AnimationManager.cs" />
     <Compile Include="Assets\Script\StatePattern\Stage\BattleReadyState.cs" />
     <Compile Include="Assets\Script\Managers\InputCommandClass\CameraMoveCommand.cs" />
+    <Compile Include="Assets\Script\PooledObject\PooledObjectWorldHealBarTag\PooledObjectWorldHealBarTag.cs" />
     <Compile Include="Assets\Script\Managers\SpanwerManager.cs" />
     <Compile Include="Assets\Script\Abnormal\AbnormalConfused.cs" />
     <Compile Include="Assets\Script\GenericCollectionExtension\GenericCollection_Queue\GenericCollectionExtension_Stack.cs" />

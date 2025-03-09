@@ -487,6 +487,15 @@ public class EnemyEntityFactory : EntityFactoryBase
             _mobContoller.SetUp(uUID, _entityTID);
             // 컨트롤러 셋업
 
+            PoolingManager.GetInstance().GetPooledObject(PooledObject.WO, PooledObjectInner.WO_WorldHealBarTag, out var _pooledObject);
+            PooledObjectWorldHealBarTag _barTag = _pooledObject as PooledObjectWorldHealBarTag;
+            _barTag.SetOwnerEntity(_cEntity);
+            _barTag.SetHP();
+            // World HealBar 세팅
+
+            _mobContoller._m_worldHaelBarTag = _barTag;
+            // World HealBar 세팅
+
             //_mobContoller.SetMoveAgent(_moveAgent);
             // 무빙 에이전트 셋업
 
@@ -568,6 +577,15 @@ public class EnemyEntityFactory : EntityFactoryBase
             _userContoller.SetActPlayer(_actPlayer);
             _userContoller.SetUp(uUID, _entityTID);
             // 컨트롤러 셋업
+
+            PoolingManager.GetInstance().GetPooledObject(PooledObject.WO, PooledObjectInner.WO_WorldHealBarTag, out var _pooledObject);
+            PooledObjectWorldHealBarTag _barTag = _pooledObject as PooledObjectWorldHealBarTag;
+            _barTag.SetOwnerEntity(_cEntity);
+            _barTag.SetHP();
+            // World HealBar 세팅
+
+            _userContoller._m_worldHaelBarTag = _barTag;
+            // World HealBar 세팅
 
             if (_isMySpawner == true)
                 _userContoller.SetPlayerZoneProbeList();
